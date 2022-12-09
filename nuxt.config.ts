@@ -4,6 +4,16 @@ export default defineNuxtConfig({
 
   modules: ["@pinia/nuxt"],
   //buildModules: ["@pinia/nuxt"],
+  alias: {
+    "./runtimeConfig": "./runtimeConfig.browser",
+  },
+  vite: {
+    // temp-fix for dev, it breaks build for now (see: https://github.com/nuxt/framework/issues/4916)
+    define: {
+      // global: {}
+      "window.global": {},
+    },
+  },
 
   postcss: {
     plugins: {

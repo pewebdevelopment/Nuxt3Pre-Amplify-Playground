@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nuxt3ampplayground-dev-182930-authRole",
+      "UnauthRoleArn": "arn:aws:iam::317786172055:role/amplify-nuxt3ampplayground-dev-182930-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::317786172055:role/amplify-nuxt3ampplayground-dev-182930-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-nuxt3ampplayground-dev-182930-deployment",
+      "UnauthRoleName": "amplify-nuxt3ampplayground-dev-182930-unauthRole",
+      "StackName": "amplify-nuxt3ampplayground-dev-182930",
+      "StackId": "arn:aws:cloudformation:ap-south-1:317786172055:stack/amplify-nuxt3ampplayground-dev-182930/51706fb0-77c1-11ed-a393-0a4f3d521d4c",
+      "AmplifyAppId": "d29ir9uiuw37l1"
+    },
+    "categories": {
+      "auth": {
+        "Nuxt3AmpPlayGround": {}
+      }
+    }
+  }
+}
