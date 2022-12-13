@@ -23,11 +23,11 @@ const AuthStore = useAuthStore();
 
 const submit = async () => {
   //call the login method from the Authstore
-  const user = await AuthStore.login({
+  const user_from_amplify = await AuthStore.login({
     email: form.loginEmail,
     password: form.password,
   });
-  console.log(user);
+  console.log(user_from_amplify);
   router.push("/dashboard");
 };
 </script>
@@ -39,7 +39,7 @@ const submit = async () => {
         <CardBox :class="cardClass" is-form @submit.prevent="submit">
           <FormField label="Login" help="Please enter your login">
             <FormControl
-              v-model="form.login"
+              v-model="form.loginEmail"
               :icon="mdiAccount"
               name="login"
               autocomplete="username"
@@ -48,7 +48,7 @@ const submit = async () => {
 
           <FormField label="Password" help="Please enter your password">
             <FormControl
-              v-model="form.pass"
+              v-model="form.password"
               :icon="mdiAsterisk"
               type="password"
               name="password"
