@@ -5,6 +5,6 @@ import "@aws-amplify/ui-vue/styles.css";
 
 <template>
   <div>
-    <Authenticator> <div>Logged in</div> </Authenticator>
+    <Authenticator> <div>Logged In</div> </Authenticator>
   </div>
 </template>
