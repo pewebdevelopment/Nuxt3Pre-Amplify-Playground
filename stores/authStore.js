@@ -6,13 +6,6 @@ export const state = () => ({
   user: null,
 });
 
-// export const mutations = {
-//   set(state, user) {
-//     state.isAuthenticated = !!user;
-//     state.user = user;
-//   },
-// };
-
 const getters = {};
 
 export const actions = {
@@ -41,11 +34,15 @@ export const actions = {
   async login({ email, password }) {
     const userfromAmplify = await Auth.signIn(email, password);
     this.user = userfromAmplify;
-    return user;
+    this.isAuthenticated = true;
+    return this.user;
   },
 
   async logout() {
     await Auth.signOut();
+    if (this.isAuthenticated === true) {
+      this.isAuthenticated = false;
+    }
     this.user = null;
   },
 };

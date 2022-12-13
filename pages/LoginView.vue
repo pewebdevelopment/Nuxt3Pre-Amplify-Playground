@@ -9,60 +9,68 @@ import FormField from "@/components/FormField.vue";
 import FormControl from "@/components/FormControl.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import BaseButtons from "@/components/BaseButtons.vue";
-
+import { useAuthStore } from "@/stores/authStore";
 
 const form = reactive({
-  login: "john.doe",
-  pass: "highly-secure-password-fYjUw-",
+  loginEmail: "zenithathang@gmail.com",
+  pass: "Zenithathang@gmail.com@99",
   remember: true,
 });
 
 const router = useRouter();
 
-const submit = () => {
+const AuthStore = useAuthStore();
+
+const submit = async () => {
+  //call the login method from the $authstore
+  const user = await AuthStore.login({
+    email: form.loginEmail,
+    password: form.pass,
+  });
+  console.log(user);
   router.push("/dashboard");
 };
 </script>
 
 <template>
   <div>
-  <NuxtLayout>
-    <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
-      <CardBox :class="cardClass" is-form @submit.prevent="submit">
-        <FormField label="Login" help="Please enter your login">
-          <FormControl
-            v-model="form.login"
-            :icon="mdiAccount"
-            name="login"
-            autocomplete="username"
+    <NuxtLayout>
+      <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
+        <CardBox :class="cardClass" is-form @submit.prevent="submit">
+          <FormField label="Login" help="Please enter your login">
+            <FormControl
+              v-model="form.login"
+              :icon="mdiAccount"
+              name="login"
+              autocomplete="username"
+            />
+          </FormField>
+
+          <FormField label="Password" help="Please enter your password">
+            <FormControl
+              v-model="form.pass"
+              :icon="mdiAsterisk"
+              type="password"
+              name="password"
+              autocomplete="current-password"
+            />
+          </FormField>
+
+          <FormCheckRadio
+            v-model="form.remember"
+            name="remember"
+            label="Remember"
+            :input-value="true"
           />
-        </FormField>
 
-        <FormField label="Password" help="Please enter your password">
-          <FormControl
-            v-model="form.pass"
-            :icon="mdiAsterisk"
-            type="password"
-            name="password"
-            autocomplete="current-password"
-          />
-        </FormField>
-
-        <FormCheckRadio
-          v-model="form.remember"
-          name="remember"
-          label="Remember"
-          :input-value="true"
-        />
-
-        <template #footer>
-          <BaseButtons>
-            <BaseButton type="submit" color="info" label="Login" />
-            <BaseButton to="/dashboard" color="info" outline label="Back" />
-          </BaseButtons>
-        </template>
-      </CardBox>
-    </SectionFullScreen>
-  </NuxtLayout>
-</div>
+          <template #footer>
+            <BaseButtons>
+              <BaseButton type="submit" color="info" label="Login" />
+              <BaseButton to="/dashboard" color="info" outline label="Back" />
+            </BaseButtons>
+          </template>
+        </CardBox>
+      </SectionFullScreen>
+    </NuxtLayout>
+  </div>
 </template>
