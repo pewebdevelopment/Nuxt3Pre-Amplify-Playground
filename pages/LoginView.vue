@@ -13,7 +13,7 @@ import { useAuthStore } from "@/stores/authStore";
 
 const form = reactive({
   loginEmail: "zenithathang@gmail.com",
-  pass: "Zenithathang@gmail.com@99",
+  password: "Zenithathang@gmail.com@99",
   remember: true,
 });
 
@@ -22,10 +22,10 @@ const router = useRouter();
 const AuthStore = useAuthStore();
 
 const submit = async () => {
-  //call the login method from the $authstore
+  //call the login method from the Authstore
   const user = await AuthStore.login({
     email: form.loginEmail,
-    password: form.pass,
+    password: form.password,
   });
   console.log(user);
   router.push("/dashboard");
