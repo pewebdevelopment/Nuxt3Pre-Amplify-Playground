@@ -10,25 +10,38 @@ import FormControl from "@/components/FormControl.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import BaseButtons from "@/components/BaseButtons.vue";
 import { useAuthStore } from "@/stores/authStore";
+import { useGraphqlAPIStore } from "@/stores/graphqlAPI";
 
 const form = reactive({
-  loginEmail: "zenithathang@gmail.com",
-  password: "Zenithathang@gmail.com@99",
+  loginEmail: "",
+  password: "",
   remember: true,
 });
+
+// const form = reactive({
+//   loginEmail: "zenithathang@gmail.com",
+//   password: "Zenithathang@gmail.com@99",
+//   remember: true,
+// });
 
 const router = useRouter();
 
 const AuthStore = useAuthStore();
 
+const GraphqlAPIStore = useGraphqlAPIStore();
+
 const submit = async () => {
   //call the login method from the Authstore
-  const user_from_amplify = await AuthStore.login({
-    email: form.loginEmail,
-    password: form.password,
-  });
-  console.log(user_from_amplify);
-  router.push("/dashboard");
+  // const user_from_amplify = await AuthStore.login({
+  //   email: form.loginEmail,
+  //   password: form.password,
+  // });
+  // console.log(user_from_amplify);
+
+  const response = await GraphqlAPIStore.createSuperAdmin({ input: {} });
+  console.log("response", response);
+
+  // router.push("/dashboard");
 };
 </script>
 
@@ -65,7 +78,7 @@ const submit = async () => {
 
           <template #footer>
             <BaseButtons>
-              <BaseButton type="submit" color="info" label="Login" />
+              <BaseButton type="submit" color="info" label="Login1111" />
               <BaseButton to="/dashboard" color="info" outline label="Back" />
             </BaseButtons>
           </template>

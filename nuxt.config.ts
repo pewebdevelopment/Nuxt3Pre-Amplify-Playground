@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   },
 
   //
-  plugins: [{ src: "@/plugins/amplify.ts", mode: "client" }, "~/plugins/auth"],
+  plugins: [{ src: "@/plugins/amplify.ts", mode: "client" }],
   vite: {
     // temp-fix for dev, it breaks build for now (see: https://github.com/nuxt/framework/issues/4916)
     define: {
