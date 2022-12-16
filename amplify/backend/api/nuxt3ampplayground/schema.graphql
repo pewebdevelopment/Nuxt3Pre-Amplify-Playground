@@ -1,0 +1,243 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY {
+  globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+type Student
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  exams: [String!]
+  description: String
+  isActive: Boolean
+  guardians: [Guardian] @hasMany
+}
+
+type Guardian
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+}
+
+type SuperAdmin
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin"]
+        operations: [create, update, read, delete]
+      }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  altEmail: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+  accessControls: [String]
+}
+
+type Admin
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  altEmail: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+  accessControls: [String]
+}
+
+type Employee
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  altEmail: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+  accessControls: [String]
+}
+
+type Educator
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      {
+        allow: groups
+        groups: ["Employee", "Educator"]
+        operations: [create, read]
+      }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  altEmail: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+  accessControls: [String]
+}
+
+type StudentTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+
+type GuardianTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+
+type AdminTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+
+type EmployeeTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+
+type EducatorTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}

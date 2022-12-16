@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "nuxt3ampplayground",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authNuxt3AmpPlayGround",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

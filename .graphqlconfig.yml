@@ -1,0 +1,14 @@
+projects:
+  nuxt3ampplayground:
+    schemaPath: >-
+      D:/Code for Life/48. Nuxt3Pre Amplify Playground/Nuxt3Pre Amplify
+      Playground/graphql/schema.json
+    includes:
+      - graphQL/**.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: graphQL
