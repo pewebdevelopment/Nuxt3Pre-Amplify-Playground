@@ -3,6 +3,26 @@
 input AMPLIFY {
   globalAuthRule: AuthRule = { allow: public }
 } # FOR TESTING ONLY!
+# type User
+#   @model
+#   @auth(
+#     rules: [
+#       {
+#         allow: groups
+#         groups: ["SuperAdmin", "Admin"]
+#         operations: [create, update, read, delete]
+#       }
+#       { allow: groups, groups: ["Employee"], operations: [create, read] }
+#     ]
+#   ) {
+#   id: ID!
+#   firstName: String!
+#   lastName: String!
+#   email: String!
+#   phoneNumber: String!
+
+# }
+
 type Student
   @model
   @auth(
@@ -26,6 +46,7 @@ type Student
   description: String
   isActive: Boolean
   guardians: [Guardian] @hasMany
+  # datamodelType: User @hasOne
 }
 
 type Guardian
