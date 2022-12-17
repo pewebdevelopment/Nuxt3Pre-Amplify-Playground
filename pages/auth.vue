@@ -5,6 +5,10 @@ import "@aws-amplify/ui-vue/styles.css";
 
 <template>
   <div>
-    <Authenticator> <div>Logged In</div> </Authenticator>
+    <Authenticator>
+      Logged In
+      <br />
+      <p>This is a paragraph that we will see only after we re logged in</p>
+    </Authenticator>
   </div>
 </template>
