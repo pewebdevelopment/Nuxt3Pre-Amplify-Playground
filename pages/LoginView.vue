@@ -78,7 +78,7 @@ const submit = async () => {
 
           <template #footer>
             <BaseButtons>
-              <BaseButton type="submit" color="info" label="Login1111" />
+              <BaseButton type="submit" color="info" label="Login Now" />
               <BaseButton to="/dashboard" color="info" outline label="Back" />
             </BaseButtons>
           </template>
