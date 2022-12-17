@@ -64,5 +64,12 @@
         }
       }
     }
+  },
+  "storage": {
+    "s3nuxt3ampplaygroundstoragefdc29ff7": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }

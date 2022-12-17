@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3nuxt3ampplaygroundstoragefdc29ff7",
+  "bucketName": "nuxt3ampplayground-storage-fdc29ff7",
+  "policyUUID": "8388809a",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
