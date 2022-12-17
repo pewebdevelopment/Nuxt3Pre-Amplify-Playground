@@ -27,6 +27,7 @@ coverage
 *.sln
 *.sw?
 
+.output
 .nuxt
 
 #amplify-do-not-edit-begin
