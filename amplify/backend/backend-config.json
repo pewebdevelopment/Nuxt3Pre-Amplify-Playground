@@ -66,7 +66,7 @@
     }
   },
   "storage": {
-    "s3nuxt3ampplaygroundstoragefdc29ff7": {
+    "s3nuxt3ampplaygroundstorage80ebce9c": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": []

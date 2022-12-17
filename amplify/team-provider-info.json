@@ -17,6 +17,9 @@
       },
       "api": {
         "nuxt3ampplayground": {}
+      },
+      "storage": {
+        "s3nuxt3ampplaygroundstorage80ebce9c": {}
       }
     }
   }

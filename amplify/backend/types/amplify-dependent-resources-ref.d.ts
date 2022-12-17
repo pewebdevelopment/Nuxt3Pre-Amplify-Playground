@@ -18,7 +18,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "storage": {
-        "s3nuxt3ampplaygroundstoragefdc29ff7": {
+        "s3nuxt3ampplaygroundstorage80ebce9c": {
             "BucketName": "string",
             "Region": "string"
         }
