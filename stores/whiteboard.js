@@ -51,7 +51,11 @@ const actions = {
   setWhiteboardTool(tool) {
     console.log("Tool from setWhiteboardTool:", tool);
     this.tool = tool;
+
+    tools["pencil"].activate();
     if (tools[tool]) {
+      console.log("Trying to Activate:", tools[tool]);
+      debugger;
       tools[tool].activate();
     }
     // commit("SET_WHITEBOARD_TOOL", tool);
