@@ -1,8 +1,8 @@
 <template>
   <div>
-    <canvas id="whiteboard" resize></canvas>
+    <canvas id="canvas-id" resize @mouseup=""></canvas>
     <mainPanel></mainPanel>
-    <historyPanel></historyPanel>
+    <!-- <historyPanel></historyPanel> -->
   </div>
 </template>
 
@@ -14,17 +14,21 @@ import HistoryPanel from "./panel/HistoryPanel";
 export default {
   components: {
     mainPanel: MainPanel,
-    historyPanel: HistoryPanel
+    // historyPanel: HistoryPanel,
   },
   created() {
-    paper.install(window);
+    // paper.install(window);
   },
+
   mounted() {
-    paper.setup("whiteboard");
-  }
+    if (process.browser) {
+      console.log("The window object:", window);
+      paper.install(window);
+      paper.setup(document.getElementById("canvas-id"));
+    }
+  },
 };
 </script>
-
 
 <style lang="scss">
 body {
@@ -35,6 +39,6 @@ body {
 canvas {
   height: 100vh;
   width: 100%;
-  background: #133337;
+  background: #fdffff;
 }
 </style>
