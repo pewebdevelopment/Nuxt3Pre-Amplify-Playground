@@ -2,7 +2,20 @@ export default defineNuxtConfig({
   srcDir: "./",
   css: ["@/assets/css/main.css"],
 
-  modules: ["@pinia/nuxt"],
+  modules: [
+    // ...
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: [
+          // automatically imports `defineStore`
+          "defineStore", // import { defineStore } from 'pinia'
+          // automatically imports `defineStore` as `definePiniaStore`
+          ["defineStore", "definePiniaStore"], // import { defineStore as definePiniaStore } from 'pinia'
+        ],
+      },
+    ],
+  ],
   //buildModules: ["@pinia/nuxt"],
   alias: {
     "./runtimeConfig": "./runtimeConfig.browser",

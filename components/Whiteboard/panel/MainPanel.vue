@@ -2,11 +2,18 @@
   <div class="mainPanel">
     <!-- Actions panel -->
     <div class="actionsPanel">
-      <!-- Tool select -->
+      <!-- pencil-->
       <panelToolIcon
         @click.native="toggleToolSettings"
         :toolColor="toolColor"
-        :isActive="tool === 'pencil' || tool === 'brush'"
+        :isActive="tool === 'pencil'"
+        :icon="activeTool"
+      />
+      <!-- Brush-->
+      <panelToolIcon
+        @click.native="toggleToolSettings"
+        :toolColor="toolColor"
+        :isActive="tool === 'brush'"
         :icon="activeTool"
       />
       <!-- Eraser select -->
@@ -62,14 +69,14 @@
           :colors="colors"
         />
         <!-- Slider -->
-        <rangeSlider
+        <!-- <rangeSlider
           :onChange="setToolSize"
           :min="0"
           :max="6"
           :value="toolSize"
           class="settingsSlider"
           slot="slider"
-        />
+        /> -->
       </panelToolSettings>
       <!-- Eraser settings -->
       <panelToolSettings v-if="isEraserSettingsOpened">
@@ -138,12 +145,13 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
-import { useWhiteboardStore } from "~~/stores/whiteboard";
+// import { mapState } from "pinia";
+import Tools from "@/components/Whiteboard/tools/tool/tools";
+import { useWhiteboardStore } from "@/stores/whiteboard";
 import PanelToolIcon from "./PanelToolIcon";
 import PanelToolSettings from "./PanelToolSettings";
 import ColorPicker from "../ColorPicker";
-import RangeSlider from "../RangeSlider";
+// import RangeSlider from "../RangeSlider";
 // import colorPalette from "../../config/colorPalette.js";
 
 // const whiteboardStore = useWhiteboardStore(); // this is for the composition API
@@ -164,11 +172,12 @@ export default {
   components: {
     panelToolIcon: PanelToolIcon,
     panelToolSettings: PanelToolSettings,
-    rangeSlider: RangeSlider,
+    // rangeSlider: RangeSlider,
     colorPicker: ColorPicker,
   },
   data() {
     return {
+      whiteboardStore: useWhiteboardStore(this.$pinia),
       isToolSettingsOpened: false,
       isEraserSettingsOpened: false,
       isShapeSettingsOpened: false,
@@ -203,7 +212,7 @@ export default {
     },
     // Set size
     setToolSize(size) {
-      whiteboardStore.setToolSize(size);
+      this.whiteboardStore.setToolSize(size);
       // this.$store.dispatch("setToolSize", size);
     },
     setEraserSize(size) {
@@ -223,7 +232,7 @@ export default {
   computed: {
     // Mapping the store via MapStore from Pinia
 
-    ...mapState(useWhiteboardStore(), ["whiteboardStore"]),
+    // ...mapState(useWhiteboardStore(), ["whiteboardStore"]),
 
     // Acitve
     activeTool: function () {
@@ -250,10 +259,13 @@ export default {
     },
 
     tool: function () {
-      return this.whiteboardStore.tool;
+      return "pencil";
+      // return this.whiteboardStore.tool;
     },
     // Color
     toolColor: function () {
+      // debugger;
+      // console.log(this.whiteboardStore);
       return this.whiteboardStore.toolArgs.color;
     },
     shapeColor: function () {
@@ -271,7 +283,10 @@ export default {
     },
   },
   mounted() {
-    this.whiteboardStore.setWhiteboardTool("pencil");
+    // console.log(Tools.pencil);
+    this.whiteboardStore.setWhiteboardTool(Tools.pencil);
+    console.log();
+    this.setToolSize(6);
   },
 };
 </script>

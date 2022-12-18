@@ -4,7 +4,9 @@ import { createLayer } from "../shared";
 import { DrawAction } from "../action";
 import { useWhiteboardStore } from "@/stores/whiteboard";
 
-const whiteboardStore = useWhiteboardStore();
+console.log(paper);
+
+// const whiteboardStore = useWhiteboardStore();
 
 let local = {
   path: null,
@@ -12,6 +14,9 @@ let local = {
 };
 
 function onMouseDown(event) {
+  console.log("Inside onMouseDown");
+  const whiteboardStore = useWhiteboardStore();
+
   let layer = createLayer();
   local.path = new paper.Path();
   local.path.strokeColor = whiteboardStore.toolArgs.color;
@@ -35,12 +40,17 @@ function onMouseDown(event) {
 }
 
 function onMouseDrag(event) {
+  console.log("Inside onMouseDrag");
+
   if (!local.path) return;
   local.path.add(event.point);
   local.path.selected = true;
 }
 
 function onMouseUp(event) {
+  console.log("Inside onMouseUp");
+  const whiteboardStore = useWhiteboardStore();
+
   local.path.add(event.point);
   local.path.simplify();
   const action = new DrawAction({

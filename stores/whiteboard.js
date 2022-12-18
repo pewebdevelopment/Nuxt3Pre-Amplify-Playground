@@ -18,68 +18,38 @@ const state = () => ({
   },
 });
 
-const mutations = {
-  //ToolArgs
-  SET_TOOL_COLOR(state, toolColor) {
-    state.toolArgs.color = toolColor;
-  },
-  SET_TOOL_SIZE(state, toolSize) {
-    state.toolArgs.size = toolSize;
-  },
-  //EraserArgs
-  SET_ERASER_SIZE(state, eraserSize) {
-    state.eraserArgs.size = eraserSize;
-  },
-  SET_ERASER_COLOR(state, eraserColor) {
-    state.eraserArgs.color = eraserColor;
-  },
-  //ShapesArgs
-  SET_SHAPE_SIZE(state, shapeSize) {
-    state.shapeArgs.size = shapeSize;
-  },
-  SET_SHAPE_COLOR(state, shapeColor) {
-    state.shapeArgs.color = shapeColor;
-  },
-  //Tool
-  SET_WHITEBOARD_TOOL(state, tool) {
-    state.tool = tool;
-    if (tools[tool]) {
-      tools[tool].activate();
-    }
-  },
-};
-
 const actions = {
   //ToolArgs
-  setToolColor: (toolColor) => {
+  setToolColor(toolColor) {
     this.toolArgs.color = toolColor;
     // commit("SET_TOOL_COLOR", toolColor);
   },
-  setToolSize: (toolSize) => {
+  setToolSize(toolSize) {
     this.toolArgs.size = toolSize;
     // commit("SET_TOOL_SIZE", toolSize);
   },
   //Eraser
-  setEraserSize: (eraserSize) => {
+  setEraserSize(eraserSize) {
     this.eraserArgs.size = eraserSize;
     // commit("SET_ERASER_SIZE", eraserSize);
   },
-  setEraserColor: (eraserColor) => {
+  setEraserColor(eraserColor) {
     this.shapeArgs.size = shapeSize;
     this.eraserArgs.color = eraserColor;
     // commit("SET_ERASER_COLOR", eraserColor);
   },
   //ShapeArgs
-  setShapeSize: (shapeSize) => {
+  setShapeSize(shapeSize) {
     this.shapeArgs.size = shapeSize;
     // commit("SET_SHAPE_SIZE", shapeSize);
   },
-  setShapeColor: (shapeColor) => {
+  setShapeColor(shapeColor) {
     this.shapeArgs.color = shapeColor;
     // commit("SET_SHAPE_COLOR", shapeColor);
   },
   //Tool
-  setWhiteboardTool: (tool) => {
+  setWhiteboardTool(tool) {
+    console.log("Tool from setWhiteboardTool:", tool);
     this.tool = tool;
     if (tools[tool]) {
       tools[tool].activate();
@@ -89,18 +59,18 @@ const actions = {
 };
 
 const getters = {
-  tool() {
-    return this.tool;
-  },
-  toolArgs() {
-    return this.toolArgs;
-  },
-  eraserArgs() {
-    return this.eraserArgs;
-  },
-  shapeArgs() {
-    return this.shapeArgs;
-  },
+  // tool() {
+  //   return this.tool;
+  // },
+  // toolArgs() {
+  //   return this.toolArgs;
+  // },
+  // eraserArgs() {
+  //   return this.eraserArgs;
+  // },
+  // shapeArgs() {
+  //   return this.shapeArgs;
+  // },
 };
 
 export const useWhiteboardStore = defineStore("Whiteboard", {
