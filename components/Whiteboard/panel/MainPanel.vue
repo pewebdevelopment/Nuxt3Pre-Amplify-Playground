@@ -14,7 +14,7 @@
         @click.native="toggleToolSettings"
         :toolColor="toolColor"
         :isActive="tool === 'brush'"
-        :icon="activeTool"
+        icon="paint-brush"
       />
       <!-- Eraser select -->
       <panelToolIcon
@@ -69,14 +69,14 @@
           :colors="colors"
         />
         <!-- Slider -->
-        <!-- <rangeSlider
+        <rangeSlider
           :onChange="setToolSize"
           :min="0"
           :max="6"
           :value="toolSize"
           class="settingsSlider"
           slot="slider"
-        /> -->
+        />
       </panelToolSettings>
       <!-- Eraser settings -->
       <panelToolSettings v-if="isEraserSettingsOpened">

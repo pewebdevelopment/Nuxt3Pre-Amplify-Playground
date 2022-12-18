@@ -1,5 +1,5 @@
 <template>
-  <div class="historyPanel">
+  <div class="historyPanel mt-14">
     <panelToolIcon @click.native="undo" icon="undo" />
     <panelToolIcon @click.native="redo" icon="redo" />
   </div>
