@@ -16,7 +16,7 @@ const state = () => ({
 
   brushArgs: {
     size: 7,
-    color: "#FFFFFF",
+    color: "#000000",
   },
 
   eraserArgs: {
