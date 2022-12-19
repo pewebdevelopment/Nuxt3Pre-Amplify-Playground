@@ -209,6 +209,7 @@ export default {
 
     togglePencilSettings() {
       this.isPencilSettingsOpened = !this.isPencilSettingsOpened;
+      this.isBrushSettingsOpened = false;
       // this.isToolSettingsOpened = !this.isToolSettingsOpened;
       this.isEraserSettingsOpened = false;
       this.isShapeSettingsOpened = false;
@@ -216,6 +217,7 @@ export default {
 
     toggleBrushSettings() {
       this.isBrushSettingsOpened = !this.isBrushSettingsOpened;
+      this.isPencilSettingsOpened = false;
       // this.isToolSettingsOpened = !this.isToolSettingsOpened;
       this.isEraserSettingsOpened = false;
       this.isShapeSettingsOpened = false;

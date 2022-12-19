@@ -55,7 +55,7 @@ const actions = {
     tools["pencil"].activate();
     if (tools[tool]) {
       console.log("Trying to Activate:", tools[tool]);
-      debugger;
+      // debugger;
       tools[tool].activate();
     }
     // commit("SET_WHITEBOARD_TOOL", tool);
