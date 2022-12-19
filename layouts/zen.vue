@@ -47,26 +47,8 @@ const menuClick = (event, item) => {
 
   if (item.isLogout) {
     AuthStore.logout();
-    console.log("Clicked On Logout");
+    // console.log("Clicked On Logout");
     router.push("/pe/login");
-
-    //const submit = async () => {
-    // call the login method from the Authstore
-    // const user_from_amplify = await AuthStore.login({
-    //   email: form.loginEmail,
-    //   password: form.password,
-    // });
-    // console.log(user_from_amplify);
-
-    // const response = await GraphqlAPIStore.createSuperAdmin({ input: {} });
-    // console.log("response", response);
-
-    // if (user_from_amplify) {
-    //   router.push("/dashboard");
-    // }
-
-    // Write Logout Code here
-    //}
   }
 };
 </script>

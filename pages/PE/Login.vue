@@ -30,7 +30,7 @@ const AuthStore = useAuthStore();
 
 const GraphqlAPIStore = useGraphqlAPIStore();
 
-const submit = async () => {
+const handleSubmit = async () => {
   // call the login method from the Authstore
   const user_from_amplify = await AuthStore.login({
     email: form.loginEmail,
@@ -51,7 +51,7 @@ const submit = async () => {
   <div>
     <NuxtLayout>
       <SectionFullScreen v-slot="{ cardClass }" bg="purplePink">
-        <CardBox :class="cardClass" is-form @submit.prevent="submit">
+        <CardBox :class="cardClass" is-form @submit.prevent="handleSubmit">
           <FormField label="Login" help="Please enter your login">
             <FormControl
               v-model="form.loginEmail"
@@ -79,10 +79,23 @@ const submit = async () => {
           />
 
           <template #footer>
-            <BaseButtons>
-              <BaseButton type="submit" color="info" label="Login" />
-              <BaseButton to="/dashboard" color="info" outline label="Back" />
-            </BaseButtons>
+            <div class="flex justify-between">
+              <BaseButtons>
+                <BaseButton type="submit" color="info" label="Login" />
+                <BaseButton
+                  to="/dashboard"
+                  color="info"
+                  outline
+                  label="Dashboard"
+                />
+              </BaseButtons>
+              <RouterLink
+                to="/pe/register"
+                class="text-sm bg-gray-800 text-white p-3 rounded-md hover:bg-gray-600"
+              >
+                Done have an account? Sign Up
+              </RouterLink>
+            </div>
           </template>
         </CardBox>
       </SectionFullScreen>

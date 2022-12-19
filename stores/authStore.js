@@ -9,12 +9,13 @@ export const state = () => ({
 const getters = {};
 
 export const actions = {
-  async load() {
+  async loadAmplifyUser() {
     try {
       const userfromAmplify = await Auth.currentAuthenticatedUser();
       this.user = userfromAmplify;
       return user;
     } catch (error) {
+      console.log(error);
       this.user = null;
     }
   },
