@@ -2,19 +2,12 @@
   <div class="mainPanel">
     <!-- Actions panel -->
     <div class="actionsPanel">
-      <!-- pencil-->
+      <!-- Tool select -->
       <panelToolIcon
         @click.native="toggleToolSettings"
         :toolColor="toolColor"
-        :isActive="tool === 'pencil'"
+        :isActive="tool === 'pencil' || tool === 'brush'"
         :icon="activeTool"
-      />
-      <!-- Brush-->
-      <panelToolIcon
-        @click.native="toggleToolSettings"
-        :toolColor="toolColor"
-        :isActive="tool === 'brush'"
-        icon="paint-brush"
       />
       <!-- Eraser select -->
       <panelToolIcon
@@ -43,58 +36,60 @@
     <!-- Action settings settings -->
     <div class="actionSettingsPanel">
       <!-- Tool settings -->
-      <panelToolSettings v-if="true">
+      <panelToolSettings v-if="isToolSettingsOpened">
         <!-- SettingsActions -->
-        <template id="YOYOLO" class="settingsActions" #settingsActions>
+        <template class="settingsActions" #settingsActions>
           <!-- Pencil select -->
-          <!-- <panelToolIcon
+          <panelToolIcon
             @click.native="setWhiteboardTool('pencil')"
             :toolColor="toolColor"
             :isActive="tool === 'pencil'"
             icon="pencil-alt"
-          /> -->
+          />
           <!-- Brush select -->
-          <!-- <panelToolIcon
+          <panelToolIcon
             @click.native="setWhiteboardTool('brush')"
             :toolColor="toolColor"
             :isActive="tool === 'brush'"
             icon="paint-brush"
-          /> -->
+          />
         </template>
-        <!-- ColorPicker -->
-        <template id="BOLO" #settingsColorPicker>
+
+        <template #settingsColorPicker>
+          <!-- ColorPicker -->
           <colorPicker
             :onSelectColor="setToolColor"
             class="settingsColorPicker"
             :colors="colors"
           />
         </template>
+
         <!-- Slider -->
-        <!-- <rangeSlider
+        <rangeSlider
           :onChange="setToolSize"
           :min="0"
           :max="6"
           :value="toolSize"
           class="settingsSlider"
           slot="slider"
-        /> -->
+        />
       </panelToolSettings>
       <!-- Eraser settings -->
       <panelToolSettings v-if="isEraserSettingsOpened">
         <!-- Slider -->
-        <!-- <rangeSlider
+        <rangeSlider
           :onChange="setEraserSize"
           :min="0"
           :max="24"
           :value="eraserSize"
           class="settingsSlider"
           slot="slider"
-        /> -->
+        />
       </panelToolSettings>
       <!-- Shape settings -->
       <panelToolSettings v-if="isShapeSettingsOpened">
         <!-- SettingsActions -->
-        <div class="settingsActions" slot="settingsActions">
+        <template class="settingsActions" #settingsActions>
           <!-- Circle select -->
           <panelToolIcon
             @click.native="setWhiteboardTool('circle')"
@@ -123,23 +118,27 @@
             :isActive="tool === 'line'"
             icon="slash"
           />
-        </div>
-        <!-- ColorPicker -->
-        <colorPicker
-          :onSelectColor="setShapeColor"
-          class="settingsColorPicker"
-          slot="settingsColorPicker"
-          :colors="colors"
-        />
-        <!-- Slider -->
-        <!-- <rangeSlider
-          :onChange="setShapeSize"
-          :min="0"
-          :max="6"
-          :value="shapeSize"
-          class="settingsSlider"
-          slot="slider"
-        /> -->
+        </template>
+
+        <template #settingsColorPicker>
+          <!-- ColorPicker -->
+          <colorPicker
+            :onSelectColor="setShapeColor"
+            class="settingsColorPicker"
+            :colors="colors"
+          />
+        </template>
+
+        <template #slider>
+          <!-- Slider -->
+          <rangeSlider
+            :onChange="setShapeSize"
+            :min="0"
+            :max="6"
+            :value="shapeSize"
+            class="settingsSlider"
+          />
+        </template>
       </panelToolSettings>
     </div>
   </div>
@@ -287,8 +286,8 @@ export default {
     // console.log(Tools.pencil);
     this.whiteboardStore.setWhiteboardTool();
     // this.whiteboardStore.setWhiteboardTool(Tools.pencil);
-    console.log();
-    this.setToolSize(6);
+    console.log(this.whiteboardStore);
+    this.setToolSize(3); // This is working to set the ToolSize
   },
 };
 </script>

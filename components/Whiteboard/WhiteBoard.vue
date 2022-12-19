@@ -1,8 +1,9 @@
 <template>
   <div>
     <canvas id="canvas-id" resize></canvas>
-    <mainPanel></mainPanel>
-    <historyPanel></historyPanel>
+    <div id="panels-container" class="flex flex-col gap-5">
+      <mainPanel /> <historyPanel />
+    </div>
   </div>
 </template>
 

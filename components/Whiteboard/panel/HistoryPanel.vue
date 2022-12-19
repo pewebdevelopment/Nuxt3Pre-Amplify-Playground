@@ -1,5 +1,5 @@
 <template>
-  <div class="historyPanel mt-14">
+  <div class="historyPanel">
     <panelToolIcon @click.native="undo" icon="undo" />
     <panelToolIcon @click.native="redo" icon="redo" />
   </div>
@@ -28,7 +28,7 @@ export default {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 170px;
+  top: 230px;
   left: 10px;
   padding: 10px;
   background: #fff;
