@@ -24,13 +24,8 @@ export default {
     if (process.browser) {
       console.log("Process - Browser");
     }
-    if (process.client) {
-      console.log("Process - Client");
-      // paper.install(window);
-      // paper.setup(document.getElementById("canvas-id"));
-    }
 
-    if (document.getElementById("canvas-id")) {
+    if (process.client) {
       // paper.install(window);
       paper.setup(document.getElementById("canvas-id"));
 
@@ -39,18 +34,20 @@ export default {
       var path = new paper.Path();
       // Give the stroke a color
       path.strokeColor = "black";
-      var start = new paper.Point(100, 100);
+      path.strokeWidth = 200;
+      var start = new paper.Point(0, 0);
       // Move to start and draw a line from there
       path.moveTo(start);
       // Note the plus operator on Point objects.
       // PaperScript does that for us, and much more!
-      path.lineTo(start + [100, -50]);
+      path.lineTo(start + [1000, 1000]);
+      path.add();
     }
   },
 };
 </script>
 
-<style lang="scss">
+<style>
 body {
   margin: 0;
   padding: 0;

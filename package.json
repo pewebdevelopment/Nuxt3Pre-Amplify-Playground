@@ -41,6 +41,7 @@
     "rollup-plugin-node-polyfills": "^0.2.1",
     "uuid4": "^2.0.3",
     "vue": "^3.2.33",
-    "vue-slider-component": "^3.2.24"
+    "vue-3-slider-component": "^0.1.0"
+    
   }
 }

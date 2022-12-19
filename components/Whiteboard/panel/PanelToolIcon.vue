@@ -43,14 +43,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 .tool {
   padding: 10px;
   cursor: pointer;
-  &:not(.active):hover {
-    background: #e6e9f0;
-    border-radius: 5px;
-  }
+}
+.tool:not(.active):hover {
+  background: #e6e9f0;
+  border-radius: 5px;
 }
 .active {
   background: #e6e9f0;

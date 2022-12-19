@@ -16,9 +16,14 @@
 </template>
 
 <script>
-import VueSlider from "vue-slider-component";
+import VueSlider from "vue-3-slider-component";
+// import { reactive, toRefs } from "vue";
 
 export default {
+  // setup() {
+  //   const data = reactive({ value: 0 });
+  //   return toRefs(data);
+  // },
   components: {
     VueSlider,
   },

@@ -1,8 +1,8 @@
 <template>
   <div class="toolSettings">
-    <slot name="settingsActions"/>
-    <slot name="slider"/>
-    <slot name="settingsColorPicker"/>
+    <slot name="settingsActions" />
+    <slot name="slider" />
+    <slot name="settingsColorPicker" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {};
 </script>
 
-<style lang="scss">
+<style>
 .toolSettings {
   display: flex;
   flex-direction: column;
@@ -21,18 +21,18 @@ export default {};
   left: 65px;
   top: 0;
   box-shadow: 0px 10px 30px 8px rgba(0, 0, 0, 0.2);
-  .settingsActions {
-    display: flex;
-    .tool:not(:last-child) {
-      margin-right: 5px;
-    }
-  }
-  .settingsSlider {
-    margin-top: 10px;
-    padding: 5px !important;
-  }
-  .settingsColorPicker {
-    margin-top: 10px;
-  }
+}
+.toolSettings .settingsActions {
+  display: flex;
+}
+.toolSettings .settingsActions .tool:not(:last-child) {
+  margin-right: 5px;
+}
+.toolSettings .settingsSlider {
+  margin-top: 10px;
+  padding: 5px !important;
+}
+.toolSettings .settingsColorPicker {
+  margin-top: 10px;
 }
 </style>

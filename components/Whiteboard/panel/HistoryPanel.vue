@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 .historyPanel {
   position: absolute;
   display: flex;

@@ -43,9 +43,9 @@
     <!-- Action settings settings -->
     <div class="actionSettingsPanel">
       <!-- Tool settings -->
-      <panelToolSettings v-if="isToolSettingsOpened">
+      <panelToolSettings v-if="true">
         <!-- SettingsActions -->
-        <div class="settingsActions" slot="settingsActions">
+        <template id="YOYOLO" class="settingsActions" #settingsActions>
           <!-- Pencil select -->
           <panelToolIcon
             @click.native="setWhiteboardTool('pencil')"
@@ -60,35 +60,36 @@
             :isActive="tool === 'brush'"
             icon="paint-brush"
           />
-        </div>
+        </template>
         <!-- ColorPicker -->
-        <colorPicker
-          :onSelectColor="setToolColor"
-          class="settingsColorPicker"
-          slot="settingsColorPicker"
-          :colors="colors"
-        />
+        <template id="BOLO" #settingsColorPicker>
+          <colorPicker
+            :onSelectColor="setToolColor"
+            class="settingsColorPicker"
+            :colors="colors"
+          />
+        </template>
         <!-- Slider -->
-        <rangeSlider
+        <!-- <rangeSlider
           :onChange="setToolSize"
           :min="0"
           :max="6"
           :value="toolSize"
           class="settingsSlider"
           slot="slider"
-        />
+        /> -->
       </panelToolSettings>
       <!-- Eraser settings -->
       <panelToolSettings v-if="isEraserSettingsOpened">
         <!-- Slider -->
-        <rangeSlider
+        <!-- <rangeSlider
           :onChange="setEraserSize"
           :min="0"
           :max="24"
           :value="eraserSize"
           class="settingsSlider"
           slot="slider"
-        />
+        /> -->
       </panelToolSettings>
       <!-- Shape settings -->
       <panelToolSettings v-if="isShapeSettingsOpened">
@@ -131,14 +132,14 @@
           :colors="colors"
         />
         <!-- Slider -->
-        <rangeSlider
+        <!-- <rangeSlider
           :onChange="setShapeSize"
           :min="0"
           :max="6"
           :value="shapeSize"
           class="settingsSlider"
           slot="slider"
-        />
+        /> -->
       </panelToolSettings>
     </div>
   </div>
@@ -291,7 +292,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .mainPanel {
   position: absolute;
   display: flex;
@@ -302,10 +303,8 @@ export default {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0px 10px 30px 8px rgba(0, 0, 0, 0.4);
-  .actionsPanel {
-    .tool:not(:last-child) {
-      margin-bottom: 5px;
-    }
-  }
+}
+.mainPanel .actionsPanel .tool:not(:last-child) {
+  margin-bottom: 5px;
 }
 </style>
