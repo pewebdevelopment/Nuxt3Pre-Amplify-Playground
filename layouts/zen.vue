@@ -13,6 +13,7 @@ import NavBar from "@/components/NavBar.vue";
 import AsideMenu from "@/components/prem/AsideMenu.vue";
 import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
 import FooterBar from "@/components/FooterBar.vue";
+import { useAuthStore } from "@/stores/authStore";
 
 useMainStore().setUser({
   name: "John Doe",
@@ -31,6 +32,10 @@ const layoutStore = useLayoutStore();
 
 const router = useRouter();
 
+const AuthStore = useAuthStore();
+
+// const GraphqlAPIStore = useGraphqlAPIStore();
+
 router.beforeEach(() => {
   layoutStore.isAsideMobileExpanded = false;
 });
@@ -41,51 +46,96 @@ const menuClick = (event, item) => {
   }
 
   if (item.isLogout) {
-    //
+    AuthStore.logout();
+    console.log("Clicked On Logout");
+    router.push("/pe/login");
+
+    //const submit = async () => {
+    // call the login method from the Authstore
+    // const user_from_amplify = await AuthStore.login({
+    //   email: form.loginEmail,
+    //   password: form.password,
+    // });
+    // console.log(user_from_amplify);
+
+    // const response = await GraphqlAPIStore.createSuperAdmin({ input: {} });
+    // console.log("response", response);
+
+    // if (user_from_amplify) {
+    //   router.push("/dashboard");
+    // }
+
+    // Write Logout Code here
+    //}
   }
 };
 </script>
 
 <template>
   <div>
-  <div :class="{
-    dark: styleStore.darkMode,
-    'overflow-hidden lg:overflow-visible': layoutStore.isAsideMobileExpanded,
-  }">
-    <div :class="[
-      layoutAsidePadding,
-      { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
-    ]"
-      class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100">
-      <NavBar :menu="menuNavBar" :class="[
-        layoutAsidePadding,
-        { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
-      ]" @menu-click="menuClick">
-        <NavBarItemPlain display="flex lg:hidden" @click.prevent="layoutStore.asideMobileToggle()">
-          <BaseIcon :path="
-            layoutStore.isAsideMobileExpanded
-              ? mdiBackburger
-              : mdiForwardburger
-          " size="24" />
-        </NavBarItemPlain>
-        <NavBarItemPlain display="hidden lg:flex xl:hidden" @click.prevent="layoutStore.asideLgToggle()">
-          <BaseIcon :path="layoutStore.isAsideLgActive ? mdiBackburger : mdiMenu" size="24" />
-        </NavBarItemPlain>
-        <NavBarItemPlain use-margin>
-          <FormControl placeholder="Search (ctrl+k)" ctrl-k-focus transparent borderless />
-        </NavBarItemPlain>
-      </NavBar>
-      <AsideMenu :menu="menuAside" @menu-click="menuClick" />
-      <slot />
+    <div
+      :class="{
+        dark: styleStore.darkMode,
+        'overflow-hidden lg:overflow-visible':
+          layoutStore.isAsideMobileExpanded,
+      }"
+    >
+      <div
+        :class="[
+          layoutAsidePadding,
+          { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
+        ]"
+        class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100"
+      >
+        <NavBar
+          :menu="menuNavBar"
+          :class="[
+            layoutAsidePadding,
+            { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
+          ]"
+          @menu-click="menuClick"
+        >
+          <NavBarItemPlain
+            display="flex lg:hidden"
+            @click.prevent="layoutStore.asideMobileToggle()"
+          >
+            <BaseIcon
+              :path="
+                layoutStore.isAsideMobileExpanded
+                  ? mdiBackburger
+                  : mdiForwardburger
+              "
+              size="24"
+            />
+          </NavBarItemPlain>
+          <NavBarItemPlain
+            display="hidden lg:flex xl:hidden"
+            @click.prevent="layoutStore.asideLgToggle()"
+          >
+            <BaseIcon
+              :path="layoutStore.isAsideLgActive ? mdiBackburger : mdiMenu"
+              size="24"
+            />
+          </NavBarItemPlain>
+          <NavBarItemPlain use-margin>
+            <FormControl
+              placeholder="Search (ctrl+k)"
+              ctrl-k-focus
+              transparent
+              borderless
+            />
+          </NavBarItemPlain>
+        </NavBar>
+        <AsideMenu :menu="menuAside" @menu-click="menuClick" />
+        <slot />
 
-      <!-- Following was the old AsideMenu  
+        <!-- Following was the old AsideMenu  
          <AsideMenu :is-aside-mobile-expanded="isAsideMobileExpanded" :is-aside-lg-active="isAsideLgActive"
           :menu="menuAside" @menu-click="menuClick" @aside-lg-close-click="isAsideLgActive = false" /> -->
-      <FooterBar>
-        <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
-      </FooterBar>
-
+        <FooterBar>
+          <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
+        </FooterBar>
+      </div>
     </div>
   </div>
-</div>
-</template> 
+</template>

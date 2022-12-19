@@ -12,17 +12,17 @@ import BaseButtons from "@/components/BaseButtons.vue";
 import { useAuthStore } from "@/stores/authStore";
 import { useGraphqlAPIStore } from "@/stores/graphqlAPI";
 
-const form = reactive({
-  loginEmail: "",
-  password: "",
-  remember: true,
-});
-
 // const form = reactive({
-//   loginEmail: "zenithathang@gmail.com",
-//   password: "Zenithathang@gmail.com@99",
+//   loginEmail: "",
+//   password: "",
 //   remember: true,
 // });
+
+const form = reactive({
+  loginEmail: "zenithathang@gmail.com",
+  password: "Zenithathang@gmail.com@99",
+  remember: true,
+});
 
 const router = useRouter();
 
@@ -31,17 +31,19 @@ const AuthStore = useAuthStore();
 const GraphqlAPIStore = useGraphqlAPIStore();
 
 const submit = async () => {
-  //call the login method from the Authstore
-  // const user_from_amplify = await AuthStore.login({
-  //   email: form.loginEmail,
-  //   password: form.password,
-  // });
-  // console.log(user_from_amplify);
+  // call the login method from the Authstore
+  const user_from_amplify = await AuthStore.login({
+    email: form.loginEmail,
+    password: form.password,
+  });
+  console.log(user_from_amplify);
 
-  const response = await GraphqlAPIStore.createSuperAdmin({ input: {} });
-  console.log("response", response);
+  // const response = await GraphqlAPIStore.createSuperAdmin({ input: {} });
+  // console.log("response", response);
 
-  // router.push("/dashboard");
+  if (user_from_amplify) {
+    router.push("/dashboard");
+  }
 };
 </script>
 
