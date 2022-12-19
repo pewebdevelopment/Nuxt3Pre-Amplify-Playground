@@ -52,7 +52,7 @@ const actions = {
     console.log("Tool from setWhiteboardTool:", tool);
     this.tool = tool;
 
-    tools["pencil"].activate();
+    // tools["pencil"].activate();
     if (tools[tool]) {
       console.log("Trying to Activate:", tools[tool]);
       // debugger;
