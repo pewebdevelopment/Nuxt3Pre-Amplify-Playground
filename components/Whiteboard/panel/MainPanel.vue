@@ -5,14 +5,20 @@
       <!-- Pencil -->
 
       <panelToolIcon
-        @click.native="togglePencilSettings"
+        @click.native="
+          togglePencilSettings();
+          setWhiteboardTool('pencil');
+        "
         :toolColor="toolColor"
         :isActive="tool === 'pencil'"
         icon="pencil-alt"
       />
       <!-- Brush -->
       <panelToolIcon
-        @click.native="toggleBrushSettings"
+        @click.native="
+          toggleBrushSettings();
+          setWhiteboardTool('brush');
+        "
         :toolColor="toolColor"
         :isActive="tool === 'brush'"
         icon="paint-brush"
@@ -42,8 +48,8 @@
       />
     </div>
 
-    <!-- Action settings settings -->
-    <div class="actionSettingsPanel">
+    <!-- Container_for_the_Tools -->
+    <div class="Container_for_the_Tools">
       <!-- Pencil settings -->
       <panelToolSettings v-if="isPencilSettingsOpened">
         <template #settingsColorPicker>

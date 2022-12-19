@@ -57,6 +57,6 @@ body {
 canvas {
   height: 100vh;
   width: 100%;
-  background: #fdffff;
+  background: #050311;
 }
 </style>
