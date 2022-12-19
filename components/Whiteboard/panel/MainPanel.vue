@@ -191,7 +191,7 @@ export default {
   data() {
     return {
       whiteboardStore: useWhiteboardStore(this.$pinia),
-      isToolSettingsOpened: false,
+
       isPencilSettingsOpened: false,
       isBrushSettingsOpened: false,
       isEraserSettingsOpened: false,
@@ -224,13 +224,16 @@ export default {
     },
     toggleEraserSettings() {
       this.isEraserSettingsOpened = !this.isEraserSettingsOpened;
-      this.isToolSettingsOpened = false;
+      this.isBrushSettingsOpened = false;
+      this.isPencilSettingsOpened = false;
+
       this.isShapeSettingsOpened = false;
     },
     toggleShapeSettings() {
       this.isShapeSettingsOpened = !this.isShapeSettingsOpened;
+      this.isBrushSettingsOpened = false;
+      this.isPencilSettingsOpened = false;
       this.isEraserSettingsOpened = false;
-      this.isToolSettingsOpened = false;
     },
     // Set Color
     setToolColor(color) {
