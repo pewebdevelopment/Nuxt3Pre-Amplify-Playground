@@ -47,19 +47,19 @@
         <!-- SettingsActions -->
         <template id="YOYOLO" class="settingsActions" #settingsActions>
           <!-- Pencil select -->
-          <panelToolIcon
+          <!-- <panelToolIcon
             @click.native="setWhiteboardTool('pencil')"
             :toolColor="toolColor"
             :isActive="tool === 'pencil'"
             icon="pencil-alt"
-          />
+          /> -->
           <!-- Brush select -->
-          <panelToolIcon
+          <!-- <panelToolIcon
             @click.native="setWhiteboardTool('brush')"
             :toolColor="toolColor"
             :isActive="tool === 'brush'"
             icon="paint-brush"
-          />
+          /> -->
         </template>
         <!-- ColorPicker -->
         <template id="BOLO" #settingsColorPicker>
@@ -285,7 +285,8 @@ export default {
   },
   mounted() {
     // console.log(Tools.pencil);
-    this.whiteboardStore.setWhiteboardTool(Tools.pencil);
+    this.whiteboardStore.setWhiteboardTool();
+    // this.whiteboardStore.setWhiteboardTool(Tools.pencil);
     console.log();
     this.setToolSize(6);
   },
