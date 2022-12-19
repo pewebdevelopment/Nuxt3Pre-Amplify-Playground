@@ -9,7 +9,7 @@
           togglePencilSettings();
           setWhiteboardTool('pencil');
         "
-        :toolColor="toolColor"
+        :toolColor="pencilColor"
         :isActive="tool === 'pencil'"
         icon="pencil-alt"
       />
@@ -19,7 +19,7 @@
           toggleBrushSettings();
           setWhiteboardTool('brush');
         "
-        :toolColor="toolColor"
+        :toolColor="brushColor"
         :isActive="tool === 'brush'"
         icon="paint-brush"
       />
@@ -55,7 +55,7 @@
         <template #settingsColorPicker>
           <!-- ColorPicker -->
           <colorPicker
-            :onSelectColor="setToolColor"
+            :onSelectColor="setPencilColor"
             class="settingsColorPicker"
             :colors="colors"
           />
@@ -76,7 +76,7 @@
         <template #settingsColorPicker>
           <!-- ColorPicker -->
           <colorPicker
-            :onSelectColor="setToolColor"
+            :onSelectColor="setBrushColor"
             class="settingsColorPicker"
             :colors="colors"
           />
@@ -242,11 +242,24 @@ export default {
       this.isEraserSettingsOpened = false;
     },
     // Set Color
-    setToolColor(color) {
-      console.log("Inside SetTool Color");
-      this.whiteboardStore.setToolColor(color);
+    // setToolColor(color) {
+    //   console.log("Inside SetTool Color");
+    //   this.whiteboardStore.setToolColor(color);
+    //   // this.$store.dispatch("setToolColor", color);
+    // },
+
+    setPencilColor(color) {
+      console.log("Inside Set Pencil Color");
+      this.whiteboardStore.setPencilColor(color);
       // this.$store.dispatch("setToolColor", color);
     },
+
+    setBrushColor(color) {
+      console.log("Inside Set Brush Color");
+      this.whiteboardStore.setBrushColor(color);
+      // this.$store.dispatch("setToolColor", color);
+    },
+
     setShapeColor(color) {
       this.whiteboardStore.setShapeColor(color);
       // this.$store.dispatch("setShapeColor", color);
@@ -309,15 +322,39 @@ export default {
       // console.log(this.whiteboardStore);
       return this.whiteboardStore.toolArgs.color;
     },
-    shapeColor: function () {
-      return this.whiteboardStore.shapeArgs.color;
-    },
+
     // Size
     toolSize: function () {
       return this.whiteboardStore.toolArgs.size;
     },
+    // Color
+    pencilColor: function () {
+      // debugger;
+      // console.log(this.whiteboardStore);
+      return this.whiteboardStore.pencilArgs.color;
+    },
+
+    // Size
+    pencilSize: function () {
+      return this.whiteboardStore.pencilArgs.size;
+    },
+
+    brushColor: function () {
+      // debugger;
+      // console.log(this.whiteboardStore);
+      return this.whiteboardStore.brushArgs.color;
+    },
+
+    // Size
+    brushSize: function () {
+      return this.whiteboardStore.brushArgs.size;
+    },
+
     eraserSize: function () {
       return this.whiteboardStore.eraserArgs.size;
+    },
+    shapeColor: function () {
+      return this.whiteboardStore.shapeArgs.color;
     },
     shapeSize: function () {
       return this.whiteboardStore.shapeArgs.size;

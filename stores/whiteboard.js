@@ -8,6 +8,17 @@ const state = () => ({
     size: 2,
     color: "#000000",
   },
+
+  pencilArgs: {
+    size: 2,
+    color: "#000000",
+  },
+
+  brushArgs: {
+    size: 7,
+    color: "#FFFFFF",
+  },
+
   eraserArgs: {
     size: 2,
     color: "#133337",
@@ -28,13 +39,32 @@ const actions = {
     this.toolArgs.size = toolSize;
     // commit("SET_TOOL_SIZE", toolSize);
   },
+
+  setPencilColor(pencilColor) {
+    this.pencilArgs.color = pencilColor;
+    // commit("SET_TOOL_COLOR", toolColor);
+  },
+  setPencilSize(pencilSize) {
+    this.pencilArgs.size = pencilSize;
+    // commit("SET_TOOL_SIZE", toolSize);
+  },
+
+  setBrushColor(brushColor) {
+    this.brushArgs.color = brushColor;
+    // commit("SET_TOOL_COLOR", toolColor);
+  },
+  setBrushSize(brushSize) {
+    this.brushArgs.size = brushSize;
+    // commit("SET_TOOL_SIZE", toolSize);
+  },
+
   //Eraser
   setEraserSize(eraserSize) {
     this.eraserArgs.size = eraserSize;
     // commit("SET_ERASER_SIZE", eraserSize);
   },
   setEraserColor(eraserColor) {
-    this.shapeArgs.size = shapeSize;
+    // this.shapeArgs.size = shapeSize;
     this.eraserArgs.color = eraserColor;
     // commit("SET_ERASER_COLOR", eraserColor);
   },
@@ -54,7 +84,7 @@ const actions = {
 
     // tools["pencil"].activate();
     if (tools[tool]) {
-      console.log("Trying to Activate:", tools[tool]);
+      console.log("Trying to Activate:", tool);
       // debugger;
       tools[tool].activate();
     }
