@@ -176,6 +176,29 @@ import ColorPicker from "../ColorPicker";
 
 // const whiteboardStore = useWhiteboardStore(); // this is for the composition API
 
+const vividColours = [
+  "#FFFFFF",
+  "#EF5350",
+  "#EC407A",
+  "#AB47BC",
+  "#7E57C2",
+  "#1976D2",
+  "#42A5F5",
+  "#26C6DA",
+  "#4DB6AC",
+  "#66BB6A",
+  "#D4E157",
+  "#FFEE58",
+  "#FDD835",
+  "#FB8C00",
+  "#8D6E63",
+  "#5D4037",
+  "#BDBDBD",
+  "#607D8B",
+  "#263238",
+  "#000000",
+];
+
 const colorPalette = [
   "#7841CC",
   "#FFD54F",
@@ -203,7 +226,7 @@ export default {
       isBrushSettingsOpened: false,
       isEraserSettingsOpened: false,
       isShapeSettingsOpened: false,
-      colors: colorPalette,
+      colors: vividColours,
     };
   },
   methods: {
