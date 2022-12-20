@@ -3,7 +3,6 @@
     <!-- Actions panel -->
     <div class="actionsPanel">
       <!-- Pencil -->
-
       <panelToolIcon
         @click.native="
           togglePencilSettings();
@@ -13,44 +12,6 @@
         :isActive="tool === 'pencil'"
         icon="pencil-alt"
       />
-      <!-- Brush -->
-      <panelToolIcon
-        @click.native="
-          toggleBrushSettings();
-          setWhiteboardTool('brush');
-        "
-        :toolColor="brushColor"
-        :isActive="tool === 'brush'"
-        icon="paint-brush"
-      />
-
-      <!-- Eraser select -->
-      <panelToolIcon
-        @click.native="
-          toggleEraserSettings();
-          setWhiteboardTool('eraser');
-        "
-        toolColor="#133337"
-        :isActive="tool === 'eraser'"
-        icon="eraser"
-      />
-      <!-- Shape select -->
-      <panelToolIcon
-        @click.native="toggleShapeSettings"
-        :toolColor="shapeColor"
-        :isActive="
-          tool === 'circle' ||
-          tool === 'square' ||
-          tool === 'triangle' ||
-          tool === 'line'
-        "
-        :icon="activeShape"
-      />
-    </div>
-
-    <!-- Tools_Settings_Container -->
-
-    <div id="Tools_Settings_Container">
       <!-- Pencil settings -->
       <panelToolSettings v-if="isPencilSettingsOpened">
         <template #settingsColorPicker>
@@ -72,6 +33,17 @@
           slot="slider"
         />
       </panelToolSettings>
+
+      <!-- Brush -->
+      <panelToolIcon
+        @click.native="
+          toggleBrushSettings();
+          setWhiteboardTool('brush');
+        "
+        :toolColor="brushColor"
+        :isActive="tool === 'brush'"
+        icon="paint-brush"
+      />
       <!-- Brush settings -->
       <panelToolSettings v-if="isBrushSettingsOpened">
         <template #settingsColorPicker>
@@ -94,6 +66,16 @@
         />
       </panelToolSettings>
 
+      <!-- Eraser  -->
+      <panelToolIcon
+        @click.native="
+          toggleEraserSettings();
+          setWhiteboardTool('eraser');
+        "
+        toolColor="#133337"
+        :isActive="tool === 'eraser'"
+        icon="eraser"
+      />
       <!-- Eraser settings -->
       <panelToolSettings v-if="isEraserSettingsOpened">
         <!-- Slider -->
@@ -106,6 +88,19 @@
           slot="slider"
         />
       </panelToolSettings>
+
+      <!-- Shape Select -->
+      <panelToolIcon
+        @click.native="toggleShapeSettings"
+        :toolColor="shapeColor"
+        :isActive="
+          tool === 'circle' ||
+          tool === 'square' ||
+          tool === 'triangle' ||
+          tool === 'line'
+        "
+        :icon="activeShape"
+      />
       <!-- Shape settings -->
       <panelToolSettings v-if="isShapeSettingsOpened">
         <!-- SettingsActions -->
@@ -172,43 +167,40 @@ import PanelToolIcon from "./PanelToolIcon";
 import PanelToolSettings from "./PanelToolSettings";
 import ColorPicker from "../ColorPicker";
 // import RangeSlider from "../RangeSlider";
-// import colorPalette from "../../config/colorPalette.js";
-
 // const whiteboardStore = useWhiteboardStore(); // this is for the composition API
 
 const vividColours = [
-  "#FFFFFF",
-  "#EF5350",
-  "#EC407A",
-  "#AB47BC",
-  "#7E57C2",
-  "#1976D2",
-  "#42A5F5",
-  "#26C6DA",
-  "#4DB6AC",
-  "#66BB6A",
-  "#D4E157",
-  "#FFEE58",
-  "#FDD835",
-  "#FB8C00",
-  "#8D6E63",
-  "#5D4037",
-  "#BDBDBD",
-  "#607D8B",
-  "#263238",
-  "#000000",
+  "#FFFFFF", //White
+  "#FF0000", // Red
+  "#EC008C", // Pink
+  "#AB47BC", // Violet
+  "#7841CC", // Purple
+  "#1976D2", // Blue
+  "#42A5F5", // LightBlue2
+  "#00C6C2", // Teal
+  "#39B54A", // Green
+  "#FFEB3B", // Yellow
+  "#FBC02D", // Mango
+  "#FB8C00", // Orange
+  "#8D6E63", // LightBrown
+  "#607D8B", //Slate
+  "#263238", // DarkSlate
+  "#000000", // Black
 ];
 
-const colorPalette = [
-  "#7841CC",
-  "#FFD54F",
-  "#00C6C2",
-  "#FF0000",
-  "#EC008C",
-  "#6DCFF6",
-  "#FBAF5D",
-  "#39B54A",
-  "#448CCB",
+const darkColours = [
+  "#C62828", // DarkRed
+  "#AD1457", // DarkPink
+  "#7B1FA2", // DarkVoilet
+  "#512DA8", // DarkPurple
+  "#1976D2", // DarkBlue
+  "#0097A7", // DarkTeal
+  "#00796B", // DarkGreen
+  "#004D40", // DarkGreen
+  "#F57F17", // DarkOrange
+  "#3E2723", // DarkBrown
+  "#212121", // DarkGray
+  "#263238", // DarkSlate
 ];
 
 export default {
@@ -226,7 +218,7 @@ export default {
       isBrushSettingsOpened: false,
       isEraserSettingsOpened: false,
       isShapeSettingsOpened: false,
-      colors: vividColours,
+      colors: darkColours,
     };
   },
   methods: {
