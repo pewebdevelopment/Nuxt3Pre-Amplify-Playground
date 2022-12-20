@@ -19,7 +19,8 @@
           <colorPicker
             :onSelectColor="setPencilColor"
             class="settingsColorPicker"
-            :colors="colors"
+            :vividColors="vividColors"
+            :darkColors="darkColors"
           />
         </template>
 
@@ -51,7 +52,8 @@
           <colorPicker
             :onSelectColor="setBrushColor"
             class="settingsColorPicker"
-            :colors="colors"
+            :vividColors="vividColors"
+            :darkColors="darkColors"
           />
         </template>
 
@@ -140,7 +142,8 @@
           <colorPicker
             :onSelectColor="setShapeColor"
             class="settingsColorPicker"
-            :colors="colors"
+            :vividColors="vividColors"
+            :darkColors="darkColors"
           />
         </template>
 
@@ -180,27 +183,27 @@ const vividColours = [
   "#00C6C2", // Teal
   "#39B54A", // Green
   "#FFEB3B", // Yellow
-  "#FBC02D", // Mango
   "#FB8C00", // Orange
   "#8D6E63", // LightBrown
   "#607D8B", //Slate
   "#263238", // DarkSlate
-  "#000000", // Black
 ];
 
 const darkColours = [
-  "#C62828", // DarkRed
+  "#B0BEC5", // DarkWhite
+  "#B71C1C", // DarkRed
   "#AD1457", // DarkPink
   "#7B1FA2", // DarkVoilet
   "#512DA8", // DarkPurple
-  "#1976D2", // DarkBlue
+  "#0D47A1", // DarkBlue
   "#0097A7", // DarkTeal
   "#00796B", // DarkGreen
   "#004D40", // DarkGreen
-  "#F57F17", // DarkOrange
+  "#FBC02D", // DarkYellowMango
+  "#E65100", // DarkOrange
   "#3E2723", // DarkBrown
-  "#212121", // DarkGray
-  "#263238", // DarkSlate
+  "#424242", // DarkGray [Replace]
+  "#000000", // DarkBlack
 ];
 
 export default {
@@ -218,7 +221,8 @@ export default {
       isBrushSettingsOpened: false,
       isEraserSettingsOpened: false,
       isShapeSettingsOpened: false,
-      colors: darkColours,
+      vividColors: vividColours,
+      darkColors: darkColours,
     };
   },
   methods: {
@@ -401,6 +405,7 @@ export default {
   border-radius: 5px;
   box-shadow: 0px 10px 30px 8px rgba(0, 0, 0, 0.4);
 }
+
 .mainPanel .actionsPanel .tool:not(:last-child) {
   margin-bottom: 5px;
 }
