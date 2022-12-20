@@ -6,22 +6,22 @@ const state = () => ({
   tool: null,
   toolArgs: {
     size: 2,
-    color: "#000000",
+    color: "#7841CC",
   },
 
   pencilArgs: {
     size: 2,
-    color: "#000000",
+    color: "#7841CC",
   },
 
   brushArgs: {
     size: 7,
-    color: "#000000",
+    color: "#90FAFA",
   },
 
   eraserArgs: {
-    size: 2,
-    color: "#133337",
+    size: 37,
+    color: "#050311", // Here the background color is being used to create new paths to create the illusion of erasing
   },
   shapeArgs: {
     size: 2,

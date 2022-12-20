@@ -19,8 +19,8 @@ function onMouseDown(event) {
 
   let layer = createLayer();
   local.path = new paper.Path();
-  local.path.strokeColor = whiteboardStore.toolArgs.color;
-  local.path.strokeWidth = whiteboardStore.toolArgs.size;
+  local.path.strokeColor = whiteboardStore.pencilArgs.color;
+  local.path.strokeWidth = whiteboardStore.pencilArgs.size;
   local.path.add(event.point);
 
   local.group = new paper.Group({
@@ -31,9 +31,9 @@ function onMouseDown(event) {
     new paper.Shape.Ellipse({
       layer: layer,
       center: event.point,
-      strokeColor: whiteboardStore.toolArgs.color,
-      fillColor: whiteboardStore.toolArgs.color,
-      radius: whiteboardStore.toolArgs.size / 2,
+      strokeColor: whiteboardStore.pencilArgs.color,
+      fillColor: whiteboardStore.pencilArgs.color,
+      radius: whiteboardStore.pencilArgs.size / 2,
     })
   );
   layer.addChild(local.group);

@@ -13,7 +13,7 @@ let local = {
 function onMouseDown() {
   let layer = createLayer();
   local.path = new paper.Path();
-  let rgb = hexToRgb(whiteboardStore.toolArgs.color || "#000000");
+  let rgb = hexToRgb(whiteboardStore.brushArgs.color || "#FFFFFF");
   local.path.fillColor = `rgba(${rgb.r},${rgb.g},${rgb.b},0.4)`;
   layer.addChild(local.path);
 }
@@ -21,8 +21,8 @@ function onMouseDown() {
 function onMouseDrag(event) {
   if (!local.path) return;
   var step = event.delta;
-  step.x *= whiteboardStore.toolArgs.size / 2.8;
-  step.y *= whiteboardStore.toolArgs.size / 2.8;
+  step.x *= whiteboardStore.brushArgs.size / 2.8;
+  step.y *= whiteboardStore.brushArgs.size / 2.8;
   step.angle += 90;
 
   var top = event.middlePoint.add(step);

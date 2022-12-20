@@ -9,7 +9,7 @@
           togglePencilSettings();
           setWhiteboardTool('pencil');
         "
-        :toolColor="pencilColor"
+        :toolColor="getPencilColor"
         :isActive="tool === 'pencil'"
         icon="pencil-alt"
       />
@@ -48,8 +48,9 @@
       />
     </div>
 
-    <!-- Container_for_the_Tools -->
-    <div class="Container_for_the_Tools">
+    <!-- Tools_Settings_Container -->
+
+    <div id="Tools_Settings_Container">
       <!-- Pencil settings -->
       <panelToolSettings v-if="isPencilSettingsOpened">
         <template #settingsColorPicker>
@@ -328,9 +329,11 @@ export default {
       return this.whiteboardStore.toolArgs.size;
     },
     // Color
-    pencilColor: function () {
+    getPencilColor: function () {
       // debugger;
       // console.log(this.whiteboardStore);
+      // return "blue";
+      console.log("Pencil Color:", this.whiteboardStore.pencilArgs.color);
       return this.whiteboardStore.pencilArgs.color;
     },
 
@@ -354,6 +357,7 @@ export default {
       return this.whiteboardStore.eraserArgs.size;
     },
     shapeColor: function () {
+      console.log("ShapeColour:", this.whiteboardStore.shapeArgs.color);
       return this.whiteboardStore.shapeArgs.color;
     },
     shapeSize: function () {
