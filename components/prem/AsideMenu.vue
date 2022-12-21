@@ -109,12 +109,13 @@ const expandCollapseItem = computed(() => ({
     @menu-click="menuClickPrimaryMenu"
   >
     <div class="flex-1 px-3 flex justify-center">
-      <b class="font-black">One</b>
+      <b class="font-black">PE One</b>
     </div>
 
     <template #footer>
       <ul class="hidden lg:block">
         <PremAsideMenuItem
+          class="font-black"
           :item="expandCollapseItem"
           :is-compact="isPrimaryMenuCompact"
           @menu-click="isPrimaryMenuCompact = !isPrimaryMenuCompact"
@@ -122,7 +123,6 @@ const expandCollapseItem = computed(() => ({
       </ul>
     </template>
   </PremAsideMenuLayer>
-
 
   <PremAsideMenuLayer
     v-if="secondaryMenuItem"
