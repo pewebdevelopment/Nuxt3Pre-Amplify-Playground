@@ -1,3 +1,5 @@
+# Comments are written like this in this .yml file
+
 version: 1
 backend:
   phases:
@@ -9,7 +11,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - npm ci # ci = clean install, its needed to intall the exact packages on linux
     build:
       commands:
         - npm run generate

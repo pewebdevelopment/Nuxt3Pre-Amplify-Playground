@@ -12,32 +12,6 @@ import {
   Tooltip,
 } from "chart.js";
 
-// following code is giving an error during the "npm run dev" process. The app cant be seen in the browser. But this code is working during the nuxt generate process.
-
-// import pkg from "chart.js";
-// const {
-//   Chart,
-//   LineElement,
-//   PointElement,
-//   LineController,
-//   LinearScale,
-//   CategoryScale,
-//   Tooltip,
-// } = pkg;
-
-// the following is an attempt thats not working anywhere
-
-// import pkg =
-// {
-//   Chart,
-//   LineElement,
-//   PointElement,
-//   LineController,
-//   LinearScale,
-//   CategoryScale,
-//   Tooltip,
-// } from "chart.js";
-
 const props = defineProps({
   data: {
     type: Object,
