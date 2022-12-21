@@ -23,11 +23,11 @@ function onMouseDown(event) {
 
   local.group = new paper.Group({
     children: [local.path],
-    layer: layer,
+    // layer: layer,
   });
   local.group.addChild(
     new paper.Shape.Ellipse({
-      layer: layer,
+      // layer: layer,
       center: event.point,
       fillColor: whiteboardStore.eraserArgs.color,
       radius: whiteboardStore.eraserArgs.size / 2,

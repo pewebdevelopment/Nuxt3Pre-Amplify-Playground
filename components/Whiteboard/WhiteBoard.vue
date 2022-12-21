@@ -32,17 +32,17 @@ export default {
 
       // Create a Paper.js Path to draw a line into it:
       console.log("Mounted Whiteboard");
-      var path = new paper.Path();
+      // var path = new paper.Path();
       // Give the stroke a color
-      path.strokeColor = "black";
-      path.strokeWidth = 200;
-      var start = new paper.Point(0, 0);
+      // path.strokeColor = "black";
+      // path.strokeWidth = 200;
+      // var start = new paper.Point(0, 0);
       // Move to start and draw a line from there
-      path.moveTo(start);
+      // path.moveTo(start);
       // Note the plus operator on Point objects.
       // PaperScript does that for us, and much more!
-      path.lineTo(start + [1000, 1000]);
-      path.add();
+      // path.lineTo(start + [1000, 1000]);
+      // path.add();
     }
   },
 };
@@ -57,6 +57,6 @@ body {
 canvas {
   height: 100vh;
   width: 100%;
-  background: #fdffff;
+  background: #050311;
 }
 </style>

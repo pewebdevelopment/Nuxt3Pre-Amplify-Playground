@@ -40,7 +40,8 @@ const handleSubmit = async () => {
     console.log("Sent user", user_to_register_in_amplify);
     if (user_to_register_in_amplify) {
       userSubmitted.value = true;
-      router.push("/pe/register");
+      return;
+      // use return statements to change the UI
     }
   }
 

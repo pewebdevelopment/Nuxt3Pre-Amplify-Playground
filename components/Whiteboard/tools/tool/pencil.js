@@ -19,21 +19,22 @@ function onMouseDown(event) {
 
   let layer = createLayer();
   local.path = new paper.Path();
-  local.path.strokeColor = whiteboardStore.toolArgs.color;
-  local.path.strokeWidth = whiteboardStore.toolArgs.size;
+  local.path.strokeColor = whiteboardStore.pencilArgs.color;
+  local.path.strokeWidth = whiteboardStore.pencilArgs.size;
   local.path.add(event.point);
-
+  console.log("Before Local Group:", local.group);
   local.group = new paper.Group({
     children: [local.path],
-    layer: layer,
+    // layer: layer.name,
   });
+  console.log("After Local Group:", local.group);
   local.group.addChild(
     new paper.Shape.Ellipse({
-      layer: layer,
+      // layer: layer,
       center: event.point,
-      strokeColor: whiteboardStore.toolArgs.color,
-      fillColor: whiteboardStore.toolArgs.color,
-      radius: whiteboardStore.toolArgs.size / 2,
+      strokeColor: whiteboardStore.pencilArgs.color,
+      fillColor: whiteboardStore.pencilArgs.color,
+      radius: whiteboardStore.pencilArgs.size / 2,
     })
   );
   layer.addChild(local.group);

@@ -18,7 +18,7 @@ function onMouseDrag(event) {
   local.path = new paper.Path.Line({
     from: event.downPoint,
     to: event.point,
-    strokeColor: "black",
+    strokeColor: whiteboardStore.shapeArgs.color,
   });
   local.path.strokeColor = whiteboardStore.shapeArgs.color;
   local.path.strokeWidth = whiteboardStore.shapeArgs.size;

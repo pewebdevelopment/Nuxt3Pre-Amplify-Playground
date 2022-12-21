@@ -1,18 +1,29 @@
 <template>
   <div class="colorPicker">
-    <div
-      @click="selectColor(color)"
-      class="color"
-      :style="{ 'background-color': color }"
-      v-for="(color, i) in colors"
-      :key="i"
-    ></div>
+    <div class="" id="darkColors">
+      <div
+        @click="selectColor(color)"
+        class="color"
+        :style="{ 'background-color': color }"
+        v-for="(color, i) in darkColors"
+        :key="i"
+      ></div>
+    </div>
+    <div class="" id="vividColors">
+      <div
+        @click="selectColor(color)"
+        class="color"
+        :style="{ 'background-color': color }"
+        v-for="(color, i) in vividColors"
+        :key="i"
+      ></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["colors", "onSelectColor"],
+  props: ["vividColors", "darkColors", "onSelectColor"],
   methods: {
     selectColor: function (color) {
       this.onSelectColor(color);
@@ -24,8 +35,8 @@ export default {
 <style scoped>
 .colorPicker {
   justify-content: space-between;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .colorPicker .color {
   width: 30px;

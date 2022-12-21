@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useRoute, RouterLink } from "vue-router";
 import { useStyleStore } from "@/stores/style.js";
 import {
@@ -7,10 +7,17 @@ import {
   gradientBgDark,
   gradientBgPinkRed,
 } from "@/configs/colors.js";
-import { gradientBgYellowRed, gradientBgRedYellow } from "@/configs/colorsPremium.js";
+import {
+  gradientBgYellowRed,
+  gradientBgRedYellow,
+} from "@/configs/colorsPremium.js";
 import JustboilLogo from "@/components/JustboilLogo.vue";
-import BaseButtons from "@/components/BaseButtons.vue";
-import BaseButton from "@/components/BaseButton.vue";
+// import BaseButtons from "@/components/BaseButtons.vue";
+// import BaseButton from "@/components/BaseButton.vue";
+
+onMounted(() => {
+  console.log("Section Form Screen ");
+});
 
 const props = defineProps({
   bg: {
@@ -60,8 +67,8 @@ const routes = {
   >
     <div v-if="hasPromo" class="space-y-12 px-12">
       <div class="hidden lg:block">
-        <Basebuttons type="justify-center" glue>
-          <!-- <BaseButton
+        <!-- <Basebuttons type="justify-center" glue>
+          <BaseButton
             v-for="(routeLabel, index) in routes"
             :key="index"
             rounded-full
@@ -69,8 +76,8 @@ const routes = {
             :active-soft="index === currentRouteName"
             :label="routeLabel"
             color="whiteDark"
-          />  -->
-        </Basebuttons>
+          />
+        </Basebuttons> -->
       </div>
 
       <div class="text-center text-white py-12 md:py-0">
@@ -85,27 +92,21 @@ const routes = {
         <RouterLink to="/"> Teletype </RouterLink>
       </div>
       <div class="hidden md:block text-white">
-        <RouterLink to="/">
-          <JustboilLogo class="w-auto h-12 mx-auto" />
-        </RouterLink>
+        <RouterLink to="/"> </RouterLink>
       </div>
-    </div> 
+    </div>
 
-<slot card-class="w-11/12 md:w-7/12 lg:w-5/12 xl:w-4/12 shadow-2xl" /> 
+    <slot card-class="w-11/12 md:w-7/12 lg:w-5/12 xl:w-4/12 shadow-2xl" />
 
     <div v-if="hasPromo" class="md:hidden space-y-12 py-12">
       <div class="text-white text-opacity-50">
         <RouterLink to="/"> Instagram </RouterLink> |
         <RouterLink to="/"> Telegram </RouterLink> |
         <RouterLink to="/"> Teletype </RouterLink>
-
       </div>
       <div class="text-white">
-        <RouterLink to="/">
-          <JustboilLogo class="w-auto h-8 mx-auto" />
-        </RouterLink>
-      </div> 
-    </div> 
-    
+        <RouterLink to="/"> </RouterLink>
+      </div>
+    </div>
   </section>
 </template>

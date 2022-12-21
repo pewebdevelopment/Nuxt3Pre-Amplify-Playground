@@ -65,8 +65,13 @@ export default [
     icon: mdiAccountCircle,
   },
   {
-    to: "/loginView",
+    to: "/pe/login",
     label: "Login",
+    icon: mdiLock,
+  },
+  {
+    to: "/pe/register",
+    label: "Register",
     icon: mdiLock,
   },
   {
@@ -99,7 +104,77 @@ export default [
           },
         ],
       },
+      {
+        to: "/whiteboard/whiteboard",
+        label: "Whiteboard",
+        icon: mdiOpenInNew,
+      },
     ],
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
   },
   {
     href: "",
