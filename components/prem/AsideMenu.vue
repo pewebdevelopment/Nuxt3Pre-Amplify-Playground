@@ -1,7 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useLayoutStore, useStyleStore } from "@/stores/layout.js";
+import { useLayoutStore } from "@/stores/layout.js";
+import { useStyleStore } from "@/stores/style.js";
 import {
   mdiClose,
   mdiChevronRightCircleOutline,
@@ -91,7 +92,7 @@ const expandCollapseItem = computed(() => ({
   icon: isPrimaryMenuCompact.value
     ? mdiChevronRightCircleOutline
     : mdiChevronLeftCircleOutline,
-  color: "",
+  color: "info",
 }));
 </script>
 
@@ -115,7 +116,6 @@ const expandCollapseItem = computed(() => ({
     <template #footer>
       <ul class="hidden lg:block">
         <PremAsideMenuItem
-          class="font-black"
           :item="expandCollapseItem"
           :is-compact="isPrimaryMenuCompact"
           @menu-click="isPrimaryMenuCompact = !isPrimaryMenuCompact"
