@@ -65,8 +65,13 @@ export default [
     icon: mdiAccountCircle,
   },
   {
-    to: "/loginView",
+    to: "/pe/login",
     label: "Login",
+    icon: mdiLock,
+  },
+  {
+    to: "/pe/register",
+    label: "Register",
     icon: mdiLock,
   },
   {
@@ -98,6 +103,11 @@ export default [
             label: "Dropdown item Two",
           },
         ],
+      },
+      {
+        to: "/whiteboard/whiteboard",
+        label: "Whiteboard",
+        icon: mdiOpenInNew,
       },
     ],
   },
