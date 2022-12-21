@@ -51,6 +51,8 @@ const asideLgCloseClick = (event) => {
         >
           <b class="font-black"> PE One</b>
         </div>
+
+        <!-- Button to open and close the sidebar -->
         <button
           class="hidden lg:inline-block xl:hidden p-3"
           @click.prevent="asideLgCloseClick"
@@ -58,11 +60,11 @@ const asideLgCloseClick = (event) => {
           <BaseIcon :path="mdiClose" />
         </button>
       </div>
+
+      <!-- The scrollbars. CSS has been written as extened CSS in the tailwind.config.js file -->
       <div
         :class="
-          styleStore.darkMode
-            ? 'aside-scrollbars-[slate]'
-            : styleStore.asideScrollbarsStyle
+          styleStore.darkMode ? 'bg-gray-600' : styleStore.asideScrollbarsStyle
         "
         class="flex-1 overflow-y-auto overflow-x-hidden"
       >
