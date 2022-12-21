@@ -16,8 +16,8 @@ import FooterBar from "@/components/FooterBar.vue";
 import { useAuthStore } from "@/stores/authStore";
 
 useMainStore().setUser({
-  name: "John Doe",
-  email: "john@example.com",
+  name: "Zenith Physics",
+  email: "zenith@physics.com",
   avatar:
     "https://avatars.dicebear.com/api/avataaars/example.svg?options[top][]=shortHair&options[accessoriesChance]=93",
 });
