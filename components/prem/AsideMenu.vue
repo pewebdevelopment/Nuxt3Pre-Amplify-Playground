@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useLayoutStore } from "@/stores/layout.js";
+import { useLayoutStore, useStyleStore } from "@/stores/layout.js";
 import {
   mdiClose,
   mdiChevronRightCircleOutline,
@@ -22,7 +22,7 @@ defineProps({
 const emit = defineEmits(["menu-click"]);
 
 const layoutStore = useLayoutStore();
-
+const styleStore = useStyleStore();
 const isPrimaryMenuCompact = ref(true);
 
 const secondaryMenuItem = ref(null);
@@ -91,7 +91,7 @@ const expandCollapseItem = computed(() => ({
   icon: isPrimaryMenuCompact.value
     ? mdiChevronRightCircleOutline
     : mdiChevronLeftCircleOutline,
-  color: "info",
+  color: "",
 }));
 </script>
 
@@ -109,12 +109,13 @@ const expandCollapseItem = computed(() => ({
     @menu-click="menuClickPrimaryMenu"
   >
     <div class="flex-1 px-3 flex justify-center">
-      <b class="font-black">One</b>
+      <b class="font-black">PE One</b>
     </div>
 
     <template #footer>
       <ul class="hidden lg:block">
         <PremAsideMenuItem
+          class="font-black"
           :item="expandCollapseItem"
           :is-compact="isPrimaryMenuCompact"
           @menu-click="isPrimaryMenuCompact = !isPrimaryMenuCompact"
@@ -122,7 +123,6 @@ const expandCollapseItem = computed(() => ({
       </ul>
     </template>
   </PremAsideMenuLayer>
-
 
   <PremAsideMenuLayer
     v-if="secondaryMenuItem"
