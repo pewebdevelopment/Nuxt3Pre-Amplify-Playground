@@ -116,4 +116,69 @@ export default [
     label: "About",
     icon: mdiHelpCircle,
   },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
+  {
+    href: "",
+    label: "About",
+    icon: mdiHelpCircle,
+  },
 ];

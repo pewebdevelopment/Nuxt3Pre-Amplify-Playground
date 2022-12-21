@@ -10,7 +10,7 @@ import { useStyleStore } from "@/stores/style.js";
 import BaseIcon from "@/components/BaseIcon.vue";
 import FormControl from "@/components/FormControl.vue";
 import NavBar from "@/components/NavBar.vue";
-import AsideMenu from "@/components/prem/AsideMenu.vue";
+import PremAsideMenu from "@/components/prem/AsideMenu.vue";
 import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
 import FooterBar from "@/components/FooterBar.vue";
 import { useAuthStore } from "@/stores/authStore";
@@ -108,12 +108,9 @@ const menuClick = (event, item) => {
             />
           </NavBarItemPlain>
         </NavBar>
-        <AsideMenu :menu="menuAside" @menu-click="menuClick" />
+        <PremAsideMenu :menu="menuAside" @menu-click="menuClick" />
         <slot />
 
-        <!-- Following was the old AsideMenu  
-         <AsideMenu :is-aside-mobile-expanded="isAsideMobileExpanded" :is-aside-lg-active="isAsideLgActive"
-          :menu="menuAside" @menu-click="menuClick" @aside-lg-close-click="isAsideLgActive = false" /> -->
         <FooterBar>
           <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
         </FooterBar>
