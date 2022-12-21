@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useLayoutStore } from "@/stores/layout.js";
+import { useLayoutStore, useStyleStore } from "@/stores/layout.js";
 import {
   mdiClose,
   mdiChevronRightCircleOutline,
@@ -22,7 +22,7 @@ defineProps({
 const emit = defineEmits(["menu-click"]);
 
 const layoutStore = useLayoutStore();
-
+const styleStore = useStyleStore();
 const isPrimaryMenuCompact = ref(true);
 
 const secondaryMenuItem = ref(null);
