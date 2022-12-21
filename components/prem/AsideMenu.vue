@@ -117,6 +117,7 @@ const expandCollapseItem = computed(() => ({
       <ul class="hidden lg:block">
         <PremAsideMenuItem
           :item="expandCollapseItem"
+          :class="styleStore.asideBrandStyle"
           :is-compact="isPrimaryMenuCompact"
           @menu-click="isPrimaryMenuCompact = !isPrimaryMenuCompact"
         />
