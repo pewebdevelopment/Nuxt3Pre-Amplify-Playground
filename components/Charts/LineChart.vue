@@ -2,15 +2,15 @@
 import { ref, watch, computed, onMounted } from "vue";
 // The following code is working in development but is giving error during the build process in AWS Hosting, as well as the npm run generate (nuxt generate) command
 
-// import {
-//   Chart,
-//   LineElement,
-//   PointElement,
-//   LineController,
-//   LinearScale,
-//   CategoryScale,
-//   Tooltip,
-// } from "chart.js";
+import {
+  Chart,
+  LineElement,
+  PointElement,
+  LineController,
+  LinearScale,
+  CategoryScale,
+  Tooltip,
+} from "chart.js";
 
 // following code is giving an error during the "npm run dev" process. The app cant be seen in the browser. But this code is working during the nuxt generate process.
 
