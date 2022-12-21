@@ -92,7 +92,7 @@ const expandCollapseItem = computed(() => ({
   icon: isPrimaryMenuCompact.value
     ? mdiChevronRightCircleOutline
     : mdiChevronLeftCircleOutline,
-  color: "info",
+  color: "",
 }));
 </script>
 
