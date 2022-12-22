@@ -19,15 +19,16 @@ function onMouseDown(event) {
 
   let layer = createLayer();
   local.path = new paper.Path();
+
   local.path.strokeColor = whiteboardStore.pencilArgs.color;
   local.path.strokeWidth = whiteboardStore.pencilArgs.size;
   local.path.add(event.point);
-  console.log("Before Local Group:", local.group);
+  // console.log("Before Local Group:", local.group);
   local.group = new paper.Group({
     children: [local.path],
     // layer: layer.name,
   });
-  console.log("After Local Group:", local.group);
+  // console.log("After Local Group:", local.group);
   local.group.addChild(
     new paper.Shape.Ellipse({
       // layer: layer,
@@ -45,7 +46,7 @@ function onMouseDrag(event) {
 
   if (!local.path) return;
   local.path.add(event.point);
-  local.path.selected = true;
+  // local.path.selected = true; // This removes the hilighting of the points as we are dwaring the path
 }
 
 function onMouseUp(event) {
