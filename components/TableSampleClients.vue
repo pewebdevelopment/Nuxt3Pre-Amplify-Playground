@@ -10,7 +10,7 @@ import BaseButton from "@/components/BaseButton.vue";
 import UserAvatar from "@/components/UserAvatar.vue";
 
 defineProps({
-  checkable: Boolean,
+  checkable: { type: Boolean, default: true },
 });
 
 const mainStore = useMainStore();
