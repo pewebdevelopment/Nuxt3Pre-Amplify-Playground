@@ -4,7 +4,6 @@
       <SectionMain>
         <CardBox has-table>
           <TableTasks :tasks="studentTasks.tasksList" />
-          <!-- {{ studentTasks.tasksList }} -->
         </CardBox>
       </SectionMain>
     </NuxtLayout>
