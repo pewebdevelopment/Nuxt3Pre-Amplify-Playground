@@ -43,9 +43,14 @@ const menuClick = (event, item) => {
       >
         <slot />
       </div>
+      <!-- The scrollbars. CSS has been written as extened CSS in the tailwind.config.js file -->
       <div
-        :class="styleStore.asideScrollbarsStyle"
-        class="flex-1 overflow-y-auto overflow-x-hidden"
+        :class="
+          styleStore.darkMode
+            ? 'aside-scrollbars-[slate]'
+            : styleStore.asideScrollbarsStyle
+        "
+        class="flex-1 overflow-y-auto overflow-x-hidden dark:bg-gray-900"
       >
         <PremAsideMenuList
           :menu="menu"
@@ -59,3 +64,15 @@ const menuClick = (event, item) => {
     </div>
   </aside>
 </template>
+
+<style scoped>
+.dark_scrollbars_compact {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(2, 7, 14) rgb(30, 41, 59) !important;
+}
+</style>
+
+// styleStore.darkMode ? 'dark-scrollbars-compact-for-scrollbar' : //
+styleStore.asideScrollbarsStyle { dark_scrollbars_compact_for_scrollbar: //
+styleStore.darkMode, `${styleStore.asideScrollbarsStyle}`: !styleStore.darkMode,
+//

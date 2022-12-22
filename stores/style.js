@@ -17,7 +17,7 @@ export const useStyleStore = defineStore("style", {
     overlayStyle: "",
 
     /* Dark mode */
-    darkMode: false,
+    darkMode: "",
   }),
   actions: {
     setStyle(payload) {
@@ -46,7 +46,10 @@ export const useStyleStore = defineStore("style", {
 
       if (typeof document !== "undefined") {
         document.body.classList[this.darkMode ? "add" : "remove"](
-          "dark-scrollbars"
+          "dark-scrollbars-compat"
+          // "dark-scrollbars"
+
+          // Write code to add dark-scroll bar to the LHS Scroll bar also
         );
 
         document.documentElement.classList[this.darkMode ? "add" : "remove"](

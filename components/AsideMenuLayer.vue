@@ -63,9 +63,11 @@ const asideLgCloseClick = (event) => {
 
       <!-- The scrollbars. CSS has been written as extened CSS in the tailwind.config.js file -->
       <div
-        :class="
-          styleStore.darkMode ? 'bg-gray-600' : styleStore.asideScrollbarsStyle
-        "
+        :class="[
+          styleStore.darkMode
+            ? 'dark-scrollbars-compat'
+            : styleStore.asideScrollbarsStyle,
+        ]"
         class="flex-1 overflow-y-auto overflow-x-hidden"
       >
         <AsideMenuList :menu="menu" @menu-click="menuClick" />
