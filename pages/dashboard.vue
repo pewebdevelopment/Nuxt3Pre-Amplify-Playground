@@ -124,7 +124,7 @@ const transactionBarItems = computed(() => mainStore.history);
           <b>Responsive table.</b> Collapses on mobile
         </NotificationBar>
 
-        <CardBox has-table>
+        <CardBox has-table class="mb-6">
           <TableSampleClients />
         </CardBox>
 
