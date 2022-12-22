@@ -124,7 +124,14 @@ const checked = (isChecked, client) => {
           />
         </td>
         <td data-label="Name">
-          {{ client.name }}
+          <CardBoxClient
+            :key="client.id"
+            :name="client.name"
+            :login="client.login"
+            :date="client.created"
+            :progress="client.progress"
+          />
+          <!-- {{ client.name }} -->
         </td>
         <td data-label="Company">
           {{ client.company }}

@@ -29,8 +29,8 @@ const transactionBarItems = computed(() => mainStore.history);
 <template>
   <div>
     <NuxtLayout name="zen">
-    <SectionMain>
-      <SectionTitleLineWithButton
+      <SectionMain>
+        <SectionTitleLineWithButton
           :icon="mdiChartTimelineVariant"
           title="Overview"
           main
@@ -44,7 +44,6 @@ const transactionBarItems = computed(() => mainStore.history);
             rounded-full
             small
           />
-
         </SectionTitleLineWithButton>
 
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
@@ -86,7 +85,6 @@ const transactionBarItems = computed(() => mainStore.history);
               :business="transaction.business"
               :type="transaction.type"
               :name="transaction.name"
-             
             />
           </div>
           <div class="flex flex-col justify-between">
@@ -100,7 +98,7 @@ const transactionBarItems = computed(() => mainStore.history);
             />
           </div>
         </div>
-        
+
         <SectionBannerStarOnGitHub class="mt-6 mb-6" />
 
         <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
@@ -110,7 +108,7 @@ const transactionBarItems = computed(() => mainStore.history);
             @click="fillChartData"
           />
         </SectionTitleLineWithButton>
-       
+
         <CardBox class="mb-6">
           <div v-if="chartData">
             <line-chart :data="chartData" class="h-96" />
@@ -128,6 +126,10 @@ const transactionBarItems = computed(() => mainStore.history);
 
         <CardBox has-table>
           <TableSampleClients />
+        </CardBox>
+
+        <CardBox has-table>
+          <TableCardClients />
         </CardBox>
       </SectionMain>
     </NuxtLayout>
