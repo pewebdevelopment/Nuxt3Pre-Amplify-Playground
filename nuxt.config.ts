@@ -39,4 +39,10 @@ export default defineNuxtConfig({
   },
 
   build: {},
+
+  ssr: false,
+  nitro: {
+    preset: "service-worker",
+  },
+  // target: "static"
 });
