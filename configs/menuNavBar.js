@@ -53,6 +53,14 @@ export default [
         isDivider: true,
       },
       {
+        icon: mdiAccount,
+        label: "Stylize",
+        to: "/prem/styleView",
+      },
+      {
+        isDivider: true,
+      },
+      {
         icon: mdiLogout,
         label: "Log Out",
         isLogout: true,
@@ -68,7 +76,7 @@ export default [
   {
     icon: mdiHelpCircleOutline,
     label: "About",
-    href: "https://justboil.me/tailwind-admin-templates/vue-dashboard/",
+    href: "",
     isDesktopNoLabel: true,
   },
   {
