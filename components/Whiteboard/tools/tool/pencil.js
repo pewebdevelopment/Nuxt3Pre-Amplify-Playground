@@ -6,7 +6,7 @@ import { useWhiteboardStore } from "@/stores/whiteboard";
 
 console.log(paper);
 
-// const whiteboardStore = useWhiteboardStore();
+const whiteboardStore = useWhiteboardStore();
 
 let local = {
   path: null,
@@ -15,7 +15,7 @@ let local = {
 
 function onMouseDown(event) {
   console.log("Inside onMouseDown");
-  const whiteboardStore = useWhiteboardStore();
+  // const whiteboardStore = useWhiteboardStore();
 
   let layer = createLayer();
   local.path = new paper.Path();
@@ -32,7 +32,7 @@ function onMouseDown(event) {
     new paper.Shape.Ellipse({
       // layer: layer,
       center: event.point,
-      strokeColor: whiteboardStore.pencilArgs.color,
+      // strokeColor: whiteboardStore.pencilArgs.color,
       fillColor: whiteboardStore.pencilArgs.color,
       radius: whiteboardStore.pencilArgs.size / 2,
     })
