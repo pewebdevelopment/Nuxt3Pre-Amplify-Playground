@@ -113,7 +113,7 @@ export default [
         ],
       },
       {
-        to: "/whiteboard/whiteboard",
+        to: "/wb/whiteboard",
         label: "Whiteboard",
         icon: mdiOpenInNew,
       },
