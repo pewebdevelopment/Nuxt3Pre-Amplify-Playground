@@ -1,5 +1,5 @@
 <script setup>
-import { mdiGithub } from "@mdi/js";
+import { mdiGithub, mdiAbugidaDevanagari } from "@mdi/js";
 import BaseButton from "@/components/BaseButton.vue";
 import SectionBanner from "@/components/SectionBanner.vue";
 import { gradientBgPinkRed } from "@/configs/colors";
@@ -8,13 +8,13 @@ import { gradientBgPinkRed } from "@/configs/colors";
 <template>
   <SectionBanner :class="gradientBgPinkRed">
     <h1 class="text-3xl text-white mb-6">
-      Like the project? Please star on <b>GitHub</b> ;-)
+      Lets strive each day to together solve the biggest challenges ;-)
     </h1>
     <div>
       <BaseButton
-        href="https://github.com/justboil/admin-one-vue-tailwind"
-        :icon="mdiGithub"
-        label="GitHub"
+        href=""
+        :icon="mdiAbugidaDevanagari"
+        label="Knowledge is Power"
         target="_blank"
         rounded-full
       />
