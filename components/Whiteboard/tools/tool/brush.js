@@ -27,7 +27,7 @@ function onMouseDrag(event) {
 
   var top = event.middlePoint.add(step);
   var bottom = event.middlePoint.subtract(step);
-  local.path.selected = true;
+  // local.path.selected = true; // This removes the hilighting of the points as we are dwaring the path
   local.path.add(top);
   local.path.insert(0, bottom);
 }
