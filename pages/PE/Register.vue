@@ -73,7 +73,8 @@ const handleSubmit = async () => {
 
 const reattemptSignup = () => {
   userSubmitted.value = false;
-  router.push("/pe/register");
+  return;
+  // router.push("/pe/register");
 };
 </script>
 
@@ -159,12 +160,12 @@ const reattemptSignup = () => {
                 />
               </div>
 
-              <RouterLink
+              <NuxtLink
                 to="/pe/login"
                 class="text-sm bg-gray-800 text-white p-3 rounded-md hover:bg-gray-600"
               >
                 Have an account? Sign In
-              </RouterLink>
+              </NuxtLink>
             </BaseLevel>
           </template>
         </CardBox>
