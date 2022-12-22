@@ -30,6 +30,8 @@ const isMenuNavBarActive = ref(false);
       <div class="flex flex-1 items-stretch h-14">
         <slot />
       </div>
+
+      <!-- The three dots that appear on a small screen to toggle the TopMenuNavBar -->
       <div class="flex-none items-stretch flex h-14 lg:hidden">
         <NavBarItemPlain
           @click.prevent="isMenuNavBarActive = !isMenuNavBarActive"
