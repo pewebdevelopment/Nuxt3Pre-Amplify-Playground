@@ -20,7 +20,12 @@ export default [
   {
     to: "/",
     icon: mdiMonitor,
-    label: "Dashboard",
+    label: "Home",
+  },
+  {
+    to: "/dashboard",
+    label: "UI Base",
+    icon: mdiTelevisionGuide,
   },
   {
     to: "/prem/tablesListsView",
@@ -28,21 +33,13 @@ export default [
     icon: mdiTable,
     updateMark: "warning",
   },
-  {
-    to: "/FormsView",
-    label: "Forms Base",
-    icon: mdiSquareEditOutline,
-  },
+
   {
     to: "/prem/FormsView",
     label: "Forms Advanced",
     icon: mdiBallot,
   },
-  {
-    to: "/uiView",
-    label: "UI Base",
-    icon: mdiTelevisionGuide,
-  },
+
   {
     to: "/prem/uiView",
     label: "UI Advanced",
@@ -50,7 +47,7 @@ export default [
   },
   {
     to: "/prem/styleView",
-    label: "Styles",
+    label: "Stylize",
     icon: mdiPalette,
   },
   {
@@ -58,7 +55,18 @@ export default [
     label: "Pricing layout",
     icon: mdiBarcode,
   },
-
+  {
+    label: "Dropdown",
+    icon: mdiFormDropdown,
+    menu: [
+      {
+        label: "Dropdown item Uno",
+      },
+      {
+        label: "Dropdown item Dos",
+      },
+    ],
+  },
   {
     to: "/prem/profileView",
     label: "Profile",
@@ -72,7 +80,7 @@ export default [
   {
     to: "/pe/register",
     label: "Register",
-    icon: mdiLock,
+    icon: mdiSquareEditOutline,
   },
   {
     // Key should be unique for each submenus object
@@ -110,46 +118,6 @@ export default [
         icon: mdiOpenInNew,
       },
     ],
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
   },
   {
     href: "",
