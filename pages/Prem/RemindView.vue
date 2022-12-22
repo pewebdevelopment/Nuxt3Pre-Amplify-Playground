@@ -44,9 +44,9 @@ const submit = () => {
           <template #footer>
             <BaseLevel mobile>
               <BaseButton label="Remind" type="submit" color="info" />
-              <RouterLink to="/pe/login" class="text-sm">
+              <NuxtLink to="/pe/login" class="text-sm">
                 Back to login
-              </RouterLink>
+              </NuxtLink>
             </BaseLevel>
           </template>
         </CardBox>

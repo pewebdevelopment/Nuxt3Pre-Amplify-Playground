@@ -87,12 +87,12 @@ const routes = {
       <div
         class="hidden md:block py-12 md:py-0 text-center text-white text-opacity-50 dark:text-opacity-80"
       >
-        <RouterLink to="/"> Instagram </RouterLink> |
-        <RouterLink to="/"> Telegram </RouterLink> |
-        <RouterLink to="/"> Teletype </RouterLink>
+        <NuxtLink to="/"> Instagram </NuxtLink> |
+        <NuxtLink to="/"> Telegram </NuxtLink> |
+        <NuxtLink to="/"> Teletype </NuxtLink>
       </div>
       <div class="hidden md:block text-white">
-        <RouterLink to="/"> </RouterLink>
+        <NuxtLink to="/"> </NuxtLink>
       </div>
     </div>
 
@@ -100,12 +100,12 @@ const routes = {
 
     <div v-if="hasPromo" class="md:hidden space-y-12 py-12">
       <div class="text-white text-opacity-50">
-        <RouterLink to="/"> Instagram </RouterLink> |
-        <RouterLink to="/"> Telegram </RouterLink> |
-        <RouterLink to="/"> Teletype </RouterLink>
+        <NuxtLink to="/"> Instagram </NuxtLink> |
+        <NuxtLink to="/"> Telegram </NuxtLink> |
+        <NuxtLink to="/"> Teletype </NuxtLink>
       </div>
       <div class="text-white">
-        <RouterLink to="/"> </RouterLink>
+        <NuxtLink to="/"> </NuxtLink>
       </div>
     </div>
   </section>

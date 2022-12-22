@@ -11,7 +11,6 @@ import { mdiAccount, mdiEmail } from "@mdi/js";
 
 // import SectionFormScreen from "@/components/Premium/SectionFormScreen.vue";
 
-
 const form = reactive({
   login: "johndoe",
   email: "john.doe@example.com",
@@ -27,50 +26,50 @@ const submit = () => {
 
 <template>
   <div>
-  <NuxtLayout>
-    <PremSectionFormScreen v-slot="{ cardClass }" bg="yellowRed" has-promo>
-      <CardBox :class="cardClass" is-form @submit.prevent="submit">
-        <FormField label="Username" help="Please enter your new username">
-          <FormControl
-            v-model="form.login"
-            :icon-right="mdiAccount"
-            name="login"
-            placeholder="johndoe"
-            autocomplete="username"
-          />
-        </FormField>
+    <NuxtLayout>
+      <PremSectionFormScreen v-slot="{ cardClass }" bg="yellowRed" has-promo>
+        <CardBox :class="cardClass" is-form @submit.prevent="submit">
+          <FormField label="Username" help="Please enter your new username">
+            <FormControl
+              v-model="form.login"
+              :icon-right="mdiAccount"
+              name="login"
+              placeholder="johndoe"
+              autocomplete="username"
+            />
+          </FormField>
 
-        <FormField label="Email" help="Please enter your email">
-          <FormControl
-            v-model="form.email"
-            :icon-right="mdiEmail"
-            name="login"
-            type="email"
-            placeholder="user@example.com"
-            autocomplete="email"
-          />
-        </FormField>
+          <FormField label="Email" help="Please enter your email">
+            <FormControl
+              v-model="form.email"
+              :icon-right="mdiEmail"
+              name="login"
+              type="email"
+              placeholder="user@example.com"
+              autocomplete="email"
+            />
+          </FormField>
 
-        <FormField label="Password" help="Click icon to show/hide">
-          <FormControl
-            v-model="form.pass"
-            type="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="new-password"
-          />
-        </FormField>
+          <FormField label="Password" help="Click icon to show/hide">
+            <FormControl
+              v-model="form.pass"
+              type="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="new-password"
+            />
+          </FormField>
 
-        <template #footer>
-          <BaseLevel mobile>
-            <BaseButton label="Signup" type="submit" color="info" />
-            <RouterLink to="/login" class="text-sm">
-              Have an account?
-            </RouterLink>
-          </BaseLevel>
-        </template>
-      </CardBox>
-    </PremSectionFormScreen>
-  </NuxtLayout>
-</div>
+          <template #footer>
+            <BaseLevel mobile>
+              <BaseButton label="Signup" type="submit" color="info" />
+              <NuxtLink to="/pe/login" class="text-sm">
+                Have an account?
+              </NuxtLink>
+            </BaseLevel>
+          </template>
+        </CardBox>
+      </PremSectionFormScreen>
+    </NuxtLayout>
+  </div>
 </template>
