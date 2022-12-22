@@ -101,27 +101,25 @@ const checked = (isChecked, client) => {
   <table>
     <thead>
       <tr>
-        <th v-if="checkable" />
-        <th />
+        <th>SrNum</th>
         <th>Name</th>
+        <th>Select</th>
         <th>Company</th>
         <th>City</th>
         <th>Progress</th>
         <th>Created</th>
+        <th>Actions</th>
         <th />
       </tr>
     </thead>
     <tbody>
-      <tr v-for="client in itemsPaginated" :key="client.id">
-        <TableCheckboxCell
-          v-if="checkable"
-          @checked="checked($event, client)"
-        />
-        <td class="border-b-0 lg:w-6 before:hidden">
-          <UserAvatar
-            :username="client.name"
-            class="w-24 h-24 mx-auto lg:w-6 lg:h-6"
-          />
+      <tr
+        v-for="client in itemsPaginated"
+        :key="client.id"
+        class="border-b-0 lg:w-6 before:hidden"
+      >
+        <td data-label="Client ID" class="border-b-0 lg:w-6 before:hidden">
+          {{ client.id }}
         </td>
         <td data-label="Name">
           <CardBoxClient
@@ -131,8 +129,15 @@ const checked = (isChecked, client) => {
             :date="client.created"
             :progress="client.progress"
           />
-          <!-- {{ client.name }} -->
         </td>
+
+        <td>
+          <TableCheckboxCell
+            v-if="checkable"
+            @checked="checked($event, client)"
+          />
+        </td>
+
         <td data-label="Company">
           {{ client.company }}
         </td>
