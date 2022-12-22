@@ -44,10 +44,12 @@ const menuClick = (event, item) => {
         <slot />
       </div>
       <!-- The scrollbars. CSS has been written as extened CSS in the tailwind.config.js file -->
+      <!-- The following ScrollBar is due to the tailwind-scrollbar plugin -->
+      <!-- If we dont want to use the tailwind scrollbar plugin then we can have a hacky workaround by using 'aside-scrollbars-[slate]' when darkMode is true, however, this is not the most optimal solution -->
       <div
         :class="
           styleStore.darkMode
-            ? 'aside-scrollbars-[slate]'
+            ? 'scrollbar scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-800 scrollbar-thumb-rounded'
             : styleStore.asideScrollbarsStyle
         "
         class="flex-1 overflow-y-auto overflow-x-hidden dark:bg-gray-900"
@@ -72,7 +74,8 @@ const menuClick = (event, item) => {
 }
 </style>
 
-// styleStore.darkMode ? 'dark-scrollbars-compact-for-scrollbar' : //
-styleStore.asideScrollbarsStyle { dark_scrollbars_compact_for_scrollbar: //
-styleStore.darkMode, `${styleStore.asideScrollbarsStyle}`: !styleStore.darkMode,
-//
+'aside-scrollbars-[slate]' 'scrollbar scrollbar-thumb-gray-900
+scrollbar-track-gray-100' // styleStore.darkMode ?
+'dark-scrollbars-compact-for-scrollbar' : // styleStore.asideScrollbarsStyle {
+dark_scrollbars_compact_for_scrollbar: // styleStore.darkMode,
+`${styleStore.asideScrollbarsStyle}`: !styleStore.darkMode, //

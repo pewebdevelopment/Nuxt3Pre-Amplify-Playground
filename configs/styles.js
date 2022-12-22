@@ -89,7 +89,8 @@ export const stone = {
 };
 
 export const emerald = {
-  aside: "bg-emerald-800 aside-scrollbars-[emerald]",
+  aside: "bg-emerald-800",
+  asideScrollbars: "aside-scrollbars-[emerald]",
   asideBrand: "bg-emerald-900 text-white",
   asideMenuItem: "hover:bg-emerald-600/50",
   asideMenuItemActive: "font-bold text-white",

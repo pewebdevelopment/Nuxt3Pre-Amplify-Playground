@@ -80,5 +80,6 @@ module.exports = {
         { values: theme("asideScrollbars") }
       );
     }),
+    require("tailwind-scrollbar")({ nocompatible: true }),
   ],
 };
