@@ -42,7 +42,8 @@ const handleSubmit = async () => {
   // console.log("response", response);
 
   if (user_from_amplify) {
-    router.push("/dashboard");
+    return;
+    // router.push("/dashboard");
   }
 };
 </script>
@@ -89,12 +90,12 @@ const handleSubmit = async () => {
                   label="Dashboard"
                 />
               </BaseButtons>
-              <RouterLink
+              <NuxtLink
                 to="/pe/register"
                 class="text-sm bg-gray-800 text-white p-3 rounded-md hover:bg-gray-600"
               >
                 Done have an account? Sign Up
-              </RouterLink>
+              </NuxtLink>
             </div>
           </template>
         </CardBox>
