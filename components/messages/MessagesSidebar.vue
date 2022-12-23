@@ -5,14 +5,14 @@
     :class="msgSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <div
-      class="sticky top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-screen"
+      class="sticky top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-screen dark:border-slate-800 dark:bg-gray-900 dark:text-gray-200"
     >
       <!-- #Marketing group -->
       <div>
         <!-- Group header -->
         <div class="sticky top-0 z-10">
           <div
-            class="flex items-center bg-white border-b border-slate-200 px-5 h-16"
+            class="flex items-center bg-white border-b dark:border-slate-800 px-5 h-16 dark:text-gray-200 dark:bg-gray-800"
           >
             <div class="w-full flex items-center justify-between">
               <!-- Channel menu -->
@@ -40,7 +40,7 @@
             <label for="msg-search" class="sr-only">Search</label>
             <input
               id="msg-search"
-              class="form-input w-full pl-9 focus:border-slate-300"
+              class="form-input w-full pl-9 focus:border-slate-300 rounded-md"
               type="search"
               placeholder="Search…"
             />

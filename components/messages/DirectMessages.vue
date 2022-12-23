@@ -1,6 +1,8 @@
 <template>
   <div class="mt-4">
-    <div class="text-xs font-semibold text-slate-400 uppercase mb-3">
+    <div
+      class="text-xs font-semibold text-slate-400 uppercase mb-3 dark:text-gray-200"
+    >
       Direct messages
     </div>
     <ul class="mb-6">
@@ -46,7 +48,8 @@
               alt="User 02"
             />
             <div class="truncate">
-              <span class="text-sm font-medium text-slate-800"
+              <span
+                class="text-sm font-medium text-slate-800 dark:text-gray-200"
                 >Tisha Yanchev</span
               >
             </div>
@@ -74,7 +77,8 @@
               alt="User 03"
             />
             <div class="truncate">
-              <span class="text-sm font-medium text-slate-800"
+              <span
+                class="text-sm font-medium text-slate-800 dark:text-gray-200"
                 >Jerzy Wierzy</span
               >
             </div>
@@ -104,14 +108,15 @@
               alt="User 04"
             />
             <div class="truncate">
-              <span class="text-sm font-medium text-slate-800"
+              <span
+                class="text-sm font-medium text-slate-800 dark:text-gray-200"
                 >Adrian Przetocki</span
               >
             </div>
           </div>
           <div class="flex items-center ml-2">
             <svg
-              class="w-3 h-3 shrink-0 fill-current text-slate-400"
+              class="w-3 h-3 shrink-0 fill-current text-slate-400 dark:text-gray-200"
               viewBox="0 0 12 12"
             >
               <path
@@ -135,7 +140,8 @@
               alt="User 05"
             />
             <div class="truncate">
-              <span class="text-sm font-medium text-slate-800"
+              <span
+                class="text-sm font-medium text-slate-800 dark:text-gray-200"
                 >Simona Lürwer</span
               >
             </div>
@@ -166,7 +172,8 @@
               alt="User 06"
             />
             <div class="truncate">
-              <span class="text-sm font-medium text-slate-800"
+              <span
+                class="text-sm font-medium text-slate-800 dark:text-gray-200"
                 >Mary Roszczewski</span
               >
             </div>

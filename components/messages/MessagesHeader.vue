@@ -1,7 +1,7 @@
 <template>
   <div class="sticky top-0">
     <div
-      class="flex items-center justify-between bg-white border-b border-slate-200 px-4 sm:px-6 md:px-5 h-16 dark:bg-gray-800 dark:border-slate-800"
+      class="flex items-center justify-between bg-white border-b border-slate-200 px-4 sm:px-6 md:px-5 h-16 dark:bg-gray-900 dark:border-slate-800"
     >
       <!-- People -->
       <div class="flex items-center">
