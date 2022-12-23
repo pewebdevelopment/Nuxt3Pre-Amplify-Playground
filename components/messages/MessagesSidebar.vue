@@ -5,7 +5,7 @@
     :class="msgSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <div
-      class="sticky top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-[calc(100vh-64px)]"
+      class="sticky top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-full"
     >
       <!-- #Marketing group -->
       <div>
