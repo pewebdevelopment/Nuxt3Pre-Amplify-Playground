@@ -1,7 +1,7 @@
 <template>
   <div
     id="messages-sidebar"
-    class="absolute z-20 top-0 bottom-0 w-full md:w-auto md:static md:top-auto md:bottom-auto -mr-px md:translate-x-0 transition-transform duration-200 ease-in-out"
+    class="absolute z-20 top-0 bottom-0 w-full md:w-auto md:static md:top-auto md:bottom-auto -mr-px md:translate-x-0 transition-transform duration-200 ease-in-out overflow-y-auto"
     :class="msgSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <div

@@ -1,35 +1,41 @@
 <template>
   <NuxtLayout name="zen">
-    <div class="flex h-screen overflow-hidden">
-      <!-- Content area -->
-      <div
-        ref="contentArea"
-        class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden"
-      >
-        <main>
-          <div class="relative flex">
-            <!-- Messages sidebar -->
-            <MessagesSidebar
-              :msgSidebarOpen="msgSidebarOpen"
-              @close-msgsidebar="msgSidebarOpen = false"
-            />
-
-            <!-- Messages body -->
-            <div
-              class="grow flex flex-col md:translate-x-0 transition-transform duration-300 ease-in-out"
-              :class="msgSidebarOpen ? 'translate-x-1/3' : 'translate-x-0'"
-            >
-              <MessagesHeader
+    <SectionMain>
+      <div class="flex h-screen overflow-hidden">
+        <!-- Content area -->
+        <div
+          ref="contentArea"
+          class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-scroll scrollbar scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+        >
+          <main>
+            <div class="relative flex">
+              <!-- Messages sidebar -->
+              <MessagesSidebar
                 :msgSidebarOpen="msgSidebarOpen"
-                @toggle-msgsidebar="msgSidebarOpen = !msgSidebarOpen"
+                @close-msgsidebar="msgSidebarOpen = false"
               />
-              <MessagesBody />
-              <MessagesFooter />
+
+              <!-- Messages body -->
+              <div
+                class="grow flex flex-col md:translate-x-0 transition-transform duration-300 ease-in-out"
+                :class="msgSidebarOpen ? 'translate-x-1/3' : 'translate-x-0'"
+              >
+                <MessagesHeader
+                  :msgSidebarOpen="msgSidebarOpen"
+                  @toggle-msgsidebar="msgSidebarOpen = !msgSidebarOpen"
+                />
+                <div
+                  class="overflow-y-scroll scrollbar scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+                >
+                  <MessagesBody />
+                </div>
+
+                <MessagesFooter />
+              </div>
             </div>
-          </div>
-        </main>
-      </div>
-    </div>
+          </main>
+        </div></div
+    ></SectionMain>
   </NuxtLayout>
 </template>
 

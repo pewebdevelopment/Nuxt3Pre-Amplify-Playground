@@ -15,6 +15,31 @@
         >
           Can anyone help? I have a question about Acme Professional
         </div>
+        <div
+          class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+        >
+          Can anyone help? I have a question about Acme Professional
+        </div>
+        <div
+          class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+        >
+          Can anyone help? I have a question about Acme Professional
+        </div>
+        <div
+          class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+        >
+          Can anyone help? I have a question about Acme Professional
+        </div>
+        <div
+          class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+        >
+          Can anyone help? I have a question about Acme Professional
+        </div>
+        <div
+          class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+        >
+          Can anyone help? I have a question about Acme Professional
+        </div>
         <div class="flex items-center justify-between">
           <div class="text-xs text-slate-500 font-medium">2:40 PM</div>
         </div>
