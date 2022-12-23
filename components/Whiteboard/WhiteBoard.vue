@@ -31,7 +31,7 @@ export default {
       paper.setup(document.getElementById("canvas-id"));
 
       // Create a Paper.js Path to draw a line into it:
-      console.log("Mounted Whiteboard");
+      console.log("Mounted Whiteboard from process.client");
       // var path = new paper.Path();
       // Give the stroke a color
       // path.strokeColor = "black";

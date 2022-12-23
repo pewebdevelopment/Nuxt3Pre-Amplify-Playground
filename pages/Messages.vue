@@ -68,8 +68,3 @@ export default {
   },
 };
 </script>
-
-// import MessagesSidebar from "../partials/messages/MessagesSidebar.vue"; //
-import MessagesHeader from "../partials/messages/MessagesHeader.vue"; // import
-MessagesBody from "../partials/messages/MessagesBody.vue"; // import
-MessagesFooter from "../partials/messages/MessagesFooter.vue";

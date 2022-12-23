@@ -53,7 +53,7 @@
                 <div class="grow flex items-center truncate">
                   <img
                     class="w-7 h-7 rounded-full mr-2"
-                    src="../../images/channel-01.png"
+                    src="https://randomuser.me/api/portraits/women/51.jpg"
                     width="28"
                     height="28"
                     alt="Channel 01"
@@ -81,7 +81,7 @@
                 <div class="grow flex items-center truncate">
                   <img
                     class="w-7 h-7 rounded-full mr-2"
-                    src="../../images/channel-02.png"
+                    src="https://randomuser.me/api/portraits/women/51.jpg"
                     width="28"
                     height="28"
                     alt="Channel 02"

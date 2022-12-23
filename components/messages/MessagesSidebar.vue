@@ -1,16 +1,16 @@
 <template>
   <div
     id="messages-sidebar"
-    class="absolute z-20 top-0 bottom-0 w-full md:w-auto md:static md:top-auto md:bottom-auto -mr-px md:translate-x-0 transition-transform duration-200 ease-in-out overflow-y-auto"
+    class="sticky z-20 top-0 bottom-0 w-full md:w-auto md:static md:top-auto md:bottom-auto -mr-px md:translate-x-0 transition-transform duration-200 ease-in-out overflow-y-auto"
     :class="msgSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <div
-      class="sticky top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 dark:border-slate-800 md:w-72 xl:w-80 h-full"
+      class="top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 dark:border-slate-800 md:w-72 xl:w-80 h-full"
     >
       <!-- #Marketing group -->
       <div>
         <!-- Group header -->
-        <div class="sticky top-0 z-10">
+        <div class="top-0 z-10">
           <div
             class="flex items-center bg-white border-b border-slate-200 px-5 h-16 dark:bg-gray-800"
           >
