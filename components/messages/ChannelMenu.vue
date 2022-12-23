@@ -15,7 +15,9 @@
         alt="Group 01"
       />
       <div class="truncate">
-        <span class="font-semibold text-slate-800">#Marketing</span>
+        <span class="font-semibold text-slate-800 dark:text-gray-200"
+          >#Marketing</span
+        >
       </div>
       <svg
         class="w-3 h-3 shrink-0 ml-1 fill-current text-slate-400"
