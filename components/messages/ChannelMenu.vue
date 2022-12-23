@@ -101,7 +101,7 @@
                 <div class="grow flex items-center truncate">
                   <img
                     class="w-7 h-7 rounded-full mr-2"
-                    src="../../images/channel-03.png"
+                    src="https://randomuser.me/api/portraits/women/51.jpg"
                     width="28"
                     height="28"
                     alt="Channel 03"
