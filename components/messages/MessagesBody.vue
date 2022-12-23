@@ -4,7 +4,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-11.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 01"
@@ -24,7 +24,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-12.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 02"
@@ -54,7 +54,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-11.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 01"
@@ -63,7 +63,7 @@
         <div class="flex items-center">
           <img
             class="rounded-lg shadow-md mb-1"
-            src="../../images/chat-image.jpg"
+            src="https://randomuser.me/api/portraits/women/51.jpg"
             width="240"
             height="180"
             alt="Chat"
@@ -91,7 +91,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-11.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 01"
@@ -111,7 +111,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-12.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 02"
@@ -150,7 +150,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-12.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 02"
@@ -181,7 +181,7 @@
     <div class="flex items-start mb-4 last:mb-0">
       <img
         class="rounded-full mr-4"
-        src="../../images/user-40-11.jpg"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="40"
         height="40"
         alt="User 01"

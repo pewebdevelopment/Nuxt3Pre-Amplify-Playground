@@ -9,7 +9,7 @@
     >
       <img
         class="w-8 h-8 rounded-full mr-2"
-        src="../../images/user-avatar-32.png"
+        src="https://randomuser.me/api/portraits/women/51.jpg"
         width="32"
         height="32"
         alt="Group 01"
@@ -34,21 +34,7 @@
     >
       <div
         v-show="dropdownOpen"
-        class="
-          origin-top-right
-          z-10
-          absolute
-          top-full
-          left-0
-          min-w-60
-          bg-white
-          border border-slate-200
-          py-1.5
-          rounded
-          shadow-lg
-          overflow-hidden
-          mt-1
-        "
+        class="origin-top-right z-10 absolute top-full left-0 min-w-60 bg-white border border-slate-200 py-1.5 rounded shadow-lg overflow-hidden mt-1"
       >
         <ul
           ref="dropdown"
@@ -57,14 +43,7 @@
         >
           <li>
             <a
-              class="
-                font-medium
-                text-sm text-slate-600
-                hover:text-slate-800
-                block
-                py-1.5
-                px-3
-              "
+              class="font-medium text-sm text-slate-600 hover:text-slate-800 block py-1.5 px-3"
               href="#0"
               @click="dropdownOpen = false"
             >
@@ -92,14 +71,7 @@
           </li>
           <li>
             <a
-              class="
-                font-medium
-                text-sm text-slate-600
-                hover:text-slate-800
-                block
-                py-1.5
-                px-3
-              "
+              class="font-medium text-sm text-slate-600 hover:text-slate-800 block py-1.5 px-3"
               href="#0"
               @click="dropdownOpen = false"
             >
@@ -119,14 +91,7 @@
           </li>
           <li>
             <a
-              class="
-                font-medium
-                text-sm text-slate-600
-                hover:text-slate-800
-                block
-                py-1.5
-                px-3
-              "
+              class="font-medium text-sm text-slate-600 hover:text-slate-800 block py-1.5 px-3"
               href="#0"
               @click="dropdownOpen = false"
             >

@@ -28,7 +28,7 @@
           <a class="block" href="#0">
             <img
               class="rounded-full border-2 border-white box-content"
-              src="../../images/user-32-01.jpg"
+              src="https://randomuser.me/api/portraits/women/51.jpg"
               width="32"
               height="32"
               alt="User 01"
@@ -37,7 +37,7 @@
           <a class="block" href="#0">
             <img
               class="rounded-full border-2 border-white box-content"
-              src="../../images/user-32-02.jpg"
+              src="https://randomuser.me/api/portraits/women/51.jpg"
               width="32"
               height="32"
               alt="User 04"

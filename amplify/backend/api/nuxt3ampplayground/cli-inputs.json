@@ -9,11 +9,13 @@
     },
     "additionalAuthTypes": [
       {
-        "mode": "API_KEY",
-        "expirationTime": 365,
-        "apiKeyExpirationDate": "2023-12-16T13:43:27.604Z",
-        "keyDescription": "Nuxt3AmpPlayGround Public Access API Key"
+        "mode": "AWS_IAM"
       }
-    ]
+    ],
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "NONE"
+      }
+    }
   }
 }
