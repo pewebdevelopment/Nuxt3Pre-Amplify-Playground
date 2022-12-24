@@ -22,16 +22,20 @@ export default {
   },
 
   mounted() {
-    if (process && process.browser) {
-      console.log("Process - Browser");
-    }
+    const runtimeConfig = useRuntimeConfig();
+    console.log("RunTimeConfig:", runtimeConfig.isClient);
+    // console.log("Process", process);
+    // console.log(mySecret);
+    // if (process && process.browser) {
+    //   console.log("Process - Browser");
+    // }
 
-    if (process && process.client) {
+    if (runtimeConfig.isClient) {
       // paper.install(window);
       paper.setup(document.getElementById("canvas-id"));
 
       // Create a Paper.js Path to draw a line into it:
-      console.log("Mounted Whiteboard from process.client");
+      // console.log(process, "Mounted Whiteboard from process.client");
       // var path = new paper.Path();
       // Give the stroke a color
       // path.strokeColor = "black";

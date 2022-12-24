@@ -8,7 +8,7 @@
           class="relative flex flex-col flex-1 rounded-lg overflow-x-hidden overflow-y-hidden"
         >
           <main>
-            <div class="relative flex">
+            <div class="relative flex bg-blue-700">
               <!-- Messages sidebar -->
               <MessagesSidebar
                 class=""
@@ -18,7 +18,7 @@
 
               <!-- Messages Panel -->
               <div
-                class="grow flex flex-col md:translate-x-0 transition-transform duration-300 ease-in-out h-screen bg-gray-200 dark:bg-gray-800"
+                class="grow relative flex flex-col md:translate-x-0 transition-transform duration-300 ease-in-out h-screen bg-gray-100 dark:bg-gray-800"
                 :class="msgSidebarOpen ? 'translate-x-1/3' : 'translate-x-0'"
               >
                 <MessagesHeader

@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: false,
   srcDir: "./",
   css: ["@/assets/css/main.css"],
 
@@ -9,6 +10,9 @@ export default defineNuxtConfig({
     },
     browser: {},
     client: {},
+    public: {
+      isClient: true,
+    },
   },
 
   modules: [
@@ -49,9 +53,5 @@ export default defineNuxtConfig({
 
   build: {},
 
-  ssr: false,
-  nitro: {
-    preset: "service-worker",
-  },
   // target: "static"
 });
