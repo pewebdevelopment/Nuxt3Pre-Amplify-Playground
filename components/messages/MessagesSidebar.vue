@@ -5,14 +5,14 @@
     :class="msgSidebarOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <div
-      class="sticky top-0 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-screen dark:border-slate-800 dark:bg-gray-900 dark:text-gray-200"
+      class="sticky top-0 bg-white overflow-x-hidden rounded-tl-lg overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-screen dark:border-slate-800 dark:bg-gray-900 dark:text-gray-200"
     >
       <!-- #Marketing group -->
       <div>
         <!-- Group header -->
         <div class="sticky top-0 z-10">
           <div
-            class="flex items-center bg-white border-b dark:border-slate-800 px-5 h-16 dark:text-gray-200 dark:bg-gray-800"
+            class="flex items-center bg-white border-b rounded-tl-lg dark:border-slate-800 px-5 h-16 dark:text-gray-200 dark:bg-gray-800"
           >
             <div class="w-full flex items-center justify-between">
               <!-- Channel menu -->

@@ -1,7 +1,7 @@
 <template>
   <div class="sticky bottom-0">
     <div
-      class="flex items-center justify-between bg-white border-t border-slate-200 dark:bg-gray-900 dark:border-slate-800 px-4 sm:px-6 md:px-5 h-16"
+      class="flex items-center justify-between rounded-lg bg-white border-t border-slate-200 dark:bg-gray-900 dark:border-slate-800 px-4 sm:px-6 md:px-5 h-16"
     >
       <!-- Plus button -->
       <button class="shrink-0 text-slate-400 hover:text-slate-500 mr-3">

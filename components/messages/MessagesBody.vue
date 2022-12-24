@@ -1,10 +1,9 @@
 <template>
   <div
-    class="h-full overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+    id="inner-scrollbar"
+    class="h-96 overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
   >
-    <div
-      class="grow overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded px-4 sm:px-6 md:px-5"
-    >
+    <div class="grow px-4 sm:px-6 md:px-5">
       <!-- Chat msg -->
       <div class="flex items-start mb-4 last:mb-0">
         <img
@@ -15,6 +14,16 @@
           alt="User 01"
         />
         <div>
+          <div
+            class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+          >
+            Can anyone help? I have a question about Acme Professional
+          </div>
+          <div
+            class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
+          >
+            Can anyone help? I have a question about Acme Professional
+          </div>
           <div
             class="text-sm bg-white text-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-200 shadow-md mb-1"
           >

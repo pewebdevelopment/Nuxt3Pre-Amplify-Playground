@@ -5,10 +5,10 @@
         <!-- Content area -->
         <div
           ref="contentArea"
-          class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+          class="relative flex flex-col flex-1 rounded-lg overflow-x-hidden overflow-y-hidden"
         >
           <main>
-            <div class="relative flex h-full">
+            <div class="relative flex">
               <!-- Messages sidebar -->
               <MessagesSidebar
                 class=""
