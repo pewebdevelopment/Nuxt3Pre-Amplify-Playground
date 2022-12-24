@@ -2,6 +2,15 @@ export default defineNuxtConfig({
   srcDir: "./",
   css: ["@/assets/css/main.css"],
 
+  runtimeConfig: {
+    process: {
+      browser: true,
+      client: true,
+    },
+    browser: {},
+    client: {},
+  },
+
   modules: [
     // ...
     [

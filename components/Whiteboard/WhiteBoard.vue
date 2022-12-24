@@ -22,11 +22,11 @@ export default {
   },
 
   mounted() {
-    if (process.browser) {
+    if (process && process.browser) {
       console.log("Process - Browser");
     }
 
-    if (process.client) {
+    if (process && process.client) {
       // paper.install(window);
       paper.setup(document.getElementById("canvas-id"));
 
