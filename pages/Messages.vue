@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="zen">
     <SectionMain>
-      <div class="flex h-screen overflow-hidden">
+      <div class="flex h-screen">
         <!-- Content area -->
         <div
           ref="contentArea"
