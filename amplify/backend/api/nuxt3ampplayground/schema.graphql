@@ -1,7 +1,27 @@
+type Topic @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  descriptio: String
+  chapterID: ID! @index(name: "byChapter")
+}
+
+type Chapter @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  subjectID: ID! @index(name: "bySubject")
+  ChapterTopics: [Topic] @hasMany(indexName: "byChapter", fields: ["id"])
+}
+
+type Subject @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  description: String
+  SubjectChapters: [Chapter] @hasMany(indexName: "bySubject", fields: ["id"])
+}
+
 type ChatConversation @model @auth(rules: [{allow: private}]) {
   id: ID!
   name: String
-  ChatMessages: [ChatMessages] @hasMany(indexName: "byChatConversation", fields: ["id"])
   Users: [User] @manyToMany(relationName: "ChatConversationUser")
 }
 

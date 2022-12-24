@@ -1,4 +1,10 @@
 export type AmplifyDependentResourcesAttributes = {
+    "api": {
+        "nuxt3ampplayground": {
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
+    },
     "auth": {
         "Nuxt3AmpPlayGround": {
             "IdentityPoolId": "string",
@@ -8,12 +14,6 @@ export type AmplifyDependentResourcesAttributes = {
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
             "AppClientID": "string"
-        }
-    },
-    "api": {
-        "nuxt3ampplayground": {
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
         }
     },
     "storage": {
