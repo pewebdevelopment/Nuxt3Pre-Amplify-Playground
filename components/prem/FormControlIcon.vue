@@ -31,7 +31,7 @@ const iconClick = (e) => {
     w="w-10"
     :h="h"
     class="absolute top-0 z-10"
-    :class="[
+    :class="[ 
       isRight ? 'right-0' : 'left-0',
       clickable ? 'cursor-pointer' : 'pointer-events-none',
       textColor,
