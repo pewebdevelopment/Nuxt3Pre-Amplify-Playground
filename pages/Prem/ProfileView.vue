@@ -17,7 +17,10 @@ import {
   mdiPlusCircle,
   mdiAccountCreditCard,
   mdiCloudLock,
+  mdiEye,
+  mdiEyeOff
 } from "@mdi/js";
+import { faEyeSlash, faSlash } from "@fortawesome/free-solid-svg-icons";
 // import SectionMain from "@/components/SectionMain.vue";
 // import CardBox from "@/components/CardBox.vue";
 // import BaseDivider from "@/components/BaseDivider.vue";
@@ -50,6 +53,9 @@ const passwordForm = reactive({
   password_current: "",
   password: "",
   password_confirmation: "",
+  show_password_current:false,
+  show_password:false,
+  show_password_confirmation:false
 });
 
 const submitProfile = () => {
@@ -59,7 +65,11 @@ const submitProfile = () => {
 const submitPass = () => {
   //
 };
-
+const toggleShow = () => {
+      
+      this.passwordForm.showPassword = !this.passwordForm.showPassword;
+      alert(passwordForm.showPassword );
+}
 const date = new Date();
 
 const dateOptions = {
@@ -343,30 +353,30 @@ const twoFactorEnabled = ref(true);
             </template>
           </CardBox>
           <CardBox is-form @submit.prevent="submitPass">
-            <FormField
+              <FormField
               label="Current password"
               help="Required. Your current password"
-            >
-              <FormControl
+              >
+              <PremFormControl
                 v-model="passwordForm.password_current"
-                :icon="mdiAsterisk"
-                name="password_current"
+                :icon-right="passwordForm.show_password_current ? mdiEyeOff :mdiEye"
                 type="password"
-                required
-                autocomplete="current-password"
+                name="password"
+                placeholder="Password"
+                @right-icon-click="passwordForm.show_password_current=!passwordForm.show_password_current"
               />
             </FormField>
 
             <BaseDivider />
 
             <FormField label="New password" help="Required. New password">
-              <FormControl
+              <PremFormControl
                 v-model="passwordForm.password"
-                :icon="mdiFormTextboxPassword"
-                name="password"
+                :icon-right="passwordForm.show_password ? mdiEyeOff :mdiEye"
                 type="password"
-                required
-                autocomplete="new-password"
+                name="password"
+                placeholder="Password"
+                @right-icon-click="passwordForm.show_password=!passwordForm.show_password"
               />
             </FormField>
 
@@ -374,13 +384,13 @@ const twoFactorEnabled = ref(true);
               label="Confirm password"
               help="Required. New password one more time"
             >
-              <FormControl
+              <PremFormControl
                 v-model="passwordForm.password_confirmation"
-                :icon="mdiFormTextboxPassword"
-                name="password_confirmation"
+                :icon-right="passwordForm.show_password_confirmation ? mdiEyeOff :mdiEye"
                 type="password"
-                required
-                autocomplete="new-password"
+                name="password"
+                placeholder="Password"
+                @right-icon-click="passwordForm.show_password_confirmation=!passwordForm.show_password_confirmation"
               />
             </FormField>
 
