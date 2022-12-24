@@ -16,9 +16,9 @@
                 @close-msgsidebar="msgSidebarOpen = false"
               />
 
-              <!-- Messages body -->
+              <!-- Messages Panel -->
               <div
-                class="grow flex flex-col md:translate-x-0 transition-transform duration-300 ease-in-out"
+                class="grow flex flex-col md:translate-x-0 transition-transform duration-300 ease-in-out h-screen bg-gray-200 dark:bg-gray-800"
                 :class="msgSidebarOpen ? 'translate-x-1/3' : 'translate-x-0'"
               >
                 <MessagesHeader
