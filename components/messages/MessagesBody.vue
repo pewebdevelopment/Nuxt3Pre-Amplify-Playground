@@ -1,5 +1,7 @@
 <template>
-  <div class="h-full">
+  <div
+    class="h-full overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+  >
     <div
       class="grow overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded px-4 sm:px-6 md:px-5"
     >
