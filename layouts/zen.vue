@@ -69,6 +69,7 @@ const menuClick = (event, item) => {
         ]"
         class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100"
       >
+        <!-- The  Navbar -->
         <NavBar
           :menu="menuNavBar"
           :class="[
@@ -108,6 +109,7 @@ const menuClick = (event, item) => {
             />
           </NavBarItemPlain>
         </NavBar>
+        <!-- The  Premium Aside Menu -->
         <PremAsideMenu :menu="menuAside" @menu-click="menuClick" />
         <slot />
 
