@@ -10,7 +10,7 @@ import { useStyleStore } from "@/stores/style.js";
 import BaseIcon from "@/components/BaseIcon.vue";
 import FormControl from "@/components/FormControl.vue";
 import NavBar from "@/components/NavBar.vue";
-import PremAsideMenu from "@/components/prem/AsideMenu.vue";
+import PremAsideMenu from "~~/components/Asidemenu/AsideMenu.vue";
 import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
 import FooterBar from "@/components/FooterBar.vue";
 import { useAuthStore } from "@/stores/authStore";
