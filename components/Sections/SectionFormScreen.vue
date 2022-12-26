@@ -11,9 +11,9 @@ import {
   gradientBgYellowRed,
   gradientBgRedYellow,
 } from "@/configs/colorsPremium.js";
-import JustboilLogo from "@/components/JustboilLogo.vue";
-// import BaseButtons from "@/components/BaseButtons.vue";
-// import BaseButton from "@/components/BaseButton.vue";
+import JustboilLogo from "@/components/Display/JustboilLogo.vue";
+import BaseButtons from "@/components/Buttons/BaseButtons.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
 
 onMounted(() => {
   console.log("Section Form Screen ");
@@ -67,7 +67,7 @@ const routes = {
   >
     <div v-if="hasPromo" class="space-y-12 px-12">
       <div class="hidden lg:block">
-        <!-- <Basebuttons type="justify-center" glue>
+        <Basebuttons type="justify-center" glue>
           <BaseButton
             v-for="(routeLabel, index) in routes"
             :key="index"
@@ -77,7 +77,7 @@ const routes = {
             :label="routeLabel"
             color="whiteDark"
           />
-        </Basebuttons> -->
+        </Basebuttons>
       </div>
 
       <div class="text-center text-white py-12 md:py-0">

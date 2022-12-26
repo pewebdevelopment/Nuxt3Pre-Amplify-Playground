@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
 import { getButtonColor } from "@/configs/colors.js";
-import BaseIcon from "@/components/BaseIcon.vue";
+import BaseIcon from "@/components/Display/BaseIcon.vue";
 
 const props = defineProps({
   label: {
@@ -110,21 +110,17 @@ const componentClass = computed(() => {
 
 <template>
   <div>
-  <component
-    :is="is"
-    :class="componentClass"
-    :href="href"
-    :type="computedType"
-    :to="to"
-    :target="target"
-    :disabled="disabled"
-  >
-<BaseIcon v-if="icon" :path="icon" :size="iconSize" />
-    <span v-if="label" :class="labelClass">{{ label }}</span>
-   
-  </component> 
-   
-
-    
-</div>
+    <component
+      :is="is"
+      :class="componentClass"
+      :href="href"
+      :type="computedType"
+      :to="to"
+      :target="target"
+      :disabled="disabled"
+    >
+      <BaseIcon v-if="icon" :path="icon" :size="iconSize" />
+      <span v-if="label" :class="labelClass">{{ label }}</span>
+    </component>
+  </div>
 </template>

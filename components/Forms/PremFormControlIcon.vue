@@ -1,5 +1,5 @@
 <script setup>
-// import BaseIcon from "@/components/BaseIcon.vue";
+import BaseIcon from "@/components/Display/BaseIcon.vue";
 
 defineProps({
   icon: {
@@ -31,7 +31,7 @@ const iconClick = (e) => {
     w="w-10"
     :h="h"
     class="absolute top-0 z-10"
-    :class="[ 
+    :class="[
       isRight ? 'right-0' : 'left-0',
       clickable ? 'cursor-pointer' : 'pointer-events-none',
       textColor,

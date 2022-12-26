@@ -1,8 +1,8 @@
 <script setup>
-import CardBox from "@/components/CardBox.vue";
-import BaseButtons from "@/components/BaseButtons.vue";
-import BaseButton from "@/components/BaseButton.vue";
-import PillTag from "@/components/PillTag.vue";
+import CardBox from "@/components/Cards/CardBox.vue";
+import BaseButtons from "@/components/Buttons/BaseButtons.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import PillTag from "@/components/Display/PillTag.vue";
 
 defineProps({
   date: {

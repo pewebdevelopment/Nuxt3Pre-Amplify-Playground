@@ -1,7 +1,7 @@
 <script setup>
-import BaseDivider from "@/components/BaseDivider.vue";
-import PillTagTrend from "@/components/PillTagTrend.vue";
-import IconRounded from "@/components/IconRounded.vue";
+import BaseDivider from "@/components/Display/BaseDivider.vue";
+import PillTagTrend from "@/components/Display/PillTagTrend.vue";
+import IconRounded from "@/components/Display/IconRounded.vue";
 
 defineProps({
   title: {

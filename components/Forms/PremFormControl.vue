@@ -10,11 +10,11 @@ import {
   mdiAsterisk,
   mdiLockOff,
 } from "@mdi/js";
-// import FormControlIcon from "@/components/Premium/FormControlIcon.vue";
-// import FormFieldHelp from "@/components/Premium/FormFieldHelp.vue";
-// import FormControlListbox from "@/components/Premium/FormControlListbox.vue";
-// import BaseIcon from "@/components/BaseIcon.vue";
-// import TipTag from "@/components/Premium/TipTag.vue";
+import PremFormControlIcon from "@/components/Forms/FormControlIcon.vue";
+import PremFormFieldHelp from "@/components/Forms/FormFieldHelp.vue";
+import PremFormControlListbox from "@/components/Forms/FormControlListbox.vue";
+import BaseIcon from "@/components/Display/BaseIcon.vue";
+import PremTipTag from "@/components/Display/TipTag.vue";
 
 const props = defineProps({
   firstAddon: Boolean,
@@ -319,110 +319,101 @@ if (props.ctrlKFocus) {
 </script>
 
 <template>
-
-<div>
-
-<div :class="upperWrapperClass">
-    
-  
-  
-<div class="relative" :class="wrapperClass">
-      <div
-        v-if="computedType === 'static'"
-        :class="inputElClass"
-        class="inline-flex items-center whitespace-nowrap"
-      >
-        {{ modelValue }}
-      </div>
-      <!-- <PremFormControlListbox
-        v-else-if="computedType === 'list'"
-        v-model="computedValue"
-        :options="options"
-        :button-class="inputElClass"
-      /> -->
-      <select
-        v-else-if="computedType === 'select'"
-        :id="id"
-        v-model="computedValue"
-        :name="name"
-        :class="inputElClass"
-      >
-        <option
-          v-for="option in options"
-          :key="option.id ?? option"
-          :value="option"
+  <div>
+    <div :class="upperWrapperClass">
+      <div class="relative" :class="wrapperClass">
+        <div
+          v-if="computedType === 'static'"
+          :class="inputElClass"
+          class="inline-flex items-center whitespace-nowrap"
         >
-          {{ option.label ?? option }}
-        </option>
-      </select>
-      <textarea
-        v-else-if="computedType === 'textarea'"
-        :id="id"
-        v-model="computedValue"
-        :class="inputElClass"
-        :name="name"
-        :placeholder="placeholder"
-        :required="required"
-      />
-      <button
-        v-else-if="computedType === 'button'"
-        :class="inputElClass"
-        class="ring-blue-700"
-      >
-        <BaseIcon
-          v-if="buttonIcon"
-          :path="buttonIcon"
-          w="w-8"
-          h="h-8"
-          size="20"
+          {{ modelValue }}
+        </div>
+        <PremFormControlListbox
+          v-else-if="computedType === 'list'"
+          v-model="computedValue"
+          :options="options"
+          :button-class="inputElClass"
         />
-        <span v-if="buttonLabel" :class="{ 'ml-1': buttonIcon }">{{
-          buttonLabel
-        }}</span>
-      </button>
-      <input
-        v-else
-        :id="id"
-        ref="inputEl"
-        v-model="computedValue"
-        :name="name"
-        :autocomplete="autocomplete"
-        :required="required"
-        :placeholder="placeholder"
-        :type="computedType"
-        :min="min"
-        :max="max"
-        :class="inputElClass"
+        <select
+          v-else-if="computedType === 'select'"
+          :id="id"
+          v-model="computedValue"
+          :name="name"
+          :class="inputElClass"
+        >
+          <option
+            v-for="option in options"
+            :key="option.id ?? option"
+            :value="option"
+          >
+            {{ option.label ?? option }}
+          </option>
+        </select>
+        <textarea
+          v-else-if="computedType === 'textarea'"
+          :id="id"
+          v-model="computedValue"
+          :class="inputElClass"
+          :name="name"
+          :placeholder="placeholder"
+          :required="required"
+        />
+        <button
+          v-else-if="computedType === 'button'"
+          :class="inputElClass"
+          class="ring-blue-700"
+        >
+          <BaseIcon
+            v-if="buttonIcon"
+            :path="buttonIcon"
+            w="w-8"
+            h="h-8"
+            size="20"
+          />
+          <span v-if="buttonLabel" :class="{ 'ml-1': buttonIcon }">{{
+            buttonLabel
+          }}</span>
+        </button>
+        <input
+          v-else
+          :id="id"
+          ref="inputEl"
+          v-model="computedValue"
+          :name="name"
+          :autocomplete="autocomplete"
+          :required="required"
+          :placeholder="placeholder"
+          :type="computedType"
+          :min="min"
+          :max="max"
+          :class="inputElClass"
+        />
+        <PremFormControlIcon
+          v-if="computedIconLeft"
+          :icon="computedIconLeft"
+          :h="controlIconH"
+          :text-color="textColor"
+        />
+        <PremFormControlIcon
+          v-if="computedIconRight"
+          :icon="computedIconRight"
+          :h="controlIconH"
+          :text-color="textColor"
+          :clickable="rightIconClickable"
+          is-right
+          @icon-click="openPasswordToggle"
+        />
+        <PremTipTag v-if="tipLeft" :tip="tipLeft" left />
+        <PremTipTag v-if="tipRight" :tip="tipRight" right />
+      </div>
+
+      <PremFormFieldHelp
+        :help="help"
+        :error="error"
+        :success="success"
+        class="mt-1"
       />
-      <PremFormControlIcon
-        v-if="computedIconLeft"
-        :icon="computedIconLeft"
-        :h="controlIconH"
-        :text-color="textColor"
-      />
-      <PremFormControlIcon
-        v-if="computedIconRight"
-        :icon="computedIconRight"
-        :h="controlIconH"
-        :text-color="textColor"
-        :clickable="rightIconClickable"
-        is-right
-        @icon-click="openPasswordToggle"
-      />
-      <PremTipTag v-if="tipLeft" :tip="tipLeft" left />
-      <PremTipTag v-if="tipRight" :tip="tipRight" right />
-    </div> 
-
-
-
-    <PremFormFieldHelp
-      :help="help"
-      :error="error"
-      :success="success"
-      class="mt-1"
-    />
-  </div> 
-
-</div>
-
+    </div>
+  </div>
 </template>

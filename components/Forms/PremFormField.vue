@@ -1,7 +1,7 @@
 <script setup>
 import { controlTextColor } from "@/configs/colorsPremium.js";
 import { computed, useSlots } from "vue";
-// import FormFieldHelp from "@/components/Premium/FormFieldHelp.vue";
+import PremFormFieldHelp from "@/components/Forms/FormFieldHelp.vue";
 
 const props = defineProps({
   label: {

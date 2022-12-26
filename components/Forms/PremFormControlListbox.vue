@@ -7,7 +7,7 @@ import {
   ListboxOptions,
   ListboxOption,
 } from "@headlessui/vue";
-// import BaseIcon from "@/components/BaseIcon.vue";
+import BaseIcon from "@/components/Display/BaseIcon.vue";
 
 const props = defineProps({
   options: {
@@ -35,56 +35,54 @@ const computedValue = computed({
 </script>
 
 <template>
-
   <div>
-<Listbox v-slot="{ }" v-model="computedValue">
-    <div class="relative">
-      <ListboxButton
-        :class="[buttonClass, open ? 'ring' : '']"
-        class="text-left ring-blue-700"
-      >
-        <span class="truncate">{{
-          computedValue ? computedValue.label : "Select"
-        }}</span>
-      </ListboxButton>
-
-      <transition
-        leave-active-class="transition duration-100 ease-in"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
-      >
-        <ListboxOptions
-          class="absolute z-50 w-full mt-2 overflow-auto text-base bg-white rounded shadow-lg ring-1 ring-black ring-opacity-5 max-h-60 focus:outline-none sm:text-sm dark:bg-slate-800"
+    <Listbox v-slot="{}" v-model="computedValue">
+      <div class="relative">
+        <ListboxButton
+          :class="[buttonClass, open ? 'ring' : '']"
+          class="text-left ring-blue-700"
         >
-          <ListboxOption
-            v-for="option in options"
-            v-slot="{ active, selected }"
-            :key="option.label"
-            :value="option"
-            :disabled="option.unavailable"
-            as="template"
-          >
-            <li
-              :class="[
-                active ? 'bg-gray-100 dark:bg-slate-700' : '',
-                option.unavailable ? 'text-gray-500 dark:text-gray-400' : '',
-                'cursor-default select-none flex items-center justify-start py-2 px-3',
-              ]"
-            >
-              <BaseIcon v-if="selected" :path="mdiCheck" class="mr-3" />
-              <span
-                :class="[
-                  selected ? 'font-medium' : 'font-normal ml-9',
-                  'block truncate',
-                ]"
-                >{{ option.label }}</span
-              >
-            </li>
-          </ListboxOption>
-        </ListboxOptions>
-      </transition>
-    </div>
-  </Listbox>
+          <span class="truncate">{{
+            computedValue ? computedValue.label : "Select"
+          }}</span>
+        </ListboxButton>
 
-</div>
+        <transition
+          leave-active-class="transition duration-100 ease-in"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0"
+        >
+          <ListboxOptions
+            class="absolute z-50 w-full mt-2 overflow-auto text-base bg-white rounded shadow-lg ring-1 ring-black ring-opacity-5 max-h-60 focus:outline-none sm:text-sm dark:bg-slate-800"
+          >
+            <ListboxOption
+              v-for="option in options"
+              v-slot="{ active, selected }"
+              :key="option.label"
+              :value="option"
+              :disabled="option.unavailable"
+              as="template"
+            >
+              <li
+                :class="[
+                  active ? 'bg-gray-100 dark:bg-slate-700' : '',
+                  option.unavailable ? 'text-gray-500 dark:text-gray-400' : '',
+                  'cursor-default select-none flex items-center justify-start py-2 px-3',
+                ]"
+              >
+                <BaseIcon v-if="selected" :path="mdiCheck" class="mr-3" />
+                <span
+                  :class="[
+                    selected ? 'font-medium' : 'font-normal ml-9',
+                    'block truncate',
+                  ]"
+                  >{{ option.label }}</span
+                >
+              </li>
+            </ListboxOption>
+          </ListboxOptions>
+        </transition>
+      </div>
+    </Listbox>
+  </div>
 </template>

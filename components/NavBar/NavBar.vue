@@ -3,8 +3,8 @@ import { ref } from "vue";
 import { mdiClose, mdiDotsVertical } from "@mdi/js";
 import { containerMaxW } from "@/configs/config.js";
 import BaseIcon from "@/components/BaseIcon.vue";
-import NavBarMenuList from "@/components/NavBarMenuList.vue";
-import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
+import NavBarMenuList from "@/components/Navbar/NavBarMenuList.vue";
+import NavBarItemPlain from "@/components/Navbar/NavBarItemPlain.vue";
 
 defineProps({
   menu: {
