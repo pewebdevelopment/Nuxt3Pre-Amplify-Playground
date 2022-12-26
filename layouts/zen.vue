@@ -112,7 +112,7 @@ const menuClick = (event, item) => {
         <!-- The  Premium Aside Menu -->
         <PremAsideMenu :menu="menuAside" @menu-click="menuClick" />
         <slot />
-
+        <!-- FooterBar-->
         <FooterBar>
           <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
         </FooterBar>

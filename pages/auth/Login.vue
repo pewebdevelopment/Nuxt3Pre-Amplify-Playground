@@ -3,12 +3,12 @@ import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import { mdiAccount, mdiAsterisk } from "@mdi/js";
 import SectionFullScreen from "@/components/SectionFullScreen.vue";
-import CardBox from "@/components/CardBox.vue";
-import FormCheckRadio from "@/components/FormCheckRadio.vue";
-import FormField from "@/components/FormField.vue";
-import FormControl from "@/components/FormControl.vue";
-import BaseButton from "@/components/BaseButton.vue";
-import BaseButtons from "@/components/BaseButtons.vue";
+import CardBox from "@/components/Cards/CardBox.vue";
+import FormCheckRadio from "@/components/Forms/FormCheckRadio.vue";
+import FormField from "@/components/Forms/FormField.vue";
+import FormControl from "@/components/Forms/FormControl.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import BaseButtons from "@/components/Buttons/BaseButtons.vue";
 import { useAuthStore } from "@/stores/authStore";
 import { useGraphqlAPIStore } from "@/stores/graphqlAPI";
 

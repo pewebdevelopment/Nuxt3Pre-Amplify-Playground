@@ -4,12 +4,12 @@ import { RouterLink } from "vue-router";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/authStore";
 import { mdiAccount, mdiEmail } from "@mdi/js";
-// import CardBox from "@/components/CardBox.vue";
-// import FormField from "@/components/FormField.vue";
-// import FormControl from "@/components/FormControl.vue";
-// import BaseButton from "@/components/BaseButton.vue";
-// import BaseLevel from "@/components/BaseLevel.vue";
-// import { useMainStore } from "@/stores/main.js";
+import CardBox from "@/components/Cards/CardBox.vue";
+import FormField from "@/components/Cards/FormField.vue";
+import FormControl from "@/components/Forms/FormControl.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import BaseLevel from "@/components/Buttons/BaseLevel.vue";
+import { useMainStore } from "@/stores/main.js";
 
 // import SectionFormScreen from "@/components/Premium/SectionFormScreen.vue";
 const router = useRouter();
