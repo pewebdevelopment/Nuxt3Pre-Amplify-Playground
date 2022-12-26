@@ -1,5 +1,5 @@
 <script setup>
-// import AsideMenuItem from "@/components/Premium/AsideMenuItem.vue";
+import PremAsideMenuItem from "@/components/AsideMenu/AsideMenuItem.vue";
 
 defineProps({
   isDropdownList: Boolean,

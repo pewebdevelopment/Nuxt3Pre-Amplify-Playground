@@ -12,6 +12,14 @@ import {
 } from "@mdi/js";
 import * as chartConfig from "@/components/Charts/chart.config.js";
 import LineChart from "@/components/Charts/LineChart.vue";
+import SectionMain from "@/components/Sections/SectionMain.vue";
+import SectionTitleLineWithButton from "@/components/Sections/SectionTitleLineWithButton.vue";
+import SectionBannerStarOnGitHub from "@/components/Sections/SectionBannerStarOnGitHub.vue";
+import CardBoxWidget from "@/components/Cards/CardBoxWidget.vue";
+import CardBoxClient from "@/components/Cards/CardBoxClient.vue";
+import CardBoxTransaction from "@/components/Cards/CardBoxTransaction.vue";
+import NotificationBar from "@/components/NotificationBars/NotificationBar.vue";
+import TableCardClients from "@/components/Tables/TableCardClients.vue";
 
 const chartData = ref(null);
 
@@ -121,7 +129,7 @@ const transactionBarItems = computed(() => mainStore.history);
         />
 
         <NotificationBar color="info" :icon="mdiMonitorCellphone">
-          <b>Responsive table.</b> Collapses on mobile
+          <b>Responsive table!</b> Collapses on mobile
         </NotificationBar>
 
         <CardBox has-table class="mb-6">
