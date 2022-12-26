@@ -76,12 +76,12 @@ export default [
     icon: mdiAccountCircle,
   },
   {
-    to: "/pe/login",
+    to: "/auth/login",
     label: "Login",
     icon: mdiLock,
   },
   {
-    to: "/pe/register",
+    to: "/auth/register",
     label: "Register",
     icon: mdiSquareEditOutline,
   },
@@ -93,7 +93,7 @@ export default [
     icon: mdiMenuOpen,
     menuSecondary: [
       {
-        to: "/profileView",
+        to: "/profile/profileView",
         label: "Sample RouterLink",
         icon: mdiCardAccountDetailsOutline,
       },
@@ -116,25 +116,25 @@ export default [
         ],
       },
       {
-        to: "/wb/whiteboard",
+        to: "/whiteboard",
         label: "Whiteboard",
         icon: mdiOpenInNew,
       },
     ],
   },
   {
-    to: "/pe/messages",
+    to: "/profile/messages",
     label: "Messages",
     icon: mdiMessage,
   },
   {
-    to: "/pe/auth",
+    to: "/auth/auth",
     label: "Authenticator",
     icon: mdiHelpCircle,
   },
   {
-    to: "/pe/tasks",
-    label: "Tasks",
+    to: "/admin/tasks",
+    label: "AdminTasks",
     icon: mdiFastForwardOutline,
   },
   {
@@ -143,8 +143,8 @@ export default [
     icon: mdiBook,
   },
   {
-    href: "",
-    label: "About",
+    to: "/pe/tasks",
+    label: "PE Tasks",
     icon: mdiHelpCircle,
   },
   {
