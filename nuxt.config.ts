@@ -18,7 +18,6 @@ export default defineNuxtConfig({
   modules: [
     // ...
     [
-      "@vueuse/nuxt",
       "@pinia/nuxt",
       {
         autoImports: [
@@ -29,6 +28,7 @@ export default defineNuxtConfig({
         ],
       },
     ],
+    ["@vueuse/nuxt"],
   ],
   //buildModules: ["@pinia/nuxt"],
   alias: {

@@ -14,6 +14,9 @@ import {
   mdiFormDropdown,
   mdiBallot,
   mdiViewQuilt,
+  mdiMessage,
+  mdiFastForwardOutline,
+  mdiBook,
 } from "@mdi/js";
 
 export default [
@@ -120,24 +123,24 @@ export default [
     ],
   },
   {
-    href: "",
-    label: "About",
+    to: "/pe/messages",
+    label: "Messages",
+    icon: mdiMessage,
+  },
+  {
+    to: "/pe/auth",
+    label: "Authenticator",
     icon: mdiHelpCircle,
   },
   {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
+    to: "/pe/tasks",
+    label: "Tasks",
+    icon: mdiFastForwardOutline,
   },
   {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
-  },
-  {
-    href: "",
-    label: "About",
-    icon: mdiHelpCircle,
+    to: "/pe/syllabus",
+    label: "Syllabus",
+    icon: mdiBook,
   },
   {
     href: "",
