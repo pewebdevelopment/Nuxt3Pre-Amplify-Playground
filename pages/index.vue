@@ -18,7 +18,7 @@ const form = reactive({
 });
 const router = useRouter();
 const submit = () => {
-  // router.push("/dashboard");
+  router.push("/dashboard");
 };
 </script>
 
