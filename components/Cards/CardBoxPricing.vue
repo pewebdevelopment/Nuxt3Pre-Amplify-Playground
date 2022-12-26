@@ -1,14 +1,14 @@
 <script setup>
 import { mdiCheck, mdiChevronUp, mdiChevronDown } from "@mdi/js";
 import { ref, computed } from "vue";
-import CardBox from "@/components/CardBox.vue";
-import BaseButtons from "@/components/BaseButtons.vue";
-import BaseButton from "@/components/BaseButton.vue";
-import PillTag from "@/components/PillTag.vue";
-import BaseLevel from "@/components/BaseLevel.vue";
-import BaseIcon from "@/components/BaseIcon.vue";
-import CardBoxComponentBody from "@/components/CardBoxComponentBody.vue";
-import CardBoxComponentFooter from "@/components/CardBoxComponentFooter.vue";
+import CardBox from "@/components/Cards/CardBox.vue";
+import BaseButtons from "@/components/Buttons/BaseButtons.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import PillTag from "@/components/Display/PillTag.vue";
+import BaseLevel from "@/components/Buttons/BaseLevel.vue";
+import BaseIcon from "@/components/Display/BaseIcon.vue";
+import CardBoxComponentBody from "@/components/Cards/CardBoxComponentBody.vue";
+import CardBoxComponentFooter from "@/components/Cards/CardBoxComponentFooter.vue";
 
 const props = defineProps({
   item: {
