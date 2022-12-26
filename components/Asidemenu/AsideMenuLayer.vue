@@ -49,7 +49,7 @@ const menuClick = (event, item) => {
       <div
         :class="
           styleStore.darkMode
-            ? 'scrollbar scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-800 scrollbar-thumb-rounded'
+            ? 'scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-800 scrollbar-thumb-rounded'
             : styleStore.asideScrollbarsStyle
         "
         class="flex-1 overflow-y-auto overflow-x-hidden dark:bg-gray-900"
@@ -73,9 +73,3 @@ const menuClick = (event, item) => {
   scrollbar-color: rgb(2, 7, 14) rgb(30, 41, 59) !important;
 }
 </style>
-
-'aside-scrollbars-[slate]' 'scrollbar scrollbar-thumb-gray-900
-scrollbar-track-gray-100' // styleStore.darkMode ?
-'dark-scrollbars-compact-for-scrollbar' : // styleStore.asideScrollbarsStyle {
-dark_scrollbars_compact_for_scrollbar: // styleStore.darkMode,
-`${styleStore.asideScrollbarsStyle}`: !styleStore.darkMode, //
