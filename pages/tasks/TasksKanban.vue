@@ -1,13 +1,13 @@
 <template>
   <NuxtLayout name="zen">
     <SectionMain>
-      <div class="flex h-screen">
+      <div class="flex h-screen w-full">
         <!-- Content area -->
-        <div class="relative flex flex-col flex-1">
+        <div class="relative flex flex-col w-full">
           <main
-            class="overflow-y-auto overflow-x-hidden scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+            class="overflow-y-auto overflow-x-scroll scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
           >
-            <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+            <div class="px-4 sm:px-6 lg:px-8 py-8 w-full mx-auto">
               <!-- Page header -->
               <div class="sm:flex sm:justify-between sm:items-center mb-8">
                 <!-- Left: Title -->
