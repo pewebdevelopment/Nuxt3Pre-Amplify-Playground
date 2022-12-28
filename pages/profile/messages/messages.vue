@@ -42,6 +42,9 @@ import SectionMain from "@/components/Sections/SectionMain.vue";
 import { ref, onMounted, watch } from "vue";
 
 export default {
+  components: {
+    SectionMain,
+  },
   setup() {
     const sidebarOpen = ref(false);
     const msgSidebarOpen = ref(true);

@@ -4,7 +4,7 @@
       <div class="flex h-screen overflow-hidden">
         <!-- Content area -->
         <div
-          class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden"
+          class="relative flex flex-col flex-1 overflow-y-auto overflow-x-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
         >
           <main>
             <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
@@ -41,42 +41,40 @@
               <!-- Filters -->
               <div class="mb-4 border-b border-slate-200">
                 <ul
-                  class="text-sm font-medium flex flex-nowrap -mx-4 sm:-mx-6 lg:-mx-8 overflow-x-scroll no-scrollbar"
+                  class="text-sm font-medium flex flex-nowrap -mx-4 sm:-mx-6 lg:-mx-8 overflow-x-scroll overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
                 >
                   <li
                     class="pb-3 mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8"
                   >
-                    <router-link
-                      class="text-indigo-500 whitespace-nowrap"
-                      to="#0"
-                      >View All</router-link
+                    <NuxtLink class="text-indigo-500 whitespace-nowrap" to="#0"
+                      >View All</NuxtLink
                     >
                   </li>
                   <li
                     class="pb-3 mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8"
                   >
-                    <router-link
+                    <NuxtLink
                       class="text-slate-500 hover:text-slate-600 whitespace-nowrap"
                       to="#0"
-                      >Web Sprint</router-link
+                      >Web Sprint</NuxtLink
                     >
                   </li>
                   <li
                     class="pb-3 mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8"
                   >
-                    <router-link
+                    <NuxtLink
                       class="text-slate-500 hover:text-slate-600 whitespace-nowrap"
                       to="#0"
-                      >Marketing</router-link
+                      >Marketing</NuxtLink
                     >
                   </li>
                   <li
                     class="pb-3 mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8"
                   >
-                    <router-link
+                    <NuxtLink
                       class="text-slate-500 hover:text-slate-600 whitespace-nowrap"
                       to="#0"
-                      >Development</router-link
+                      >Development</NuxtLink
                     >
                   </li>
                 </ul>
@@ -131,6 +129,7 @@ import Task09 from "@/components/Tasks/Task09.vue";
 export default {
   name: "TasksKanban",
   components: {
+    SectionMain,
     TasksGroups,
     Task01,
     Task02,
