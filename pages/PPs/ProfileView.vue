@@ -18,29 +18,29 @@ import {
   mdiAccountCreditCard,
   mdiCloudLock,
   mdiEye,
-  mdiEyeOff
+  mdiEyeOff,
 } from "@mdi/js";
 import { faEyeSlash, faSlash } from "@fortawesome/free-solid-svg-icons";
-// import SectionMain from "@/components/SectionMain.vue";
-// import CardBox from "@/components/CardBox.vue";
-// import BaseDivider from "@/components/BaseDivider.vue";
-// import FormField from "@/components/FormField.vue";
-// import FormControl from "@/components/FormControl.vue";
-// import FormFilePicker from "@/components/FormFilePicker.vue";
-// import BaseButton from "@/components/BaseButton.vue";
-// import BaseButtons from "@/components/BaseButtons.vue";
-// import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
-// import UserAvatarCurrentUserWithUpload from "@/components/Premium/UserAvatarCurrentUserWithUpload.vue";
-// import PillTag from "@/components/PillTag.vue";
-// import PillTagPlain from "@/components/PillTagPlain.vue";
-// import BaseIcon from "@/components/BaseIcon.vue";
-// import FormCheckRadio from "@/components/FormCheckRadio.vue";
-// import NotificationBar from "@/components/NotificationBar.vue";
+import SectionMain from "@/components/Sections/SectionMain.vue";
+import CardBox from "@/components/Cards/CardBox.vue";
+import BaseDivider from "@/components/Navbar/BaseDivider.vue";
+import FormField from "@/components/Forms/FormField.vue";
+import FormControl from "@/components/Forms/FormControl.vue";
+import FormFilePicker from "@/components/Forms/FormFilePicker.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import BaseButtons from "@/components/Buttons/BaseButtons.vue";
+import SectionTitleLineWithButton from "@/components/Sections/SectionTitleLineWithButton.vue";
+import UserAvatarCurrentUserWithUpload from "@/components/Avatars/UserAvatarCurrentUserWithUpload.vue";
+import PillTag from "@/components/Display/PillTag.vue";
+import PillTagPlain from "@/components/Display/PillTagPlain.vue";
+import BaseIcon from "@/components/Display/BaseIcon.vue";
+import FormCheckRadio from "@/components/Forms/FormCheckRadio.vue";
+import NotificationBar from "@/components/NotificationBars/NotificationBar.vue";
 
-// import CardBoxBillingItem from "@/components/Premium/CardBoxBillingItem.vue";
-// import CardBoxPaymentMethod from "@/components/Premium/CardBoxPaymentMethod.vue";
-// import UserCardProfileNumber from "@/components/Premium/UserCardProfileNumber.vue";
-// import SectionBannerProfile from "@/components/Premium/SectionBannerProfile.vue";
+import PremCardBoxBillingItem from "@/components/Cards/CardBoxBillingItem.vue";
+import PremCardBoxPaymentMethod from "@/components/Cards/CardBoxPaymentMethod.vue";
+import PremUserCardProfileNumber from "@/components/Avatars/UserCardProfileNumber.vue";
+import PremSectionBannerProfile from "@/components/Sections/SectionBannerProfile.vue";
 
 const mainStore = useMainStore();
 
@@ -53,9 +53,9 @@ const passwordForm = reactive({
   password_current: "",
   password: "",
   password_confirmation: "",
-  show_password_current:false,
-  show_password:false,
-  show_password_confirmation:false
+  show_password_current: false,
+  show_password: false,
+  show_password_confirmation: false,
 });
 
 const submitProfile = () => {
@@ -66,10 +66,9 @@ const submitPass = () => {
   //
 };
 const toggleShow = () => {
-      
-      this.passwordForm.showPassword = !this.passwordForm.showPassword;
-      alert(passwordForm.showPassword );
-}
+  this.passwordForm.showPassword = !this.passwordForm.showPassword;
+  alert(passwordForm.showPassword);
+};
 const date = new Date();
 
 const dateOptions = {
@@ -353,17 +352,22 @@ const twoFactorEnabled = ref(true);
             </template>
           </CardBox>
           <CardBox is-form @submit.prevent="submitPass">
-              <FormField
+            <FormField
               label="Current password"
               help="Required. Your current password"
-              >
+            >
               <PremFormControl
                 v-model="passwordForm.password_current"
-                :icon-right="passwordForm.show_password_current ? mdiEyeOff :mdiEye"
+                :icon-right="
+                  passwordForm.show_password_current ? mdiEyeOff : mdiEye
+                "
                 type="password"
                 name="password"
                 placeholder="Password"
-                @right-icon-click="passwordForm.show_password_current=!passwordForm.show_password_current"
+                @right-icon-click="
+                  passwordForm.show_password_current =
+                    !passwordForm.show_password_current
+                "
               />
             </FormField>
 
@@ -372,11 +376,13 @@ const twoFactorEnabled = ref(true);
             <FormField label="New password" help="Required. New password">
               <PremFormControl
                 v-model="passwordForm.password"
-                :icon-right="passwordForm.show_password ? mdiEyeOff :mdiEye"
+                :icon-right="passwordForm.show_password ? mdiEyeOff : mdiEye"
                 type="password"
                 name="password"
                 placeholder="Password"
-                @right-icon-click="passwordForm.show_password=!passwordForm.show_password"
+                @right-icon-click="
+                  passwordForm.show_password = !passwordForm.show_password
+                "
               />
             </FormField>
 
@@ -386,11 +392,16 @@ const twoFactorEnabled = ref(true);
             >
               <PremFormControl
                 v-model="passwordForm.password_confirmation"
-                :icon-right="passwordForm.show_password_confirmation ? mdiEyeOff :mdiEye"
+                :icon-right="
+                  passwordForm.show_password_confirmation ? mdiEyeOff : mdiEye
+                "
                 type="password"
                 name="password"
                 placeholder="Password"
-                @right-icon-click="passwordForm.show_password_confirmation=!passwordForm.show_password_confirmation"
+                @right-icon-click="
+                  passwordForm.show_password_confirmation =
+                    !passwordForm.show_password_confirmation
+                "
               />
             </FormField>
 

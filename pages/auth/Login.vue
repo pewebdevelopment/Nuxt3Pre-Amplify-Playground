@@ -2,7 +2,7 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import { mdiAccount, mdiAsterisk } from "@mdi/js";
-import SectionFullScreen from "@/components/SectionFullScreen.vue";
+import SectionFullScreen from "@/components/Sections/SectionFullScreen.vue";
 import CardBox from "@/components/Cards/CardBox.vue";
 import FormCheckRadio from "@/components/Forms/FormCheckRadio.vue";
 import FormField from "@/components/Forms/FormField.vue";
