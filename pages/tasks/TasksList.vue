@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="zen">
+  <NuxtLayout name="zennofooter">
     <div class="flex h-screen overflow-hidden">
       <!-- Content area -->
       <div

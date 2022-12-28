@@ -12,7 +12,7 @@ import FormControl from "@/components/Forms/FormControl.vue";
 import NavBar from "@/components/Navbar/NavBar.vue";
 import PremAsideMenu from "@/components/AsideMenu/AsideMenu.vue";
 import NavBarItemPlain from "@/components/Navbar/NavBarItemPlain.vue";
-import FooterBar from "@/components/Footers/FooterBar.vue";
+// import FooterBar from "@/components/Footers/FooterBar.vue";
 import { useAuthStore } from "@/stores/authStore";
 
 useMainStore().setUser({
@@ -112,10 +112,6 @@ const menuClick = (event, item) => {
         <!-- The  Premium Aside Menu -->
         <PremAsideMenu :menu="menuAside" @menu-click="menuClick" />
         <slot />
-        <!-- FooterBar-->
-        <FooterBar>
-          <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
-        </FooterBar>
       </div>
     </div>
   </div>
