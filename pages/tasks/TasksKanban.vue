@@ -12,7 +12,9 @@
               <div class="sm:flex sm:justify-between sm:items-center mb-8">
                 <!-- Left: Title -->
                 <div class="mb-4 sm:mb-0">
-                  <h1 class="text-2xl md:text-3xl text-slate-800 font-bold">
+                  <h1
+                    class="text-2xl md:text-3xl text-slate-800 dark:text-slate-200 font-bold"
+                  >
                     Acme Inc. Tasks ✨
                   </h1>
                 </div>
@@ -91,9 +93,17 @@
                     <Task01 />
                     <Task02 />
                     <Task03 />
+                    <Task04 />
+                    <Task05 />
+                    <Task04 />
+                    <Task05 />
                   </TasksGroups>
                   <!-- Tasks column -->
                   <TasksGroups title="In Progress ✌️">
+                    <Task04 />
+                    <Task05 />
+                    <Task04 />
+                    <Task05 />
                     <Task04 />
                     <Task05 />
                   </TasksGroups>
