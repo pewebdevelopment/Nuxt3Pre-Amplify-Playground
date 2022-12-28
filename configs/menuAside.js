@@ -31,30 +31,30 @@ export default [
     icon: mdiTelevisionGuide,
   },
   {
-    to: "/prem/tablesListsView",
+    to: "/pps/tablesListsView",
     label: "Tables & Lists",
     icon: mdiTable,
     updateMark: "warning",
   },
 
   {
-    to: "/prem/FormsView",
+    to: "/pps/FormsView",
     label: "Forms Advanced",
     icon: mdiBallot,
   },
 
   {
-    to: "/prem/uiView",
+    to: "/pps/uiView",
     label: "UI Advanced",
     icon: mdiViewQuilt,
   },
   {
-    to: "/prem/styleView",
+    to: "/pps/styleView",
     label: "Stylize",
     icon: mdiPalette,
   },
   {
-    to: "/prem/pricingView",
+    to: "/pps/pricingView",
     label: "Pricing layout",
     icon: mdiBarcode,
   },
@@ -71,7 +71,7 @@ export default [
     ],
   },
   {
-    to: "/prem/profileView",
+    to: "/pps/profileView",
     label: "Profile",
     icon: mdiAccountCircle,
   },

@@ -356,7 +356,7 @@ const twoFactorEnabled = ref(true);
               label="Current password"
               help="Required. Your current password"
             >
-              <PremFormControl
+              <FormControl
                 v-model="passwordForm.password_current"
                 :icon-right="
                   passwordForm.show_password_current ? mdiEyeOff : mdiEye
@@ -374,7 +374,7 @@ const twoFactorEnabled = ref(true);
             <BaseDivider />
 
             <FormField label="New password" help="Required. New password">
-              <PremFormControl
+              <FormControl
                 v-model="passwordForm.password"
                 :icon-right="passwordForm.show_password ? mdiEyeOff : mdiEye"
                 type="password"
@@ -390,7 +390,7 @@ const twoFactorEnabled = ref(true);
               label="Confirm password"
               help="Required. New password one more time"
             >
-              <PremFormControl
+              <FormControl
                 v-model="passwordForm.password_confirmation"
                 :icon-right="
                   passwordForm.show_password_confirmation ? mdiEyeOff : mdiEye

@@ -1,13 +1,12 @@
 <script setup>
-  import { useStyleStore } from "@/stores/style.js";
-  import { mdiThemeLightDark } from "@mdi/js";
+import { useStyleStore } from "@/stores/style.js";
+import { mdiThemeLightDark } from "@mdi/js";
 
-// import CardBox from "@/components/CardBox.vue";
-// import SectionTitle from "@/components/SectionTitle.vue";
-// import SectionMain from "@/components/SectionMain.vue";
-// import BaseButton from "@/components/BaseButton.vue";
-// import BaseButtons from "@/components/BaseButtons.vue";
-
+import CardBox from "@/components/Cards/CardBox.vue";
+import SectionTitle from "@/components/Sections/SectionTitle.vue";
+import SectionMain from "@/components/Sections/SectionMain.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import BaseButtons from "@/components/Buttons/BaseButtons.vue";
 
 const styleStore = useStyleStore();
 
@@ -43,43 +42,43 @@ const darkModeToggle = () => {
 
 <template>
   <div>
-  <NuxtLayout name="zen">
-    <SectionTitle> Sidebar Colors </SectionTitle>
+    <NuxtLayout name="zen">
+      <SectionTitle> Sidebar Colors </SectionTitle>
 
-    <SectionMain>
-      <CardBox class="xl:w-8/12 md:mx-auto">
-        <div>
-          <BaseButtons type="justify-center">
+      <SectionMain>
+        <CardBox class="xl:w-8/12 md:mx-auto">
+          <div>
+            <BaseButtons type="justify-center">
+              <BaseButton
+                v-for="(styleBg, style) in styles"
+                :key="style"
+                :color="style === 'white' ? style : `${styleBg} text-white`"
+                :label="style"
+                class="capitalize"
+                rounded-full
+                @click="setStyle(style)"
+              />
+            </BaseButtons>
+          </div>
+        </CardBox>
+      </SectionMain>
+
+      <SectionTitle> Dark mode </SectionTitle>
+
+      <SectionMain>
+        <CardBox class="md:w-7/12 lg:w-5/12 xl:w-4/12 md:mx-auto">
+          <div
+            class="text-center py-24 lg:py-12 text-gray-500 dark:text-gray-400"
+          >
             <BaseButton
-              v-for="(styleBg, style) in styles"
-              :key="style"
-              :color="style === 'white' ? style : `${styleBg} text-white`"
-              :label="style"
-              class="capitalize"
-              rounded-full
-              @click="setStyle(style)"
+              label="Toggle light/dark"
+              :icon="mdiThemeLightDark"
+              color="contrast"
+              @click="darkModeToggle"
             />
-          </BaseButtons>
-        </div>
-      </CardBox>
-    </SectionMain>
-
-    <SectionTitle> Dark mode </SectionTitle>
-
-    <SectionMain>
-      <CardBox class="md:w-7/12 lg:w-5/12 xl:w-4/12 md:mx-auto">
-        <div
-          class="text-center py-24 lg:py-12 text-gray-500 dark:text-gray-400"
-        >
-          <BaseButton
-            label="Toggle light/dark"
-            :icon="mdiThemeLightDark"
-            color="contrast"
-            @click="darkModeToggle"
-          />
-        </div>
-      </CardBox>
-    </SectionMain>
-  </NuxtLayout>
-</div>
+          </div>
+        </CardBox>
+      </SectionMain>
+    </NuxtLayout>
+  </div>
 </template>

@@ -1,15 +1,14 @@
 <script setup>
 import { reactive } from "vue";
-import { RouterLink } from "vue-router";
+// import { RouterLink } from "vue-router";
 import { useMainStore } from "@/stores/main.js";
 import { mdiAccount, mdiEmail } from "@mdi/js";
-// import CardBox from "@/components/CardBox.vue";
-// import FormField from "@/components/FormField.vue";
-// import FormControl from "@/components/FormControl.vue";
-// import BaseButton from "@/components/BaseButton.vue";
-// import BaseLevel from "@/components/BaseLevel.vue";
-
-// import SectionFormScreen from "@/components/Premium/SectionFormScreen.vue";
+import CardBox from "@/components/Cards/CardBox.vue";
+import FormField from "@/components/Forms/FormField.vue";
+import FormControl from "@/components/Forms/FormControl.vue";
+import BaseButton from "@/components/Buttons/BaseButton.vue";
+import BaseLevel from "@/components/Buttons/BaseLevel.vue";
+import PremSectionFormScreen from "@/components/Sections/SectionFormScreen.vue";
 
 const form = reactive({
   login: "johndoe",
@@ -63,7 +62,7 @@ const submit = () => {
           <template #footer>
             <BaseLevel mobile>
               <BaseButton label="Signup" type="submit" color="info" />
-              <NuxtLink to="/pe/login" class="text-sm">
+              <NuxtLink to="/auth/login" class="text-sm">
                 Have an account?
               </NuxtLink>
             </BaseLevel>
