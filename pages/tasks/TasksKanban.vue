@@ -1,14 +1,12 @@
 <template>
   <NuxtLayout name="zen">
     <SectionMain>
-      <div
-        class="flex h-screen overflow-x-hidden scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
-      >
+      <div class="flex h-screen">
         <!-- Content area -->
-        <div
-          class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
-        >
-          <main>
+        <div class="relative flex flex-col flex-1">
+          <main
+            class="overflow-y-auto overflow-x-hidden scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+          >
             <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
               <!-- Page header -->
               <div class="sm:flex sm:justify-between sm:items-center mb-8">
@@ -85,7 +83,7 @@
               <!-- Cards -->
 
               <div
-                class="cards-container overflow-x-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+                class="h-full w-auto cards-container overflow-x-auto overflow-y-scroll scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
               >
                 <div class="flex gap-4">
                   <!-- Tasks column -->

@@ -1,5 +1,5 @@
 <template>
-  <div class="tasks-group-container">
+  <div class="tasks-groups-container">
     <!-- Column header -->
     <header>
       <div class="flex items-center justify-between mb-2">
@@ -28,7 +28,13 @@ export default {
 </script>
 
 <style>
-.tasks-group-container {
-  width: 20rem;
+.tasks-groups-container {
+  --width: 20rem;
+}
+
+.tasks-groups-container {
+  width: var(--width);
+  min-width: var(--width);
+  max-width: var(--width);
 }
 </style>
