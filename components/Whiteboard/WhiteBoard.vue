@@ -17,36 +17,14 @@ export default {
     mainPanel: MainPanel,
     historyPanel: HistoryPanel,
   },
-  created() {
-    // paper.install(window); // dont use this with created, use it onMounted!
-  },
+  created() {},
 
   mounted() {
     const runtimeConfig = useRuntimeConfig();
     console.log("RunTimeConfig:", runtimeConfig.isClient);
-    // console.log("Process", process);
-    // console.log(mySecret);
-    // if (process && process.browser) {
-    //   console.log("Process - Browser");
-    // }
 
     if (runtimeConfig.isClient) {
-      // paper.install(window);
       paper.setup(document.getElementById("canvas-id"));
-
-      // Create a Paper.js Path to draw a line into it:
-      // console.log(process, "Mounted Whiteboard from process.client");
-      // var path = new paper.Path();
-      // Give the stroke a color
-      // path.strokeColor = "black";
-      // path.strokeWidth = 200;
-      // var start = new paper.Point(0, 0);
-      // Move to start and draw a line from there
-      // path.moveTo(start);
-      // Note the plus operator on Point objects.
-      // PaperScript does that for us, and much more!
-      // path.lineTo(start + [1000, 1000]);
-      // path.add();
     }
   },
 };
