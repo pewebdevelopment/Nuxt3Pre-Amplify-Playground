@@ -376,6 +376,7 @@ const twoFactorEnabled = ref(true);
             <FormField label="New password" help="Required. New password">
               <FormControl
                 v-model="passwordForm.password"
+                :icon="mdiAsterisk"
                 :icon-right="passwordForm.show_password ? mdiEyeOff : mdiEye"
                 type="password"
                 name="password"
