@@ -28,6 +28,10 @@ const props = defineProps({
     type: String,
     default: null,
   },
+  iconRight: {
+    type: String,
+    default: null,
+  },
   options: {
     type: Array,
     default: null,
@@ -66,6 +70,10 @@ const inputElClass = computed(() => {
 
   if (props.icon) {
     base.push("pl-10");
+  }
+
+  if (props.iconRight) {
+    base.push("pr-10");
   }
 
   return base;
@@ -161,5 +169,6 @@ if (props.ctrlKFocus) {
       :class="inputElClass"
     />
     <FormControlIcon v-if="icon" :icon="icon" :h="controlIconH" />
+    <FormControlIcon v-if="iconRight" :icon="iconRight" :h="controlIconH" />
   </div>
 </template>

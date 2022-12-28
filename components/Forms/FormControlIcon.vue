@@ -20,4 +20,11 @@ defineProps({
     :h="h"
     class="absolute top-0 left-0 z-10 pointer-events-none text-gray-500 dark:text-slate-400"
   />
+
+  <BaseIcon
+    :path="iconRight"
+    w="w-10"
+    :h="h"
+    class="absolute top-0 right-0 z-10 pointer-events-none text-gray-500 dark:text-slate-400"
+  />
 </template>
