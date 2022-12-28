@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <canvas id="canvas-id" resize class="mb-10"></canvas> -->
-    <canvas id="canvas-fabric" ref="fabricJS"></canvas>
+    <canvas id="canvas-fabric" ref="fabricJS" class="h-screen w-full"></canvas>
     <!-- <div id="panels-container" class="flex flex-col gap-5">
       <mainPanel /> <historyPanel />
     </div> -->
@@ -31,8 +31,8 @@ export default {
       const ref = this.$refs.fabricJS;
       const canvas = new fabric.Canvas(ref);
 
-      console.log("ref", ref);
-      console.log("canvas", canvas);
+      console.log("Ref", ref);
+      console.log("Fabric canvas", canvas);
       const rect = new fabric.Circle({
         fill: "#0000FF",
         radius: 100,
@@ -53,9 +53,15 @@ body {
   padding: 0;
   overflow: hidden;
 }
-canvas {
-  height: 100vh;
-  width: 100%;
+/* canvas {
+  height: 1000;
+  width: 1000;
+  background: #cb0c0c;
+} */
+
+#canvas-fabric {
+  height: 1000px;
+  width: 1000px;
   background: #cb0c0c;
 }
 </style>
