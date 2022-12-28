@@ -1,26 +1,26 @@
 <script setup>
-import { useRouter } from 'vue-router'
-import { useStyleStore } from '@/stores/style.js'
-import { darkModeKey, styleKey } from '@/configs/config'
+import { useRouter } from "vue-router";
+import { useStyleStore } from "@/stores/style.js";
+import { darkModeKey, styleKey } from "@/configs/config";
 
-import { gradientBgPurplePink } from '@/configs/colors.js'
-import SectionMain from '@/components/SectionMain.vue'
-import CardBox from '@/components/CardBox.vue'
+import { gradientBgPurplePink } from "@/configs/colors.js";
+import SectionMain from "@/components/Sections/SectionMain.vue";
+import CardBox from "@/components/Cards/CardBox.vue";
 
-const styles = ['white', 'basic']
+const styles = ["white", "basic"];
 
-const styleStore = useStyleStore()
+const styleStore = useStyleStore();
 
 // styleStore.setDarkMode(false)
 
-const router = useRouter()
+const router = useRouter();
 const click = (slug) => {
   styleStore.setDarkMode(false);
 
   styleStore.setStyle(slug);
   // styleStore.setStyle('white')
-  router.push('/dashboard')
-}
+  router.push("/dashboard");
+};
 
 onMounted(() => {
   // if (process.client)
@@ -35,8 +35,7 @@ onMounted(() => {
   //   styleStore.setDarkMode()
   // }
   styleStore.setDarkMode(true);
-
-})
+});
 </script>
 
 <template>
