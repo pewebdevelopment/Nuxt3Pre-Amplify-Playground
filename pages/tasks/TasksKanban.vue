@@ -155,6 +155,9 @@ import Task06 from "@/components/Tasks/Task06.vue";
 import Task07 from "@/components/Tasks/Task07.vue";
 import Task08 from "@/components/Tasks/Task08.vue";
 import Task09 from "@/components/Tasks/Task09.vue";
+import { useStyleStore } from "@/stores/style";
+
+const styleStore = useStyleStore();
 
 export default {
   name: "TasksKanban",

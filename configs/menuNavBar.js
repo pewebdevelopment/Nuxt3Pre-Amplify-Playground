@@ -39,7 +39,7 @@ export default [
       {
         icon: mdiAccount,
         label: "My Profile",
-        to: "/prem/profileView",
+        to: "/pps/profileView",
       },
       {
         icon: mdiCogOutline,
@@ -55,7 +55,7 @@ export default [
       {
         icon: mdiAccount,
         label: "Stylize",
-        to: "/prem/styleView",
+        to: "/pps/styleView",
       },
       {
         isDivider: true,
