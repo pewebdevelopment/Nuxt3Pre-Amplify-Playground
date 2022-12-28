@@ -1,10 +1,12 @@
 <template>
   <NuxtLayout name="zen">
     <SectionMain>
-      <div class="flex h-screen overflow-hidden">
+      <div
+        class="flex h-screen overflow-x-hidden scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+      >
         <!-- Content area -->
         <div
-          class="relative flex flex-col flex-1 overflow-y-auto overflow-x-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+          class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
         >
           <main>
             <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
@@ -81,34 +83,54 @@
               </div>
 
               <!-- Cards -->
-              <div class="grid grid-cols-4 gap-x-4 gap-y-8">
-                <!-- Tasks column -->
-                <TasksGroups title="To Do’s 🖋️">
-                  <Task01 />
-                  <Task02 />
-                  <Task03 />
-                </TasksGroups>
-                <!-- Tasks column -->
-                <TasksGroups title="In Progress ✌️">
-                  <Task04 />
-                  <Task05 />
-                </TasksGroups>
-                <!-- Tasks column -->
-                <TasksGroups title="Completed 🎉">
-                  <Task06 />
-                  <Task07 />
-                </TasksGroups>
-                <!-- Tasks column -->
-                <TasksGroups title="Notes 📒">
-                  <Task08 />
-                  <Task09 />
-                </TasksGroups>
+
+              <div
+                class="cards-container overflow-x-auto scrollbar-thin dark:scrollbar-thumb-gray-900 dark:scrollbar-track-gray-800 scrollbar-thumb-gray-700 scrollbar-track-gray-400 scrollbar-thumb-rounded"
+              >
+                <div class="flex gap-4">
+                  <!-- Tasks column -->
+                  <TasksGroups title="To Do’s 🖋️">
+                    <Task01 />
+                    <Task02 />
+                    <Task03 />
+                  </TasksGroups>
+                  <!-- Tasks column -->
+                  <TasksGroups title="In Progress ✌️">
+                    <Task04 />
+                    <Task05 />
+                  </TasksGroups>
+                  <!-- Tasks column -->
+                  <TasksGroups title="Completed 🎉">
+                    <Task06 />
+                    <Task07 />
+                  </TasksGroups>
+                  <!-- Tasks column -->
+                  <TasksGroups title="Notes 📒">
+                    <Task08 />
+                    <Task09 />
+                  </TasksGroups>
+                  <!-- Tasks column -->
+                  <TasksGroups title="Notes 📒">
+                    <Task08 />
+                    <Task09 />
+                  </TasksGroups>
+                  <!-- Tasks column -->
+                  <TasksGroups title="Notes 📒">
+                    <Task08 />
+                    <Task09 />
+                  </TasksGroups>
+                  <!-- Tasks column -->
+                  <TasksGroups title="Notes 📒">
+                    <Task08 />
+                    <Task09 />
+                  </TasksGroups>
+                </div>
               </div>
             </div>
           </main>
         </div>
-      </div> </SectionMain
-    >>
+      </div>
+    </SectionMain>
   </NuxtLayout>
 </template>
 
