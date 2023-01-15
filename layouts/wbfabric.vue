@@ -14,6 +14,7 @@ import PremAsideMenu from "@/components/AsideMenu/AsideMenu.vue";
 import NavBarItemPlain from "@/components/Navbar/NavBarItemPlain.vue";
 import FooterBar from "@/components/Footers/FooterBar.vue";
 import { useAuthStore } from "@/stores/authStore";
+import { useWBFabric } from "@/stores/wbFabric";
 
 useMainStore().setUser({
   name: "Zenith Physics",
@@ -30,6 +31,8 @@ const styleStore = useStyleStore();
 
 const layoutStore = useLayoutStore();
 
+const fabricStore = useWBFabric();
+
 const router = useRouter();
 
 const AuthStore = useAuthStore();
@@ -41,6 +44,15 @@ router.beforeEach(() => {
 });
 
 const menuClick = (event, item) => {
+  console.log("Event:", event);
+  console.log("Item:", item);
+
+  if (item.label.toLowerCase() === "home") {
+    console.log("Item.label:", item.label);
+    console.log(fabricStore.currentRectCount);
+    fabricStore.incrCurrentRectCount();
+  }
+
   if (item.isToggleLightDark) {
     styleStore.setDarkMode();
   }
