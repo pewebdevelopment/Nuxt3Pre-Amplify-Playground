@@ -27,17 +27,21 @@ export default {
 
       const ref = this.$refs.fabricJS;
       const canvas = new fabric.Canvas(ref);
+      console.log("Setting New dimensions for Fabric");
+      canvas.setDimensions({ width: 1000, height: 1000 });
+      // canvas.setWidth("1000px");
 
       console.log("Ref", ref);
       console.log("Fabric canvas", canvas);
       const rect = new fabric.Circle({
         fill: "#0000FF",
         radius: 100,
-        stroke: "#0000FF",
+        stroke: "#FFFFFF",
         strokeWidth: 5,
         // width: 200,
         // height: 200,
       });
+
       canvas.add(rect);
     }
   },
@@ -59,6 +63,6 @@ body {
 #canvas-fabric {
   height: 100vh;
   width: 1000px;
-  background: #cb0c0c;
+  background: #000000;
 }
 </style>

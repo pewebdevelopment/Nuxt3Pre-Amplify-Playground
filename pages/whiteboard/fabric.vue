@@ -1,5 +1,7 @@
 <template>
-  <whiteboard></whiteboard>
+  <NuxtLayout name="wbfabric">
+    <div class="mydiv"><whiteboard></whiteboard></div>
+  </NuxtLayout>
 </template>
 
 <script>
