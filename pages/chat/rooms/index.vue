@@ -27,12 +27,21 @@
 
 <script>
 import { register } from "vue-advanced-chat";
+import "vue-advanced-chat/dist/vue-advanced-chat.css";
 // import { register } from '../../vue-advanced-chat/dist/vue-advanced-chat.es.js'
 register();
+
+const importChat = () => {
+  if (process.client) {
+    return { ChatWindow: () => import("vue-advanced-chat") };
+  }
+  return {};
+};
 
 export default {
   data() {
     return {
+      components: importChat(),
       currentUserId: "1234",
       rooms: [
         {
