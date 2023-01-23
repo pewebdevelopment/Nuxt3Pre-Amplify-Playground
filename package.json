@@ -46,6 +46,7 @@
     "rollup-plugin-node-polyfills": "^0.2.1",
     "uuid4": "^2.0.3",
     "vue": "^3.2.33",
-    "vue-3-slider-component": "^0.1.0"
+    "vue-3-slider-component": "^0.1.0",
+    "vue-advanced-chat": "^2.0.6"
   }
 }
