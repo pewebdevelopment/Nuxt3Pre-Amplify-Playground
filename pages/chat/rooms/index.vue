@@ -1,35 +1,38 @@
 <template>
   <client-only>
-    <!-- <chat-window
+    <vue-advanced-chat
+      height="calc(100vh - 20px)"
       :current-user-id="currentUserId"
-      :show-add-room="false"
-      :show-audio="false"
-      :messages-loaded="true"
+      :show-add-room="true"
+      :show-audio="true"
+      :rooms="JSON.stringify(rooms)"
       :rooms-loaded="true"
-      :rooms="rooms"
-      :messages="messages"
-    /> -->
-
-    <div>
-      <vue-advanced-chat
-        height="calc(100vh - 20px)"
-        :current-user-id="currentUserId"
-        :rooms="JSON.stringify(rooms)"
-        :rooms-loaded="true"
-        :messages="JSON.stringify(messages)"
-        :messages-loaded="messagesLoaded"
-        @send-message="sendMessage($event.detail[0])"
-        @fetch-messages="fetchMessages($event.detail[0])"
-      />
-    </div>
+      :messages="JSON.stringify(messages)"
+      :messages-loaded="messagesLoaded"
+      @send-message="sendMessage($event.detail[0])"
+      @fetch-messages="fetchMessages($event.detail[0])"
+    />
   </client-only>
 </template>
 
 <script>
+// This is the sandbox for using Vue Advanced Chat with Nuxt
+// https://github.com/antoine92190/vue-advanced-chat-sandbox/tree/nuxt
+
 import { register } from "vue-advanced-chat";
 // import "vue-advanced-chat/dist/vue-advanced-chat.css";
 // import { register } from '../../vue-advanced-chat/dist/vue-advanced-chat.es.js'
 register();
+
+// Following is later in case of the usage of TypeScript
+// interface Message {
+//   _id: string
+//   content: string
+//   senderId: string
+//   username?: string
+//   timestamp: string
+//   date: string
+// }
 
 const importChat = () => {
   if (process.client) {
