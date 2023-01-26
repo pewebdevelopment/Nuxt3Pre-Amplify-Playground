@@ -1,6 +1,7 @@
 <template>
   <client-only>
     <vue-advanced-chat
+      id="VueChat"
       height="calc(100vh - 20px)"
       :current-user-id="currentUserId"
       :show-add-room="true"
@@ -141,8 +142,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 body {
   font-family: "Quicksand", sans-serif;
+}
+
+#VueChat:deep(.vac-room-name) {
+  background-color: black;
+  color: aliceblue;
 }
 </style>
