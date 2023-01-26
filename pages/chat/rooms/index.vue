@@ -56,6 +56,24 @@ export default {
             { _id: "4321", username: "John Snow" },
           ],
         },
+        {
+          roomId: "2",
+          roomName: "Room 2",
+          avatar: "https://66.media.tumblr.com/avatar_c6a8eae4303e_512.pnj",
+          users: [
+            { _id: "1234", username: "John Doe" },
+            { _id: "4321", username: "John Snow" },
+          ],
+        },
+        {
+          roomId: "3",
+          roomName: "Room 3",
+          avatar: "https://66.media.tumblr.com/avatar_c6a8eae4303e_512.pnj",
+          users: [
+            { _id: "1234", username: "John Doe" },
+            { _id: "4321", username: "John Snow" },
+          ],
+        },
       ],
       messages: [],
       messagesLoaded: false,
