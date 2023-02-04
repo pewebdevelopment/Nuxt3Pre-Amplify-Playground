@@ -12,3 +12,6 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: graphQL
+extensions:
+  amplify:
+    version: 3
