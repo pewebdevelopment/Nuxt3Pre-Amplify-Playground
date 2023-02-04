@@ -1,44 +1,56 @@
-type Topic @model @auth(rules: [{allow: private}]) {
+type Topic @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String
   descriptio: String
-  chapterID: ID! @index(name: "byChapter")
+  chapterID: ID!
 }
 
-type Chapter @model @auth(rules: [{allow: private}]) {
+type Chapter @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String
-  subjectID: ID! @index(name: "bySubject")
+  subjectID: ID!
   ChapterTopics: [Topic] @hasMany(indexName: "byChapter", fields: ["id"])
 }
 
-type Subject @model @auth(rules: [{allow: private}]) {
+type Subject @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String
   description: String
   SubjectChapters: [Chapter] @hasMany(indexName: "bySubject", fields: ["id"])
 }
 
-type ChatConversation @model @auth(rules: [{allow: private}]) {
+type ChatConversation @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String
   Users: [User] @manyToMany(relationName: "ChatConversationUser")
 }
 
-type ChatMessages @model @auth(rules: [{allow: private}]) {
+type ChatMessages @model @auth(rules: [{ allow: private }]) {
   id: ID!
   Message: String
   User: User @hasOne
-  chatconversationID: ID! @index(name: "byChatConversation")
+  chatconversationID: ID!
 }
 
-type User @model @auth(rules: [{allow: private}]) {
+type User @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String
-  chatconversations: [ChatConversation] @manyToMany(relationName: "ChatConversationUser")
+  chatconversations: [ChatConversation]
+    @manyToMany(relationName: "ChatConversationUser")
 }
 
-type Student @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type Student
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
   id: ID!
   firstName: String!
   middleName: String
@@ -52,7 +64,18 @@ type Student @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"
   guardians: [Guardian] @hasMany
 }
 
-type Guardian @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type Guardian
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
   id: ID!
   firstName: String!
   middleName: String
@@ -64,35 +87,17 @@ type Guardian @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin
   isActive: Boolean
 }
 
-type SuperAdmin @model @auth(rules: [{allow: groups, groups: ["SuperAdmin"], operations: [create, update, read, delete]}]) {
-  id: ID!
-  firstName: String!
-  middleName: String
-  lastName: String!
-  email: String!
-  altEmail: String!
-  phoneNumber: String!
-  altPhoneNumber: String!
-  description: String
-  isActive: Boolean
-  accessControls: [String]
-}
-
-type Admin @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}]) {
-  id: ID!
-  firstName: String!
-  middleName: String
-  lastName: String!
-  email: String!
-  altEmail: String!
-  phoneNumber: String!
-  altPhoneNumber: String!
-  description: String
-  isActive: Boolean
-  accessControls: [String]
-}
-
-type Employee @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type SuperAdmin
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin"]
+        operations: [create, update, read, delete]
+      }
+    ]
+  ) {
   id: ID!
   firstName: String!
   middleName: String
@@ -106,7 +111,17 @@ type Employee @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin
   accessControls: [String]
 }
 
-type Educator @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee", "Educator"], operations: [create, read]}]) {
+type Admin
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+    ]
+  ) {
   id: ID!
   firstName: String!
   middleName: String
@@ -120,38 +135,145 @@ type Educator @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin
   accessControls: [String]
 }
 
-type StudentTask @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type Employee
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  altEmail: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+  accessControls: [String]
+}
+
+type Educator
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      {
+        allow: groups
+        groups: ["Employee", "Educator"]
+        operations: [create, read]
+      }
+    ]
+  ) {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  email: String!
+  altEmail: String!
+  phoneNumber: String!
+  altPhoneNumber: String!
+  description: String
+  isActive: Boolean
+  accessControls: [String]
+}
+
+type StudentTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
   status: String
 }
 
-type GuardianTask @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type GuardianTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
   status: String
 }
 
-type AdminTask @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}]) {
+type AdminTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
   status: String
 }
 
-type EmployeeTask @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type EmployeeTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
   status: String
 }
 
-type EducatorTask @model @auth(rules: [{allow: groups, groups: ["SuperAdmin", "Admin"], operations: [create, update, read, delete]}, {allow: groups, groups: ["Employee"], operations: [create, read]}]) {
+type EducatorTask
+  @model
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["SuperAdmin", "Admin"]
+        operations: [create, update, read, delete]
+      }
+      { allow: groups, groups: ["Employee"], operations: [create, read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
   status: String
 }
- 
